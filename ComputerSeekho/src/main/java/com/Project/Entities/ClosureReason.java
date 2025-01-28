@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
-@Table(name = "closure_reason_master")
+@Table(name = "closure_reason")
 @Data
 public class ClosureReason {
     @Id
