@@ -1,6 +1,6 @@
 package com.Project.Entities;
 
-import jakarta.persistence.*; // Ensure correct imports for JPA annotations
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Table(name = "course")

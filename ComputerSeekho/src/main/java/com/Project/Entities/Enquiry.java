@@ -1,5 +1,6 @@
 package com.Project.Entities;
 
+import java.time.LocalDate;
 import java.util.Date;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -29,7 +30,7 @@ public class Enquiry {
     private String enquirerEmailId;
 
     @Column(name = "enquiry_date")
-    private Date enquiryDate;
+    private LocalDate enquiryDate;
 
     @Column(name = "enquirer_query")
     private String enquirerQuery;
@@ -106,11 +107,11 @@ public class Enquiry {
         this.enquirerEmailId = enquirerEmailId;
     }
 
-    public Date getEnquiryDate() {
+    public LocalDate getEnquiryDate() {
         return enquiryDate;
     }
 
-    public void setEnquiryDate(Date enquiryDate) {
+    public void setEnquiryDate(LocalDate enquiryDate) {
         this.enquiryDate = enquiryDate;
     }
 
