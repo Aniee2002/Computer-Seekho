@@ -1,4 +1,4 @@
-package com.example.Entities;
+package com.Project.Entities;
 
 import java.io.Serializable;
 import jakarta.persistence.*;

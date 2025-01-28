@@ -1,4 +1,4 @@
-package com.example.Entities;
+package com.Project.Entities;
 
 import jakarta.persistence.*; // Ensure correct imports for JPA annotations
 import lombok.Data;
