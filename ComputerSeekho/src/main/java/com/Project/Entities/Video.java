@@ -32,6 +32,10 @@ public class Video {
 
     @Column(name = "is_active")
     private boolean videoIsActive;
+    
+    @ManyToOne
+    @JoinColumn(name = "course_id", referencedColumnName = "course_id")
+    private Course course_id;
 
     // Getters and Setters
     public int getVideoId() {

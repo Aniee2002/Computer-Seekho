@@ -1,5 +1,10 @@
 package com.Project.Entities;
 
+import java.time.LocalTime;
+
+import org.hibernate.event.spi.LockEventListener;
+import org.springframework.cglib.core.Local;
+
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -16,10 +21,10 @@ public class Batch {
     private String batch_name;
 
     @Column(name = "batch_start_time")
-    private int batch_start_time;
+    private LocalTime batch_start_time;
 
     @Column(name = "batch_end_time")
-    private int batch_end_time;
+    private LocalTime batch_end_time;
 
     @ManyToOne
     @JoinColumn(name = "course_id", nullable = false)
@@ -44,19 +49,19 @@ public class Batch {
         this.batch_name = batch_name;
     }
 
-    public int getBatch_start_time() {
+    public LocalTime getBatch_start_time() {
         return batch_start_time;
     }
 
-    public void setBatch_start_time(int batch_start_time) {
+    public void setBatch_start_time(LocalTime batch_start_time) {
         this.batch_start_time = batch_start_time;
     }
 
-    public int getBatch_end_time() {
+    public LocalTime getBatch_end_time() {
         return batch_end_time;
     }
 
-    public void setBatch_end_time(int batch_end_time) {
+    public void setBatch_end_time(LocalTime batch_end_time) {
         this.batch_end_time = batch_end_time;
     }
 
