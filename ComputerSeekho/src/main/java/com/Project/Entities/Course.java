@@ -3,9 +3,7 @@ package com.Project.Entities;
 import jakarta.persistence.*; // Ensure correct imports for JPA annotations
 import lombok.Data;
 
-import org.springframework.stereotype.Component;
-
-@Component
+@Table(name = "course")
 @Entity
 @Data
 public class Course {
