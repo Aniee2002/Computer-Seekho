@@ -28,7 +28,6 @@ public class Album {
     @Column(name = "is_active")
     private boolean albumIsActive;
 
-    // Getters and Setters
     public int getAlbumId() {
         return albumId;
     }

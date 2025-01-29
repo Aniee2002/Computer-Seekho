@@ -37,7 +37,6 @@ public class AlbumController {
         return album != null ? new ResponseEntity<>(album, HttpStatus.OK) : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    // Update an album
     @PutMapping("/{id}")
     public ResponseEntity<Album> updateAlbum(@PathVariable("id") int albumId, @RequestBody Album albumDetails) {
         Album album = albumService.getAlbumById(albumId);
