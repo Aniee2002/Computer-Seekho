@@ -1,6 +1,6 @@
 package com.Project.Entities;
 
-import org.hibernate.validator.constraints.URL;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -29,7 +29,6 @@ public class Staff {
 
     @Column(name = "photo_url")
     @NotBlank(message = "photoUrl is mandatory")
-    @URL(message = "Photo URL must be a valid URL")
     private String photoUrl;
 
     @Column(name = "staff_email")
@@ -50,8 +49,9 @@ public class Staff {
     @Column(name = "staffPassword")
     @NotBlank(message = "Password is required")
     @Size(min = 8, message = "Password must be at least 8 characters")
-    private String staff_password;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private String staffPassword;
 
     @Column(name = "staff_role")
-    private String staffRole = "ADMIN";
+    private String staffRole;
 }
