@@ -13,19 +13,16 @@ public class ReceiptServiceImpl implements ReceiptService {
     ReceiptRepositories receiptRepositories;
     @Override
     public Optional<Receipt> getReceiptById(int receiptId) {
-        throw new UnsupportedOperationException("Unimplemented method 'getReceiptById'");
+        return receiptRepositories.findById(receiptId);
     }
 
     @Override
     public List<Receipt> getAllReceipts() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAllReceipts'");
+        return receiptRepositories.findAll();
     }
 
     @Override
     public Receipt addReceipt(Receipt receipt) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addReceipt'");
+        return receiptRepositories.save(receipt);
     }
-    
 }
