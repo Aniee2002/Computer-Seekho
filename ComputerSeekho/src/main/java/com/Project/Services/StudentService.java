@@ -10,4 +10,6 @@ public interface StudentService {
     Student addStudent(Student student);
     Student updateStudent(Student student,int studentId);
     void deleteStudent(int studentId);
+    List<Student> getbybatch(int batchId);
+    List<Student> getbycourse(int courseId);
 }

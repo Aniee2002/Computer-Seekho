@@ -1,5 +1,6 @@
 package com.Project.Controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.Project.Services.StudentService;
 import com.Project.Entities.Student;
+
 
 @RestController
 @RequestMapping("/student")
@@ -52,4 +54,15 @@ public class StudentController {
         studentService.deleteStudent(studentId);
         return ResponseEntity.ok().body("Student Deleted");
     }
+
+    @GetMapping("/bybatch/{batchid}")
+    public List<Student> getbybatch(@PathVariable int batchid) {
+        return studentService.getbybatch(batchid);
+    }
+
+    @GetMapping("/bycourse/{courseid}")
+    public List<Student> getbycourse(@PathVariable int courseid) {
+        return studentService.getbycourse(courseid);
+    }
+    
 }
