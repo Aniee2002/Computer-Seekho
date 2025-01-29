@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,7 +24,7 @@ public class StudentController {
     private StudentService studentService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<Student> getStudentById(int id) {
+    public ResponseEntity<Student> getStudentById(@PathVariable int id) {
         Optional<Student> student = studentService.getStudentById(id);
         return ResponseEntity.status(HttpStatus.CREATED).body(student.get());
     }
@@ -47,7 +48,7 @@ public class StudentController {
     }
 
     @DeleteMapping("/delete/{studentId}")
-    public ResponseEntity<String> deleteStudent(int studentId) {
+    public ResponseEntity<String> deleteStudent(@PathVariable int studentId) {
         studentService.deleteStudent(studentId);
         return ResponseEntity.ok().body("Student Deleted");
     }
