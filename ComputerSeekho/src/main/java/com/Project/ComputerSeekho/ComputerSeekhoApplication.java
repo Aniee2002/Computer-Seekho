@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @ComponentScan(basePackages="com.Project.*")
 @EntityScan(basePackages="com.Project.*")
+@ComponentScan(basePackages="com.Project.*")
 @EnableJpaRepositories(basePackages="com.Project.*")
 @ComponentScan(basePackages="com.Project.*")
 public class ComputerSeekhoApplication {
