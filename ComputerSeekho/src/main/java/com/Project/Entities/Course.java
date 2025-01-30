@@ -1,6 +1,6 @@
 package com.Project.Entities;
 
-import jakarta.persistence.*; // Ensure correct imports for JPA annotations
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Table(name = "course")
@@ -36,10 +36,6 @@ public class Course {
 
     @Column(length = 100, name = "cover_photo") 
     private String coverphoto;
-
-    @ManyToOne // Many courses can reference one video
-    @JoinColumn(name = "video_id") 
-    private Video videoid;
 
     // Getter and Setter Methods
 
@@ -105,13 +101,5 @@ public class Course {
 
     public void setCoverphoto(String coverphoto) {
         this.coverphoto = coverphoto;
-    }
-
-    public Video getVideoid() {
-        return videoid;
-    }
-
-    public void setVideoid(Video videoid) {
-        this.videoid = videoid;
     }
 }

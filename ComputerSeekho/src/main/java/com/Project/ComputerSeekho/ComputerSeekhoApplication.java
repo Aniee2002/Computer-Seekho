@@ -7,9 +7,11 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
+@ComponentScan(basePackages="com.Project.*")
 @EntityScan(basePackages="com.Project.*")
 @ComponentScan(basePackages="com.Project.*")
 @EnableJpaRepositories(basePackages="com.Project.*")
+@ComponentScan(basePackages="com.Project.*")
 public class ComputerSeekhoApplication {
 
 	public static void main(String[] args) {
