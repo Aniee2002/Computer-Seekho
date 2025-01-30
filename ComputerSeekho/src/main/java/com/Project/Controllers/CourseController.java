@@ -1,6 +1,5 @@
 package com.Project.Controllers;
 
-import java.util.Optional;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,8 +22,11 @@ public class CourseController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Course> getCourseById(int id) {
-        Optional<Course> course = courseService.getCourseById(id);
-        return ResponseEntity.status(HttpStatus.CREATED).body(course.get());
+        Course course = courseService.getCourseById(id).get();
+        if(course == null) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
+        return ResponseEntity.status(HttpStatus.CREATED).body(course);
     }
     @GetMapping("/all")
     public List<Course> getAllCourses() {
@@ -34,16 +36,22 @@ public class CourseController {
     @PostMapping("/add")
     public ResponseEntity<Course> addCourse(@RequestBody Course course) {
         Course course2 = courseService.addCourse(course);
+        if(course2 == null) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
         return ResponseEntity.status(HttpStatus.CREATED).body(course2);
     }
     @PostMapping("/update")
     public ResponseEntity<Course> updateCourse(@RequestBody Course course) {
         Course course2 = courseService.updateCourse(course, course.getCourse_id());
+        if(course2 == null) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
         return ResponseEntity.status(HttpStatus.CREATED).body(course2);
     }
     @DeleteMapping("/delete/{courseId}")
-    public ResponseEntity<String> deleteCourse(int courseId) {
+    public String deleteCourse(int courseId) {
         courseService.deleteCourse(courseId);
-        return ResponseEntity.ok().body("Course Deleted");
+        return "Course Deleted";
     }
 }

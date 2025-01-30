@@ -1,6 +1,5 @@
 package com.Project.Controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -50,9 +49,9 @@ public class StudentController {
     }
 
     @DeleteMapping("/delete/{studentId}")
-    public ResponseEntity<String> deleteStudent(@PathVariable int studentId) {
+    public String deleteStudent(@PathVariable int studentId) {
         studentService.deleteStudent(studentId);
-        return ResponseEntity.ok().body("Student Deleted");
+        return "Student deleted with id: " + studentId;
     }
 
     @GetMapping("/bybatch/{batchid}")

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,8 +21,11 @@ public class ReceiptController {
     private ReceiptService receiptService;
     
     @GetMapping("/{id}")
-    public ResponseEntity<Receipt> getReceiptById(int receiptId) {
+    public ResponseEntity<Receipt> getReceiptById(@PathVariable int receiptId) {
         Receipt receipt = receiptService.getReceiptById(receiptId).get();
+        if(receipt == null) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
         return ResponseEntity.status(HttpStatus.CREATED).body(receipt);
     }
 
@@ -33,6 +37,9 @@ public class ReceiptController {
     @PostMapping("/add")
     public ResponseEntity<Receipt> addReceipt(Receipt receipt) {
         Receipt receipt2 = receiptService.addReceipt(receipt);
+        if(receipt2 == null) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
         return ResponseEntity.status(HttpStatus.CREATED).body(receipt2);
     }
 }

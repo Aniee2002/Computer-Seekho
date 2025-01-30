@@ -2,8 +2,6 @@ package com.Project.Entities;
 
 import java.time.LocalTime;
 
-import org.hibernate.event.spi.LockEventListener;
-import org.springframework.cglib.core.Local;
 
 import jakarta.persistence.*;
 import lombok.Data;

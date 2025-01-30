@@ -27,4 +27,9 @@ public interface StudentRepositories extends JpaRepository<Student, Integer> {
     WHERE s.batch_id = ?1"""
     ,nativeQuery = true)
     List<Student> findByBatchId(int batchId);
+
+    @Query(value = """
+    DELETE FROM student WHERE student_id = ?1"""
+    ,nativeQuery = true)
+    int deleteStudent(int studentId);
 }
