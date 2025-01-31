@@ -50,14 +50,6 @@ public class Followup implements Serializable {
         this.enquiry.setEnquiryId(enquiry_id);
     }
 
-    public int getStaffId() {
-        return staff.getStaffId();
-    }
-
-    public void setStaffId(int staff_id) {
-        this.staff.setStaffId(staff_id);
-    }
-
     public void setFollowupDate(LocalDate followup_date){
         this.followup_date = followup_date;
     }
