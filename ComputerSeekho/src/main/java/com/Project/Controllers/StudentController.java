@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.Project.Services.StudentService;
 import com.Project.Entities.Student;
 
+
 @RestController
 @RequestMapping("/student")
 public class StudentController {
@@ -23,7 +25,7 @@ public class StudentController {
     private StudentService studentService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<Student> getStudentById(int id) {
+    public ResponseEntity<Student> getStudentById(@PathVariable int id) {
         Optional<Student> student = studentService.getStudentById(id);
         return ResponseEntity.status(HttpStatus.CREATED).body(student.get());
     }
@@ -47,8 +49,19 @@ public class StudentController {
     }
 
     @DeleteMapping("/delete/{studentId}")
-    public ResponseEntity<String> deleteStudent(int studentId) {
+    public String deleteStudent(@PathVariable int studentId) {
         studentService.deleteStudent(studentId);
-        return ResponseEntity.ok().body("Student Deleted");
+        return "Student deleted with id: " + studentId;
     }
+
+    @GetMapping("/bybatch/{batchid}")
+    public List<Student> getbybatch(@PathVariable int batchid) {
+        return studentService.getbybatch(batchid);
+    }
+
+    @GetMapping("/bycourse/{courseid}")
+    public List<Student> getbycourse(@PathVariable int courseid) {
+        return studentService.getbycourse(courseid);
+    }
+    
 }

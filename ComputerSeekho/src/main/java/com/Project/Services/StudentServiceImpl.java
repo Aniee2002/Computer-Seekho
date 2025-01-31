@@ -13,22 +13,39 @@ public class StudentServiceImpl implements StudentService {
     @Autowired
     private StudentRepositories studentRepositories;
 
+    @Override
     public Optional<Student> getStudentById(int studentId) {
         return studentRepositories.findById(studentId);
     }
 
+    @Override
     public List<Student> getAllStudents() {
         return studentRepositories.findAll();
     }
 
+    @Override
     public Student addStudent(Student student) {
         return studentRepositories.save(student);
     }
+
+    @Override
     public Student updateStudent(Student student,int studentId) {
         student.setStudentId(studentId);
         return studentRepositories.save(student);
     }
+
+    @Override
     public void deleteStudent(int studentId) {
-        studentRepositories.deleteById(studentId);
+        studentRepositories.deleteStudent(studentId);
+    }
+
+    @Override
+    public List<Student> getbybatch(int batchId) {
+        return studentRepositories.findByBatchId(batchId);
+    }
+
+    @Override
+    public List<Student> getbycourse(int courseId) {
+        return studentRepositories.findbycourse(courseId);
     }
 }

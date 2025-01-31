@@ -3,9 +3,12 @@ package com.Project.Services;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.stereotype.Service;
+
 import com.Project.Entities.Course;
 import com.Project.Repositories.CourseRepositories;
 
+@Service
 public class CourseServiceImpl implements CourseService {
 
     CourseRepositories courseRepositories;
