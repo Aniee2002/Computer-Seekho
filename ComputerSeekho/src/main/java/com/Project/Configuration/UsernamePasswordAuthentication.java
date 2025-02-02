@@ -26,17 +26,18 @@ public class UsernamePasswordAuthentication implements AuthenticationProvider {
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         String username = authentication.getName();
         String pass = authentication.getCredentials().toString();
-        
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
 
         Staff staff = service.findByStaffUsername(username);
-
         if (staff != null) {
             if(passwordEncoder.matches(pass,staff.getStaffPassword())) {
                 authorities.add(new SimpleGrantedAuthority(staff.getStaffRole()));
+            }else {
+                throw new BadCredentialsException("Invalid password");
             }
         }else {
-            throw new BadCredentialsException("Username not found");
+            throw new BadCredentialsException("User not found with username: " + username);
+            
         }
         return new UsernamePasswordAuthenticationToken(username,pass,authorities);
     }
