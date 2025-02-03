@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "student_master")
+@Table(name = "student")
 public class Student {
 
     @Id
@@ -37,7 +37,7 @@ public class Student {
     private String studentQualification;
 
     @Column(name = "student_mobile")
-    private int studentMobile;
+    private String studentMobile;
 
     @ManyToOne
     @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
@@ -46,10 +46,4 @@ public class Student {
     @ManyToOne
     @JoinColumn(name = "course_id", referencedColumnName = "course_id")
     private Course course_id;
-
-    @Column(name = "student_password", length = 15, nullable = false)
-    private String studentPassword;
-
-    @Column(name = "student_username", length = 15, unique = true, nullable = false)
-    private String studentUsername;
 }

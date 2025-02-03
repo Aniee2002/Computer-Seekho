@@ -1,7 +1,6 @@
 package com.Project.Entities;
 
 import java.time.LocalDate;
-import java.util.Date;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -21,10 +20,7 @@ public class Enquiry {
     private String enquirerAddress;
 
     @Column(name = "enquirer_mobile")
-    private int enquirerMobile;
-
-    @Column(name = "enquirer_alternate_mobile")
-    private int enquirerAlternateMobile;
+    private String enquirerMobile;
 
     @Column(name = "enquirer_email_id")
     private String enquirerEmailId;
@@ -34,9 +30,6 @@ public class Enquiry {
 
     @Column(name = "enquirer_query")
     private String enquirerQuery;
-
-    @Column(name = "closure_reason_id")
-    private int closureReasonId;
 
     @Column(name = "closure_reason")
     private String closureReason;
@@ -57,7 +50,7 @@ public class Enquiry {
     private int inquiryCounter;
 
     @Column(name = "follow_up_date")
-    private Date followUpDate;
+    private LocalDate followUpDate;
 
     public int getEnquiryId() {
         return enquiryId;
@@ -83,20 +76,12 @@ public class Enquiry {
         this.enquirerAddress = enquirerAddress;
     }
 
-    public int getEnquirerMobile() {
+    public String getEnquirerMobile() {
         return enquirerMobile;
     }
 
-    public void setEnquirerMobile(int enquirerMobile) {
+    public void setEnquirerMobile(String enquirerMobile) {
         this.enquirerMobile = enquirerMobile;
-    }
-
-    public int getEnquirerAlternateMobile() {
-        return enquirerAlternateMobile;
-    }
-
-    public void setEnquirerAlternateMobile(int enquirerAlternateMobile) {
-        this.enquirerAlternateMobile = enquirerAlternateMobile;
     }
 
     public String getEnquirerEmailId() {
@@ -121,14 +106,6 @@ public class Enquiry {
 
     public void setEnquirerQuery(String enquirerQuery) {
         this.enquirerQuery = enquirerQuery;
-    }
-
-    public int getClosureReasonId() {
-        return closureReasonId;
-    }
-
-    public void setClosureReasonId(int closureReasonId) {
-        this.closureReasonId = closureReasonId;
     }
 
     public String getClosureReason() {
@@ -179,11 +156,11 @@ public class Enquiry {
         this.inquiryCounter = inquiryCounter;
     }
 
-    public Date getFollowUpDate() {
+    public LocalDate getFollowUpDate() {
         return followUpDate;
     }
 
-    public void setFollowUpDate(Date followUpDate) {
+    public void setFollowUpDate(LocalDate followUpDate) {
         this.followUpDate = followUpDate;
     }
 }

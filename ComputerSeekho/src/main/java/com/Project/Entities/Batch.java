@@ -1,5 +1,7 @@
 package com.Project.Entities;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -16,10 +18,10 @@ public class Batch {
     private String batch_name;
 
     @Column(name = "batch_start_time")
-    private int batch_start_time;
+    private LocalDate batch_start_time;
 
     @Column(name = "batch_end_time")
-    private int batch_end_time;
+    private LocalDate batch_end_time;
 
     @ManyToOne
     @JoinColumn(name = "course_id", nullable = false)
@@ -44,28 +46,28 @@ public class Batch {
         this.batch_name = batch_name;
     }
 
-    public int getBatch_start_time() {
+    public LocalDate getBatch_start_time() {
         return batch_start_time;
     }
 
-    public void setBatch_start_time(int batch_start_time) {
+    public void setBatch_start_time(LocalDate batch_start_time) {
         this.batch_start_time = batch_start_time;
     }
 
-    public int getBatch_end_time() {
+    public LocalDate getBatch_end_time() {
         return batch_end_time;
     }
 
-    public void setBatch_end_time(int batch_end_time) {
+    public void setBatch_end_time(LocalDate batch_end_time) {
         this.batch_end_time = batch_end_time;
     }
 
     public int getCourse_id() {
-        return course.getCourse_id();
+        return course.getCourseId();
     }
 
     public void setCourse_id(int course_id) {
-        this.course.setCourse_id(course_id);
+        this.course.setCourseId(course_id);
     }
 
     public Boolean getBatch_is_active() {

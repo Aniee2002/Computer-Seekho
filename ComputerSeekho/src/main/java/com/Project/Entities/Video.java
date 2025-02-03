@@ -3,7 +3,7 @@ package com.Project.Entities;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "video_master")
@@ -20,18 +20,22 @@ public class Video {
     @Column(name = "video_url", length = 255)
     private String videoUrl;
 
-    @Column(name = "batch_id")
-    
-    private int batchId;
+    @ManyToOne
+    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
+    private Batch batchId;
 
     @Column(name = "start_date")
-    private LocalDateTime startDate;
+    private LocalDate startDate;
 
     @Column(name = "end_date")
-    private LocalDateTime endDate;
+    private LocalDate endDate;
 
     @Column(name = "is_active")
     private boolean videoIsActive;
+    
+    @ManyToOne
+    @JoinColumn(name = "course_id", referencedColumnName = "course_id")
+    private Course course_id;
 
     // Getters and Setters
     public int getVideoId() {
@@ -58,27 +62,27 @@ public class Video {
         this.videoUrl = videoUrl;
     }
 
-    public int getBatchId() {
+    public Batch getBatchId() {
         return batchId;
     }
 
-    public void setBatchId(int batchId) {
+    public void setBatchId(Batch batchId) {
         this.batchId = batchId;
     }
 
-    public LocalDateTime getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalDateTime startDate) {
+    public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
 
-    public LocalDateTime getEndDate() {
+    public LocalDate getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(LocalDateTime endDate) {
+    public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
 
