@@ -63,11 +63,11 @@ public class Batch {
     }
 
     public int getCourse_id() {
-        return course.getCourse_id();
+        return course.getCourseId();
     }
 
     public void setCourse_id(int course_id) {
-        this.course.setCourse_id(course_id);
+        this.course.setCourseId(course_id);
     }
 
     public Boolean getBatch_is_active() {

@@ -1,8 +1,5 @@
 package com.Project.Entities;
 
-
-import java.util.Optional;
-
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -33,15 +30,5 @@ public class ClosureReason {
 
     public void setClosureReasonDesc(String closureReasonDesc) {
         this.closureReasonDesc = closureReasonDesc;
-    }
-
-    public Optional<ClosureReason> getClosureReasonById(Integer id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getClosureReasonById'");
-    }
-
-    public ClosureReason addClosureReason(ClosureReason closureReason) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addClosureReason'");
     }
 }
