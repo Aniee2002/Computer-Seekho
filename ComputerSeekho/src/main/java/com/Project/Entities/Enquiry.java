@@ -2,6 +2,7 @@ package com.Project.Entities;
 
 import java.time.LocalDate;
 import jakarta.persistence.*;
+import jakarta.websocket.CloseReason;
 import lombok.Data;
 
 @Entity
@@ -20,10 +21,7 @@ public class Enquiry {
     private String enquirerAddress;
 
     @Column(name = "enquirer_mobile")
-    private int enquirerMobile;
-
-    @Column(name = "enquirer_alternate_mobile")
-    private int enquirerAlternateMobile;
+    private String enquirerMobile;
 
     @Column(name = "enquirer_email_id")
     private String enquirerEmailId;
@@ -34,8 +32,9 @@ public class Enquiry {
     @Column(name = "enquirer_query")
     private String enquirerQuery;
 
-    @Column(name = "closure_reason_id")
-    private int closureReasonId;
+    @ManyToOne
+    @JoinColumn(name = "closure_reason_id", referencedColumnName = "closure_reason_id")
+    private ClosureReason closureReasonId;
 
     @Column(name = "closure_reason")
     private String closureReason;
@@ -82,20 +81,12 @@ public class Enquiry {
         this.enquirerAddress = enquirerAddress;
     }
 
-    public int getEnquirerMobile() {
+    public String getEnquirerMobile() {
         return enquirerMobile;
     }
 
-    public void setEnquirerMobile(int enquirerMobile) {
+    public void setEnquirerMobile(String enquirerMobile) {
         this.enquirerMobile = enquirerMobile;
-    }
-
-    public int getEnquirerAlternateMobile() {
-        return enquirerAlternateMobile;
-    }
-
-    public void setEnquirerAlternateMobile(int enquirerAlternateMobile) {
-        this.enquirerAlternateMobile = enquirerAlternateMobile;
     }
 
     public String getEnquirerEmailId() {
@@ -122,11 +113,11 @@ public class Enquiry {
         this.enquirerQuery = enquirerQuery;
     }
 
-    public int getClosureReasonId() {
+    public ClosureReason getClosureReasonId() {
         return closureReasonId;
     }
 
-    public void setClosureReasonId(int closureReasonId) {
+    public void setClosureReasonId(ClosureReason closureReasonId) {
         this.closureReasonId = closureReasonId;
     }
 

@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +22,7 @@ public class CourseController {
     private CourseService courseService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<Course> getCourseById(int id) {
+    public ResponseEntity<Course> getCourseById(@PathVariable int id) {
         Course course = courseService.getCourseById(id).get();
         if(course == null) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
@@ -29,8 +30,12 @@ public class CourseController {
         return ResponseEntity.status(HttpStatus.CREATED).body(course);
     }
     @GetMapping("/all")
-    public List<Course> getAllCourses() {
-        return courseService.getAllCourses();
+    public ResponseEntity<List<Course>> getAllCourses() {
+        List<Course> courses = courseService.getAllCourses();
+        if(courses == null) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
+        return ResponseEntity.status(HttpStatus.CREATED).body(courses);
     }
 
     @PostMapping("/add")
@@ -50,7 +55,7 @@ public class CourseController {
         return ResponseEntity.status(HttpStatus.CREATED).body(course2);
     }
     @DeleteMapping("/delete/{courseId}")
-    public String deleteCourse(int courseId) {
+    public String deleteCourse(@PathVariable int courseId) {
         courseService.deleteCourse(courseId);
         return "Course Deleted";
     }

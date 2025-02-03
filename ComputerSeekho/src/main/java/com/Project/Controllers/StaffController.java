@@ -42,7 +42,7 @@ public class StaffController {
         if (isUpdated) {
             return new ResponseEntity<>("Staff updated successfully", HttpStatus.OK);
         } else {
-            return  new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);     
+            return  new ResponseEntity<>("Cannot Found Staff", HttpStatus.NOT_FOUND);     
         }
     }
 
@@ -52,7 +52,7 @@ public class StaffController {
         if (staff != null) {
             return new ResponseEntity<>(staff, HttpStatus.OK);
         } else {
-            return  new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);     
+            return  new ResponseEntity<>(null, HttpStatus.NOT_FOUND);     
         }
     }
 

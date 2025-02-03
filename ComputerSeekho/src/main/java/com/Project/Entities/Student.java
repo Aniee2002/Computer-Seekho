@@ -37,7 +37,7 @@ public class Student {
     private String studentQualification;
 
     @Column(name = "student_mobile")
-    private int studentMobile;
+    private String studentMobile;
 
     @ManyToOne
     @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")

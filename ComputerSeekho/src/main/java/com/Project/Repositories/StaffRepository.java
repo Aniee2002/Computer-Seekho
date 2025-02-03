@@ -1,5 +1,7 @@
 package com.Project.Repositories;
 
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -12,7 +14,7 @@ import jakarta.transaction.Transactional;
 
 @Repository
 public interface StaffRepository extends JpaRepository<Staff,Integer>{
-    Staff findByStaffUsername(String staffUsername);    
+    Optional<Staff> findByStaffUsername(String staffUsername);    
 
     @Modifying
     @Transactional
@@ -21,5 +23,6 @@ public interface StaffRepository extends JpaRepository<Staff,Integer>{
 
     @Transactional
     @Modifying
-    int deleteByStaffUsername(String staffUsername);
+    @Query(value = "DELETE FROM Staff WHERE staff_username = :staffUsername", nativeQuery = true)
+    void deleteByStaffUsername(String staffUsername);
 } 

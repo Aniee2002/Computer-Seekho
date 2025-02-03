@@ -30,18 +30,21 @@ public class RecruiterController {
         return new ResponseEntity<>(savedRecruiter,HttpStatus.CREATED);
     }
 
-    @GetMapping("/get")
+    @GetMapping("/getAll")
     public ResponseEntity<List<Recruiter>> getAllRecruiter()
     {
         List<Recruiter> recruiters = recruiterService.getAllRecruiter();
-        return new ResponseEntity<>(recruiters,HttpStatus.CREATED);
+        if(recruiters == null) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
+        return ResponseEntity.status(HttpStatus.CREATED).body(recruiters);
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Void> deleteRecruiter(@PathVariable int id) 
+    public String deleteRecruiter(@PathVariable int id) 
     {
         recruiterService.deleteRecruiter(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return "Recruiter Deleted";
     }
     
 }

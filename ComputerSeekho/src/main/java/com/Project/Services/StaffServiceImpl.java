@@ -27,7 +27,7 @@ public class StaffServiceImpl implements StaffService {
 
     @Override
     public Staff findByStaffUsername(String staffUsername) {
-        return staffRepository.findByStaffUsername(staffUsername);
+        return staffRepository.findByStaffUsername(staffUsername).get();
     }
 
     
@@ -37,6 +37,7 @@ public class StaffServiceImpl implements StaffService {
         
         if(isStaffExist(staff.getStaffId())) {
             String password = passwordEncoder.encode(staff.getStaffPassword());
+            staff.setStaffPassword(password);
             staffRepository.updateStaff(staff.getStaffUsername(), password, staff.getStaffId());
             return true;
         }
@@ -50,9 +51,9 @@ public class StaffServiceImpl implements StaffService {
 
     @Override
     public boolean deleteByStaffUsername(String staffUsername) {
-        Staff staff = staffRepository.findByStaffUsername(staffUsername);
-        int a =  staffRepository.deleteByStaffUsername(staffUsername);
-        if (staff == null || a != 0) {
+        Staff staff = staffRepository.findByStaffUsername(staffUsername).get();
+        staffRepository.deleteByStaffUsername(staffUsername);
+        if (staff == null) {
             return false;
         }
         return true;
