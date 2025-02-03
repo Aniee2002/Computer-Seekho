@@ -48,7 +48,7 @@ public class CourseController {
     }
     @PostMapping("/update")
     public ResponseEntity<Course> updateCourse(@RequestBody Course course) {
-        Course course2 = courseService.updateCourse(course, course.getCourse_id());
+        Course course2 = courseService.updateCourse(course, course.getCourseId());
         if(course2 == null) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
@@ -59,4 +59,14 @@ public class CourseController {
         courseService.deleteCourse(courseId);
         return "Course Deleted";
     }
+
+    @GetMapping("/find/{courseName}")
+    public ResponseEntity<Course> findCourseByName(@PathVariable String courseName) {
+        Course course = courseService.findCourseByName(courseName).get();
+        if(course == null) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
+        return ResponseEntity.status(HttpStatus.CREATED).body(course);
+    }
+
 }

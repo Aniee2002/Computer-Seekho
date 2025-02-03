@@ -29,8 +29,13 @@ public class AlbumServiceImpl implements AlbumService {
     }
 
     @Override
-    public Album updateAlbum(Album album) {
-        return albumRepository.save(album);
+    public boolean updateAlbum(Album album) {
+        Album existingAlbum = albumRepository.findById(album.getAlbumId()).get();
+        if(existingAlbum != null) {
+            albumRepository.save(album);
+            return true;
+        }
+        return false;
     }
 
     @Override

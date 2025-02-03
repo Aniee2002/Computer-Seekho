@@ -2,7 +2,6 @@ package com.Project.Entities;
 
 import java.time.LocalDate;
 import jakarta.persistence.*;
-import jakarta.websocket.CloseReason;
 import lombok.Data;
 
 @Entity
@@ -31,10 +30,6 @@ public class Enquiry {
 
     @Column(name = "enquirer_query")
     private String enquirerQuery;
-
-    @ManyToOne
-    @JoinColumn(name = "closure_reason_id", referencedColumnName = "closure_reason_id")
-    private ClosureReason closureReasonId;
 
     @Column(name = "closure_reason")
     private String closureReason;
@@ -111,14 +106,6 @@ public class Enquiry {
 
     public void setEnquirerQuery(String enquirerQuery) {
         this.enquirerQuery = enquirerQuery;
-    }
-
-    public ClosureReason getClosureReasonId() {
-        return closureReasonId;
-    }
-
-    public void setClosureReasonId(ClosureReason closureReasonId) {
-        this.closureReasonId = closureReasonId;
     }
 
     public String getClosureReason() {
