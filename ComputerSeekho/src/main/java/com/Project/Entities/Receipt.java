@@ -21,8 +21,9 @@ public class Receipt implements Serializable {
     @Column(nullable = false)
     private double receiptAmount;
 
-    @Column(nullable = false)
-    private int paymentId;
+    @OneToOne
+    @JoinColumn(name = "payment_id", referencedColumnName = "payment_id")
+    private Payment paymentId;
 
     public int getReceiptId() {
         return receiptId;
@@ -48,11 +49,11 @@ public class Receipt implements Serializable {
         this.receiptAmount = receiptAmount;
     }
 
-    public int getPaymentId() {
+    public Payment getPaymentId() {
         return paymentId;
     }
 
-    public void setPaymentId(int paymentId) {
+    public void setPaymentId(Payment paymentId) {
         this.paymentId = paymentId;
     }
 }
