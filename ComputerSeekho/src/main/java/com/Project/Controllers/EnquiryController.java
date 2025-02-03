@@ -3,6 +3,8 @@ package com.Project.Controllers;
 import com.Project.Entities.Enquiry;
 import com.Project.Services.EnquiryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,23 +22,37 @@ public class EnquiryController {
     }
 
     @GetMapping("/getAll")
-    public List<Enquiry> getAllEnquiries() {
-        return enquiryService.getAllEnquiries();
+    public ResponseEntity<List<Enquiry>> getAllEnquiries() {
+        List<Enquiry> enquries =  enquiryService.getAllEnquiries();
+        if (enquries != null) {
+            return new ResponseEntity<>(enquries, HttpStatus.OK);
+        } else {
+            return  new ResponseEntity<>(null, HttpStatus.NOT_FOUND);     
+        }
     }
 
     @PutMapping("/update/{id}")
-    public Enquiry updateEnquiry(@PathVariable int id, @RequestBody Enquiry enquiry) {
-        return enquiryService.updateEnquiry(id, enquiry);
+    public ResponseEntity<Enquiry> updateEnquiry(@PathVariable int id, @RequestBody Enquiry enquiry) {
+        Enquiry newEnquiry = enquiryService.getEnquiryById(id);
+        if (newEnquiry == null) {
+            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(newEnquiry, HttpStatus.OK);
     }
 
     @DeleteMapping("delete/{id}")
-    public void deleteEnquiry(@PathVariable int id) {
+    public ResponseEntity<String> deleteEnquiry(@PathVariable int id) {
         enquiryService.deleteEnquiry(id);
+        return new ResponseEntity<>("Enquiry deleted successfully", HttpStatus.OK);
     }
 
     @GetMapping("getid/{id}")
-    public Enquiry getEnquiryById(@PathVariable int id) {
-        return enquiryService.getEnquiryById(id);
+    public ResponseEntity<Enquiry> getEnquiryById(@PathVariable int id) {
+        Enquiry enquiry =  enquiryService.getEnquiryById(id);
+        if (enquiry == null) {
+            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(enquiry, HttpStatus.OK);
     }
 }
 
