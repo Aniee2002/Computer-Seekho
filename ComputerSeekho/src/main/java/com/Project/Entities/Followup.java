@@ -1,6 +1,8 @@
 package com.Project.Entities;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -24,7 +26,7 @@ public class Followup implements Serializable {
     private Staff staff;
 
     @Column(name = "followup_date")
-    private String followup_date;
+    private LocalDate followup_date;
 
     @Column(name = "followup_msg")
     private String followup_msg;
@@ -48,19 +50,11 @@ public class Followup implements Serializable {
         this.enquiry.setEnquiryId(enquiry_id);
     }
 
-    public int getStaffId() {
-        return staff.getStaffId();
-    }
-
-    public void setStaffId(int staff_id) {
-        this.staff.setStaffId(staff_id);
-    }
-
-    public void setFollowupDate(String followup_date){
+    public void setFollowupDate(LocalDate followup_date){
         this.followup_date = followup_date;
     }
 
-    public String getFollowupDate(){
+    public LocalDate getFollowupDate(){
         return followup_date;
     }
 
@@ -69,7 +63,7 @@ public class Followup implements Serializable {
     }
 
     public String getFollowupMsg(){
-        return followup_date;
+        return followup_msg;
     }
 
     public void setActive(boolean is_active){

@@ -13,9 +13,10 @@ public class VideoServiceImpl implements VideoService{
     @Autowired
     private VideoRepository videoRepository;
     @Override
-    public void addVideo(Video v) {
+    public Video addVideo(Video v) {
  
         videoRepository.save(v);
+        return v;
     }
 
     @Override
@@ -31,8 +32,9 @@ public class VideoServiceImpl implements VideoService{
     }
 
     @Override
-    public void activateVideo(int videoId, Boolean videoIsActive) {
+    public Boolean activateVideo(int videoId, Boolean videoIsActive) {
         videoRepository.activateVideo(videoIsActive,videoId);
+        return videoIsActive;
     }
     
 }

@@ -96,7 +96,6 @@ public class BatchController {
         else
         {
             return new ResponseEntity<>(batchlist,HttpStatus.NOT_FOUND);
-        }
     }
 
     @DeleteMapping("/delete/{batch_id}")
@@ -122,6 +121,13 @@ public class BatchController {
         } else {
             return new ResponseEntity<>("Batch not found",HttpStatus.NOT_FOUND);
         }
+    }
+
+    @PutMapping("/activate/{batch_id}/{batch_is_active}")
+    public ResponseEntity<String> activateBatch(@PathVariable int batch_id,@PathVariable Boolean batch_is_active)
+    {
+        batchService.activateBatch(batch_id,batch_is_active);
+        return ResponseEntity.ok("Batch Activated / Deactivates");
     }
 
 }

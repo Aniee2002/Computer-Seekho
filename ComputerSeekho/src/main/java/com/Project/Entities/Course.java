@@ -1,6 +1,6 @@
 package com.Project.Entities;
 
-import jakarta.persistence.*; // Ensure correct imports for JPA annotations
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Table(name = "course")
@@ -11,107 +11,89 @@ public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "course_id")
-    private int course_id;
+    private int courseId;
 
     @Column(length = 100, name = "course_name") 
-    private String coursename;
+    private String courseName;
 
     @Column(length = 200, name = "course_descriptor") 
-    private String coursedescription;
+    private String courseDescription;
 
     @Column(name = "course_duration")
-    private int courseduration;
+    private int courseDuration;
 
     @Column(length = 200, name = "course_syllabus") 
-    private String coursesyllabus;
-
-    @Column(length = 100, name = "age_grp_type") 
-    private String age_grp_type;
+    private String courseSyllabus;
 
     @Column(name = "course_fee")
-    private double coursefee;
+    private double courseFee;
 
     @Column(name = "course_is_active")
-    private Boolean course_is_active;
+    private Boolean courseIsActive;
 
     @Column(length = 100, name = "cover_photo") 
-    private String coverphoto;
-
-    @ManyToOne // Many courses can reference one video
-    @JoinColumn(name = "video_id") 
-    private Video videoid;
-
-    // Getter and Setter Methods
-
-    public int getCourse_id() {
-        return course_id;
+    private String coverPhoto;
+    public int getCourseId() {
+        return courseId;
     }
 
-    public void setCourse_id(int course_id) {
-        this.course_id = course_id;
+    public void setCourseId(int courseId) {
+        this.courseId = courseId;
     }
 
-    public String getCoursename() {
-        return coursename;
+    public String getCourseName() {
+        return courseName;
     }
 
-    public void setCoursename(String coursename) {
-        this.coursename = coursename;
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
     }
 
-    public String getCoursedescription() {
-        return coursedescription;
+    public String getCourseDescription() {
+        return courseDescription;
     }
 
-    public void setCoursedescription(String coursedescription) {
-        this.coursedescription = coursedescription;
+    public void setCourseDescription(String courseDescription) {
+        this.courseDescription = courseDescription;
     }
 
-    public int getCourseduration() {
-        return courseduration;
+    public int getCourseDuration() {
+        return courseDuration;
     }
 
-    public void setCourseduration(int courseduration) {
-        this.courseduration = courseduration;
+    public void setCourseDuration(int courseDuration) {
+        this.courseDuration = courseDuration;
     }
 
-    public String getCoursesyllabus() {
-        return coursesyllabus;
+    public String getCourseSyllabus() {
+        return courseSyllabus;
     }
 
-    public void setCoursesyllabus(String coursesyllabus) {
-        this.coursesyllabus = coursesyllabus;
+    public void setCourseSyllabus(String courseSyllabus) {
+        this.courseSyllabus = courseSyllabus;
     }
 
-    public String getAge_grp_type() {
-        return age_grp_type;
+    public double getCourseFee() {
+        return courseFee;
     }
 
-    public void setAge_grp_type(String age_grp_type) {
-        this.age_grp_type = age_grp_type;
+    public void setCourseFee(double courseFee) {
+        this.courseFee = courseFee;
     }
 
-    public Boolean getCourse_is_active() {
-        return course_is_active;
+    public Boolean getCourseIsActive() {
+        return courseIsActive;
     }
 
-    public void setCourse_is_active(Boolean course_is_active) {
-        this.course_is_active = course_is_active;
+    public void setCourseIsActive(Boolean courseIsActive) {
+        this.courseIsActive = courseIsActive;
     }
 
-    public String getCoverphoto() {
-        return coverphoto;
+    public String getCoverPhoto() {
+        return coverPhoto;
     }
 
-    public void setCoverphoto(String coverphoto) {
-        this.coverphoto = coverphoto;
-    }
-
-    public Video getVideoid() {
-        return videoid;
-    }
-
-    public void setVideoid(Video videoid) {
-        this.videoid = videoid;
+    public void setCoverPhoto(String coverPhoto) {
+        this.coverPhoto = coverPhoto;
     }
 }

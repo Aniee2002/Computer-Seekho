@@ -1,6 +1,5 @@
 package com.Project.Entities;
 
-
 import jakarta.persistence.*;
 import lombok.Data;
 
