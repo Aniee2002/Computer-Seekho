@@ -9,7 +9,6 @@ import java.util.List;
 
 
 @Repository
-@Transactional
 public interface PlacementRepository extends JpaRepository<Placement, Integer> {
-    // public List<Placement> findByStudentID(int studentID);
+    
 }
