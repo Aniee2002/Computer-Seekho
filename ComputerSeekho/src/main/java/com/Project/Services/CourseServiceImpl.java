@@ -29,7 +29,7 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public Course updateCourse(Course course, int courseId) {
-        course.setCourse_id(courseId);
+        course.setCourseId(courseId);
         return courseRepositories.save(course);
     }
 
@@ -38,4 +38,8 @@ public class CourseServiceImpl implements CourseService {
         courseRepositories.deleteById(courseId);
     }
     
+    @Override
+    public Optional<Course> findCourseByName(String courseName) {
+        return courseRepositories.findCourseByName(courseName);
+    }
 }

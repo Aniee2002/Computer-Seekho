@@ -31,8 +31,12 @@ public class StudentController {
     }
 
     @GetMapping("/all")
-    public List<Student> getAllStudents() {
-        return studentService.getAllStudents();
+    public ResponseEntity<List<Student>> getAllStudents() {
+        List<Student> students = studentService.getAllStudents();
+        if(students == null) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
+        return ResponseEntity.status(HttpStatus.CREATED).body(students);
     }
 
     @PostMapping("/add")
@@ -55,13 +59,21 @@ public class StudentController {
     }
 
     @GetMapping("/bybatch/{batchid}")
-    public List<Student> getbybatch(@PathVariable int batchid) {
-        return studentService.getbybatch(batchid);
+    public ResponseEntity<List<Student>> getbybatch(@PathVariable int batchid) {
+        List<Student> students = studentService.getbybatch(batchid);
+        if(students == null) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
+        return ResponseEntity.status(HttpStatus.CREATED).body(students); 
     }
 
     @GetMapping("/bycourse/{courseid}")
-    public List<Student> getbycourse(@PathVariable int courseid) {
-        return studentService.getbycourse(courseid);
+    public ResponseEntity<List<Student>> getbycourse(@PathVariable int courseid) {
+        List<Student> students = studentService.getbycourse(courseid);
+        if(students == null) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
+        return ResponseEntity.status(HttpStatus.CREATED).body(students);
     }
     
 }

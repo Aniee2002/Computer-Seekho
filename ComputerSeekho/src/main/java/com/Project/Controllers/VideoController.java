@@ -1,6 +1,9 @@
 package com.Project.Controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,32 +19,31 @@ import com.Project.Services.VideoService;
 @RequestMapping("/video")
 public class VideoController {
 
-      @Autowired
+    @Autowired
     private VideoService videoService;
 
     @PostMapping("/add")
-    public void addVideo(Video v)
-    {
+    public ResponseEntity<Video> addVideo(Video v) {
         videoService.addVideo(v);
+        return ResponseEntity.ok(v);
     }
 
     @GetMapping("/all")
-    public void getAllVideos()
-    {
-        videoService.getAllVideos();
+    public ResponseEntity<List<Video>> getAllVideos() {
+        List<Video> video = videoService.getAllVideos();
+        return ResponseEntity.ok(video);
     }
 
     @DeleteMapping("/delete/{videoId}")
-    public void delete(@PathVariable int videoId)
-    {
+    public String delete(@PathVariable int videoId) {
         videoService.delete(videoId);
+        return "Video Deleted";
     }
 
     @PutMapping("/activate/{videoId}/{videoIsActive}")
-    public void activateVideo(@PathVariable int videoId,@PathVariable Boolean videoIsActive)
-    {
+    public Boolean activateVideo(@PathVariable int videoId, @PathVariable Boolean videoIsActive) {
         videoService.activateVideo(videoId, videoIsActive);
+        return videoIsActive;
     }
-    
 
 }

@@ -8,6 +8,6 @@ public interface AlbumService {
     Album saveAlbum(Album album);
     List<Album> getAllAlbums();
     Album getAlbumById(int albumId);
-    Album updateAlbum(Album album);
+    boolean updateAlbum(Album album);
     void deleteAlbum(int albumId);
 }

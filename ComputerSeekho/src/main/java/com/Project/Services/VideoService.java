@@ -4,8 +4,8 @@ import java.util.List;
 import com.Project.Entities.Video;
 
 public interface VideoService {
-    void addVideo(Video v);
+    Video addVideo(Video v);
     List<Video> getAllVideos();
     void delete(int videoId);
-    void activateVideo(int videoId,Boolean videoIsActive);
+    Boolean activateVideo(int videoId,Boolean videoIsActive);
 }

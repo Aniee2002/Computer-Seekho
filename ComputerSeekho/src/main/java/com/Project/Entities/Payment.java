@@ -15,8 +15,9 @@ public class Payment {
     @Column(name = "payment_id")
     private int paymentId;
 
-    @Column(name = "payment_typeID")
-    private int paymentTypeId;
+    @ManyToOne
+    @JoinColumn(name = "payment_type_id", referencedColumnName = "payment_type_id")
+    private PaymentType paymentTypeId;
 
     @Column(name = "payment_date")
     private LocalDate paymentDate;
@@ -45,11 +46,11 @@ public class Payment {
         this.paymentId = paymentId;
     }
 
-    public int getPaymentTypeId() {
+    public PaymentType getPaymentTypeId() {
         return paymentTypeId;
     }
 
-    public void setPaymentTypeId(int paymentTypeId) {
+    public void setPaymentTypeId(PaymentType paymentTypeId) {
         this.paymentTypeId = paymentTypeId;
     }
 

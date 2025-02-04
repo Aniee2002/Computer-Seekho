@@ -52,10 +52,10 @@ public class StaffServiceImpl implements StaffService {
     @Override
     public boolean deleteByStaffUsername(String staffUsername) {
         Staff staff = staffRepository.findByStaffUsername(staffUsername).get();
-        staffRepository.deleteByStaffUsername(staffUsername);
         if (staff == null) {
             return false;
         }
+        staffRepository.deleteByStaffUsername(staffUsername);
         return true;
     }
 

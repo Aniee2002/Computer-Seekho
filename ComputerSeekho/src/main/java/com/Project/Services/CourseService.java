@@ -10,5 +10,6 @@ public interface CourseService {
     List<Course> getAllCourses();
     Course addCourse(Course course);
     Course updateCourse(Course course,int courseId);
+    Optional<Course> findCourseByName(String courseName);
     void deleteCourse(int courseId);
 }

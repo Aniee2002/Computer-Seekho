@@ -20,8 +20,9 @@ public class Video {
     @Column(name = "video_url", length = 255)
     private String videoUrl;
 
-    @Column(name = "batch_id")
-    private int batchId;
+    @ManyToOne
+    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
+    private Batch batchId;
 
     @Column(name = "start_date")
     private LocalDate startDate;
@@ -61,11 +62,11 @@ public class Video {
         this.videoUrl = videoUrl;
     }
 
-    public int getBatchId() {
+    public Batch getBatchId() {
         return batchId;
     }
 
-    public void setBatchId(int batchId) {
+    public void setBatchId(Batch batchId) {
         this.batchId = batchId;
     }
 

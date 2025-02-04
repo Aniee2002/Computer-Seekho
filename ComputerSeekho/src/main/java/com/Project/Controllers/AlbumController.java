@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/albums")
+@RequestMapping("/albums")
 public class AlbumController {
 
     @Autowired
@@ -37,24 +37,16 @@ public class AlbumController {
         return album != null ? new ResponseEntity<>(album, HttpStatus.OK) : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Album> updateAlbum(@PathVariable("id") int albumId, @RequestBody Album albumDetails) {
-        Album album = albumService.getAlbumById(albumId);
-        if (album != null) {
-            album.setAlbumName(albumDetails.getAlbumName());
-            album.setAlbumDescription(albumDetails.getAlbumDescription());
-            album.setStartDate(albumDetails.getStartDate());
-            album.setEndDate(albumDetails.getEndDate());
-            album.setAlbumIsActive(albumDetails.isAlbumIsActive());
-            Album updatedAlbum = albumService.updateAlbum(album);
-            return new ResponseEntity<>(updatedAlbum, HttpStatus.OK);
+    @PutMapping("/update/{id}")
+    public ResponseEntity<String> updateAlbum(@PathVariable("id") int albumId, @RequestBody Album albumDetails) {
+        if(albumService.updateAlbum(albumDetails)){
+            return new ResponseEntity<>("Album updated successfully", HttpStatus.OK);
         } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>("Album not found", HttpStatus.NOT_FOUND);
         }
     }
 
-    // Delete an album
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<HttpStatus> deleteAlbum(@PathVariable("id") int albumId) {
         albumService.deleteAlbum(albumId);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
