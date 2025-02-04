@@ -21,14 +21,14 @@ public class Batch {
     private LocalDate batch_start_time;
 
     @Column(name = "batch_end_time")
-    private LocalDate batch_end_time;
+    private LocalDate batch_start_time;
 
     @ManyToOne
     @JoinColumn(name = "course_id", nullable = false)
     private Course course;
 
-    @Column(name = "batch_is_active")
-    private Boolean batch_is_active;
+    @Column(name = "batch_is_active",columnDefinition = "BOOLEAN DEFAULT TRUE")
+    private boolean batch_is_active;
 
     public int getBatch_id() {
         return batch_id;
@@ -70,11 +70,11 @@ public class Batch {
         this.course.setCourseId(course_id);
     }
 
-    public Boolean getBatch_is_active() {
+    public boolean getBatch_is_active() {
         return batch_is_active;
     }
 
-    public void setBatch_is_active(Boolean batch_is_active) {
+    public void setBatch_is_active(boolean batch_is_active) {
         this.batch_is_active = batch_is_active;
     }
 }
