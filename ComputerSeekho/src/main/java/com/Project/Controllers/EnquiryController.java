@@ -55,4 +55,3 @@ public class EnquiryController {
         return new ResponseEntity<>(enquiry, HttpStatus.OK);
     }
 }
-

@@ -8,6 +8,6 @@ public interface StaffService {
     Staff findByStaffUsername(String staffUsername);
     Staff saveStaff(Staff staff);
     boolean updateStaff(Staff staff);
-    boolean deleteByStaffUsername(String staffUsername) ;
+    boolean deleteByStaffId(int staffId) ;
     List<Staff> getAllStaff();
 }
