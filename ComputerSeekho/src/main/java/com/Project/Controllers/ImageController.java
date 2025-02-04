@@ -1,6 +1,5 @@
 package com.Project.Controllers;
 
-import java.lang.classfile.ClassFile.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -11,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.Project.Entities.Image;
-import com.Project.Services.ImageService;
+import com.Project.Services.ImageServiceImpl;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -26,7 +25,7 @@ public class ImageController {
     
   //  private static final String Optional = null;
         @Autowired
-        private ImageService imageService;
+        private ImageServiceImpl imageService;
     
         @PostMapping("/add")
         public ResponseEntity<Image> uploadImage(@RequestBody Image image) {
@@ -53,6 +52,13 @@ public class ImageController {
         {
             imageService.deleteImage(id);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+
+        @GetMapping("/album/{id}")
+        public ResponseEntity<List<Image>> getImagesByAlbum(@PathVariable int id)
+        {
+            List<Image> images = imageService.getbyAlbum(id);
+            return new ResponseEntity<>(images,HttpStatus.OK);
         }
 
 }

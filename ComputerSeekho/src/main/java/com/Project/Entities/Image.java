@@ -16,7 +16,7 @@ public class Image {
     private String imageUrl;
 
     @ManyToOne
-    @JoinColumn(name = "album_id", referencedColumnName = "albumId")
+    @JoinColumn(name = "album_id", referencedColumnName = "album_id")
     private Album album;
 
     // Getters and Setters

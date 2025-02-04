@@ -12,6 +12,7 @@ import com.Project.Repositories.PaymentTypeRepository;
 @Service
 public class PaymentTypeServiceImpl implements PaymentTypeService {
 
+    @Autowired
     private PaymentTypeRepository paymentTypeRepository;
 
     @Override

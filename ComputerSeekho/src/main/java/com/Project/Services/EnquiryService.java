@@ -10,4 +10,5 @@ public interface EnquiryService {
     void deleteEnquiry(int enquiryId);
     Enquiry getEnquiryById(int enquiryId);
     List<Enquiry> getAllEnquiries();
+    List<Enquiry> getEnquiryByStaff(int staffId);
 }
