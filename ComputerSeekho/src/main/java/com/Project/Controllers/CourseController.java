@@ -39,12 +39,12 @@ public class CourseController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<Course> addCourse(@RequestBody Course course) {
+    public ResponseEntity<String> addCourse(@RequestBody Course course) {
         Course course2 = courseService.addCourse(course);
         if(course2 == null) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Not Added");
         }
-        return ResponseEntity.status(HttpStatus.CREATED).body(course2);
+        return ResponseEntity.status(HttpStatus.CREATED).body("Course added sucessfully");
     }
     @PostMapping("/update")
     public ResponseEntity<Course> updateCourse(@RequestBody Course course) {

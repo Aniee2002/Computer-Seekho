@@ -26,18 +26,18 @@ public class BatchServiceImpl implements BatchService{
     }
 
     @Override
-    public Optional<Batch> getByBatchName(String batch_name) {
-        return batchRepository.findByBatchName(batch_name);
+    public Optional<Batch> getByBatchName(String batchName) {
+        return batchRepository.findByBatchName(batchName);
     }
 
     @Override
-    public void delete(int batch_id) {
-        batchRepository.deleteById(batch_id);
+    public void delete(int batchId) {
+        batchRepository.deleteById(batchId);
     }
 
     @Override
-    public void activateBatch(int batch_id,Boolean batch_is_active) {
-        batchRepository.activateBatch(batch_is_active,batch_id);
+    public void activateBatch(int batchId,Boolean batchIsActive) {
+        batchRepository.activateBatch(batchIsActive,batchId);
     }
     
 }
