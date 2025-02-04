@@ -12,5 +12,5 @@ public interface ImageService {
     public Image saveImage(Image image);
     public Optional<Image> getImageById(int id);
     public void deleteImage(int id);
-    public List<Image> getbyAlbum(int id);
+    // public List<Image> getbyAlbum(int id);
 }

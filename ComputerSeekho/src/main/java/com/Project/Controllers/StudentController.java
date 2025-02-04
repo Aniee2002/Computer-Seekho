@@ -24,7 +24,7 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
 
-    @GetMapping("/{id}")
+    @GetMapping("/get/{id}")
     public ResponseEntity<Student> getStudentById(@PathVariable int id) {
         Optional<Student> student = studentService.getStudentById(id);
         return ResponseEntity.status(HttpStatus.CREATED).body(student.get());
@@ -58,7 +58,7 @@ public class StudentController {
         return "Student deleted with id: " + studentId;
     }
 
-    @GetMapping("/bybatch/{batchid}")
+    @GetMapping("/getbybatch/{batchid}")
     public ResponseEntity<List<Student>> getbybatch(@PathVariable int batchid) {
         List<Student> students = studentService.getbybatch(batchid);
         if(students == null) {
@@ -67,7 +67,7 @@ public class StudentController {
         return ResponseEntity.status(HttpStatus.CREATED).body(students); 
     }
 
-    @GetMapping("/bycourse/{courseid}")
+    @GetMapping("/getbycourse/{courseid}")
     public ResponseEntity<List<Student>> getbycourse(@PathVariable int courseid) {
         List<Student> students = studentService.getbycourse(courseid);
         if(students == null) {

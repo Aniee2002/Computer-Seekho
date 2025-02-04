@@ -17,10 +17,10 @@ public interface VideoRepository extends JpaRepository<Video,Integer>{
 	@Query("update Video v set v.videoIsActive = :videoIsActive where v.videoId = :videoId")
 	void activateVideo(@Param("videoIsActive") Boolean  videoIsActive,@Param("videoId")int videoId);
 
-	@Query("select v from Video v where v.batch_id = ?1")
-	public List<Video> findByBatchId(int batch_id);
+	// @Query("select v from Video v where v.batch_id = ?1")
+	// public List<Video> findByBatchId(int batch_id);
 
-	@Query("select v from Video v where v.course_id = ?1")
-	public List<Video> findbyCourseID(int course_id);
+	// @Query("select v from Video v where v.course_id = ?1")
+	// public List<Video> findbyCourseID(int course_id);
 
 }

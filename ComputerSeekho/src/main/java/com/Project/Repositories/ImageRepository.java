@@ -10,7 +10,7 @@ import com.Project.Entities.Image;
 
 @Repository
 public interface ImageRepository extends JpaRepository<Image , Integer>{
-    @Query("select i from Image i where i.album_id = ?1")
-    public List<Image> findByAlbumId(int album_id);
+    // @Query("select i from Image i where i.album_id = ?1")
+    // public List<Image> findByAlbumId(int album_id);
 
 }

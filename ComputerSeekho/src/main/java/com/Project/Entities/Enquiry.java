@@ -37,11 +37,12 @@ public class Enquiry {
     @Column(name = "enquiry_processed_flag")
     private boolean enquiryProcessedFlag;
 
-    @Column(name = "course_id")
-    private int courseId;
+    @Column(name = "course_name")
+    private String courseName;
 
-    @Column(name = "staff_id")
-    private int staffId;
+    @ManyToOne
+    @JoinColumn(name = "staff_id", referencedColumnName = "staff_id")
+    private Staff staffId;
 
     @Column(name = "student_name")
     private String studentName;
@@ -124,19 +125,19 @@ public class Enquiry {
         this.enquiryProcessedFlag = enquiryProcessedFlag;
     }
 
-    public int getCourseId() {
-        return courseId;
+    public String getCourseId() {
+        return courseName;
     }
 
-    public void setCourseId(int courseId) {
-        this.courseId = courseId;
+    public void setCourseId(String courseId) {
+        this.courseName = courseId;
     }
 
-    public int getStaffId() {
+    public Staff getStaffId() {
         return staffId;
     }
 
-    public void setStaffId(int staffId) {
+    public void setStaffId(Staff staffId) {
         this.staffId = staffId;
     }
 

@@ -33,7 +33,7 @@ public class SecurityConfig {
 
             security.authorizeHttpRequests(Auth-> Auth
             .requestMatchers("/auth/signIn").authenticated()
-            .requestMatchers("/staff/getAll").hasRole("ADM")
+            // .requestMatchers("/staff/getAll").hasRole("ADM")
             .requestMatchers("/**").permitAll());
             security.httpBasic(Customizer.withDefaults());
 

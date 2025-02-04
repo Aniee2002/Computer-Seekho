@@ -35,10 +35,10 @@ public class ImageServiceImpl implements ImageService {
         imageRepository.deleteById(id);
     }
 
-    @Override
-    public List<Image> getbyAlbum(int id) {
-        return imageRepository.findByAlbumId(id);
-    }
+    // @Override
+    // public List<Image> getbyAlbum(int id) {
+    //     return imageRepository.findByAlbumId(id);
+    // }
 
 
 }

@@ -40,7 +40,7 @@ public class ImageController {
             return new ResponseEntity<>(images,HttpStatus.CREATED);
         }
         
-        @GetMapping("/{id}")
+        @GetMapping("/get/{id}")
         public ResponseEntity<Image> getImageById(@PathVariable Integer id) 
         {
             Optional<Image> image = imageService.getImageById(id);
@@ -54,11 +54,11 @@ public class ImageController {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
 
-        @GetMapping("/album/{id}")
-        public ResponseEntity<List<Image>> getImagesByAlbum(@PathVariable int id)
-        {
-            List<Image> images = imageService.getbyAlbum(id);
-            return new ResponseEntity<>(images,HttpStatus.OK);
-        }
+        // @GetMapping("/album/{id}")
+        // public ResponseEntity<List<Image>> getImagesByAlbum(@PathVariable int id)
+        // {
+        //     List<Image> images = imageService.getbyAlbum(id);
+        //     return new ResponseEntity<>(images,HttpStatus.OK);
+        // }
 
 }

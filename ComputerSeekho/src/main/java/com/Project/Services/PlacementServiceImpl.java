@@ -3,11 +3,14 @@ package com.Project.Services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.Project.Entities.Placement;
 import com.Project.Repositories.PlacementRepository;
 
+@Service
 public class PlacementServiceImpl implements PlacementService {
+
     @Autowired
     private PlacementRepository placementRepository;
 
@@ -26,8 +29,8 @@ public class PlacementServiceImpl implements PlacementService {
         return placementRepository.findAll();
     }
 
-    @Override
-    public List<Placement> getbyStudent(int studentID) {
-        return placementRepository.findByStudentID(studentID);
-    }
+    // @Override
+    // public List<Placement> getbyStudent(int studentID) {
+    //     return placementRepository.findByStudentID(studentID);
+    // }
 }

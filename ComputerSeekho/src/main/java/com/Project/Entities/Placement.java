@@ -29,7 +29,8 @@ public class Placement {
     @JoinColumn(name = "recruiter_id", referencedColumnName = "recruiter_id")
     private Recruiter recruiterID;
 
-    private int CTC;
+    @Column(name = "CTC")
+    private float CTC;
 
     // Getters and Setters
     public int getPlacement_id() {
@@ -56,11 +57,11 @@ public class Placement {
         this.recruiterID = recruiter;
     }
 
-    public int getCTC() {
+    public float getCTC() {
         return CTC;
     }
 
-    public void setCTC(int CTC) {
+    public void setCTC(float CTC) {
         this.CTC = CTC;
     }
 }

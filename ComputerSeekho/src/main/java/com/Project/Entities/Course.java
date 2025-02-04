@@ -33,6 +33,7 @@ public class Course {
 
     @Column(length = 100, name = "cover_photo") 
     private String coverPhoto;
+    
     public int getCourseId() {
         return courseId;
     }

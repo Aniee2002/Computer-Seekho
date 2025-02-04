@@ -22,17 +22,9 @@ public class Payment {
     @Column(name = "payment_date")
     private LocalDate paymentDate;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "student_id", referencedColumnName = "student_id")
     private Student student;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "course_id", referencedColumnName = "course_id")
-    private Course course;
-
-    @ManyToOne
-    @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
-    private Batch batch;
 
     @Column(name = "amount")
     private double amount;
@@ -68,22 +60,6 @@ public class Payment {
 
     public void setStudent(Student student) {
         this.student = student;
-    }
-
-    public Course getCourse() {
-        return course;
-    }
-
-    public void setCourse(Course course) {
-        this.course = course;
-    }
-
-    public Batch getBatch() {
-        return batch;
-    }
-
-    public void setBatch(Batch batch) {
-        this.batch = batch;
     }
 
     public double getAmount() {
