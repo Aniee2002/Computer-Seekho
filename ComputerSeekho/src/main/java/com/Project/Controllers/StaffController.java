@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
 @RequestMapping("/staff")
+@SuppressWarnings("null")
 public class StaffController {
     @Autowired
     private StaffService staffService;
