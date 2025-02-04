@@ -1,5 +1,7 @@
 package com.Project.Entities;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -16,17 +18,17 @@ public class Batch {
     private String batch_name;
 
     @Column(name = "batch_start_time")
-    private int batch_start_time;
+    private LocalDateTime batch_start_time;
 
     @Column(name = "batch_end_time")
-    private int batch_end_time;
+    private LocalDateTime batch_end_time;
 
     @ManyToOne
     @JoinColumn(name = "course_id", nullable = false)
     private Course course;
 
-    @Column(name = "batch_is_active")
-    private Boolean batch_is_active;
+    @Column(name = "batch_is_active",columnDefinition = "BOOLEAN DEFAULT TRUE")
+    private boolean batch_is_active;
 
     public int getBatch_id() {
         return batch_id;
@@ -44,19 +46,19 @@ public class Batch {
         this.batch_name = batch_name;
     }
 
-    public int getBatch_start_time() {
+    public LocalDateTime getBatch_start_time() {
         return batch_start_time;
     }
 
-    public void setBatch_start_time(int batch_start_time) {
+    public void setBatch_start_time(LocalDateTime batch_start_time) {
         this.batch_start_time = batch_start_time;
     }
 
-    public int getBatch_end_time() {
+    public LocalDateTime getBatch_end_time() {
         return batch_end_time;
     }
 
-    public void setBatch_end_time(int batch_end_time) {
+    public void setBatch_end_time(LocalDateTime batch_end_time) {
         this.batch_end_time = batch_end_time;
     }
 
@@ -68,11 +70,11 @@ public class Batch {
         this.course.setCourse_id(course_id);
     }
 
-    public Boolean getBatch_is_active() {
+    public boolean getBatch_is_active() {
         return batch_is_active;
     }
 
-    public void setBatch_is_active(Boolean batch_is_active) {
+    public void setBatch_is_active(boolean batch_is_active) {
         this.batch_is_active = batch_is_active;
     }
 }
