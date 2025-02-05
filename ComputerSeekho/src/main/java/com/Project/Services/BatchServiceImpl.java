@@ -26,21 +26,12 @@ public class BatchServiceImpl implements BatchService{
         return batchRepository.findAll();
     }
     @Override
-    public Optional<Batch> getByBatchName(String batch_name) {
-        return batchRepository.findByBatchName(batch_name);
+    public Optional<Batch> getByBatchName(String batchName) {
+        return batchRepository.findByBatchName(batchName);
     }
-    @Override
-    public boolean delete(int batch_id) {
-
-    Batch delete= batchRepository.findById(batch_id).get();
-    if(delete==null)
-    {
-        return false;
+    public void delete(int batchId) {
+        batchRepository.deleteById(batchId);
     }
-    batchRepository.deleteById(batch_id);
-    return true;
-    }
-    @Override
     @Transactional
     public int deactivateBatch(int batch_id) {
         Optional<Batch> batchOptional = batchRepository.findById(batch_id);
@@ -57,6 +48,9 @@ public class BatchServiceImpl implements BatchService{
         return batchRepository.findAllActiveBatch();
     }
     @Override
+    public void activateBatch(int batchId,Boolean batchIsActive) {
+        batchRepository.activateBatch(batchIsActive,batchId);
+    }
     public List<Batch> getByCourseId(int course_id) {
         return batchRepository.findByCourseId(course_id);
     }
