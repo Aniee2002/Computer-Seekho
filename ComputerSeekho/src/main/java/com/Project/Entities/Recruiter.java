@@ -29,28 +29,4 @@ public class Recruiter {
     @NotBlank(message = "Recruiter location is mandatory")
     @Size(min = 3,max = 50,message = "Recruiter location must be between 3 and 50")
     private String recruiterLocation;
-
-    public int getRecruiterId() {
-        return recruiterId;
-    }
-
-    public void setRecruiterId(int recruiterId) {
-        this.recruiterId = recruiterId;
-    }
-
-    public String getRecruiterName() {
-        return recruiterName;
-    }
-
-    public void setRecruiterName(String recruiterName) {
-        this.recruiterName = recruiterName;
-    }
-
-    public String getRecruiterLocation() {
-        return recruiterLocation;
-    }
-
-    public void setRecruiterLocation(String recruiterLocation) {
-        this.recruiterLocation = recruiterLocation;
-    }
 }

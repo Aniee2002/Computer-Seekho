@@ -1,5 +1,6 @@
 package com.Project.Controllers;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.Project.DTO.ApiResponse;
 import com.Project.Entities.Course;
 import com.Project.Services.CourseService;
 
@@ -40,12 +42,12 @@ public class CourseController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<String> addCourse(@RequestBody Course course) {
-        Course course2 = courseService.addCourse(course);
-        if(course2 == null) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Not Added");
-        }
-        return ResponseEntity.status(HttpStatus.CREATED).body("Course added sucessfully");
+    public ResponseEntity<ApiResponse> addCourse(@RequestBody Course course) {
+        courseService.addCourse(course);
+        // if(course2 == null) {
+        //     return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ApiResponse("internal ", null));
+        // }
+        return ResponseEntity.status(HttpStatus.CREATED).body(new ApiResponse("Course added sucessfully", LocalDateTime.now()));
     }
     @PutMapping("/update")
     public ResponseEntity<Course> updateCourse(@RequestBody Course course) {
@@ -56,9 +58,9 @@ public class CourseController {
         return ResponseEntity.status(HttpStatus.CREATED).body(course2);
     }
     @DeleteMapping("/delete/{courseId}")
-    public String deleteCourse(@PathVariable int courseId) {
+    public ResponseEntity<ApiResponse> deleteCourse(@PathVariable int courseId) {
         courseService.deleteCourse(courseId);
-        return "Course Deleted";
+        return new ResponseEntity<>(new ApiResponse("Course Deleted", LocalDateTime.now()), HttpStatus.OK);
     }
 
     @GetMapping("/find/{courseName}")

@@ -1,5 +1,6 @@
 package com.Project.Controllers;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -9,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.Project.DTO.ApiResponse;
 import com.Project.Entities.Image;
 import com.Project.Services.ImageServiceImpl;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,14 +25,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 @RequestMapping("/image")
 public class ImageController {
     
-  //  private static final String Optional = null;
         @Autowired
         private ImageServiceImpl imageService;
     
         @PostMapping("/add")
-        public ResponseEntity<Image> uploadImage(@RequestBody Image image) {
-           Image savedImage =  imageService.saveImage(image); 
-            return new ResponseEntity<>(savedImage ,HttpStatus.CREATED);
+        public ResponseEntity<ApiResponse> uploadImage(@RequestBody Image image) {
+           imageService.saveImage(image); 
+            return new ResponseEntity<>( new ApiResponse("Image Uploaded Successfully", LocalDateTime.now()),HttpStatus.CREATED);
            
         }
     
@@ -48,10 +49,10 @@ public class ImageController {
     }
 
         @DeleteMapping("/delete/{id}")
-        public ResponseEntity<Void> deletImage(@PathVariable int id)
+        public ResponseEntity<ApiResponse> deleteImage(@PathVariable int id)
         {
             imageService.deleteImage(id);
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>(new ApiResponse("image deleted successfully", LocalDateTime.now()),HttpStatus.OK);
         }
 
         // @GetMapping("/album/{id}")

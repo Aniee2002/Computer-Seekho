@@ -1,8 +1,10 @@
 package com.Project.Controllers;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.Project.DTO.ApiResponse;
 import com.Project.Entities.Video;
 import com.Project.Services.VideoService;
 
@@ -35,15 +38,15 @@ public class VideoController {
     }
 
     @DeleteMapping("/delete/{videoId}")
-    public String delete(@PathVariable int videoId) {
+    public ResponseEntity<ApiResponse> delete(@PathVariable int videoId) {
         videoService.delete(videoId);
-        return "Video Deleted";
+        return new ResponseEntity<>(new ApiResponse("Video Deleted", LocalDateTime.now()),HttpStatus.OK);
     }
 
     @PutMapping("/activate/{videoId}/{videoIsActive}")
-    public Boolean activateVideo(@PathVariable int videoId, @PathVariable Boolean videoIsActive) {
+    public ResponseEntity<ApiResponse> activateVideo(@PathVariable int videoId, @PathVariable Boolean videoIsActive) {
         videoService.activateVideo(videoId, videoIsActive);
-        return videoIsActive;
+        return new ResponseEntity<>(new ApiResponse("Video deleted successfully", LocalDateTime.now()),HttpStatus.OK);
     }
 
 }
