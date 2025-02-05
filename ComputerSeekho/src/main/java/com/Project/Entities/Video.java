@@ -35,7 +35,7 @@ public class Video {
     
     @ManyToOne
     @JoinColumn(name = "course_id", referencedColumnName = "course_id")
-    private Course course_id;
+    private Course courseId;
 
     // Getters and Setters
     public int getVideoId() {

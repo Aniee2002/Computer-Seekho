@@ -27,7 +27,7 @@ public class BatchController {
     private BatchService batchService;
 
     @PostMapping("/add")
-    ResponseEntity<String> addBatch(@RequestBody Batch b)
+    public ResponseEntity<Batch> addBatch(@RequestBody Batch b)
     {
        Batch added = batchService.addBatch(b);
        System.out.println(b+":in controller");

@@ -20,7 +20,7 @@ public class ReceiptController {
     @Autowired
     private ReceiptService receiptService;
     
-    @GetMapping("/{id}")
+    @GetMapping("/get/{id}")
     public ResponseEntity<Receipt> getReceiptById(@PathVariable int receiptId) {
         Receipt receipt = receiptService.getReceiptById(receiptId).get();
         if(receipt == null) {

@@ -10,12 +10,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@SuppressWarnings("null")
 @RequestMapping("/enquiries")
 public class EnquiryController {
 
     @Autowired
     public EnquiryService enquiryService;
-
+    
     @PostMapping("/create")
     public Enquiry createEnquiry(@RequestBody Enquiry enquiry) {
         return enquiryService.createEnquiry(enquiry);
@@ -37,7 +38,7 @@ public class EnquiryController {
         if (newEnquiry == null) {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<>(newEnquiry, HttpStatus.OK);
+        return ResponseEntity.ok(enquiryService.updateEnquiry(id, enquiry));
     }
 
     @DeleteMapping("delete/{id}")
@@ -53,5 +54,14 @@ public class EnquiryController {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(enquiry, HttpStatus.OK);
+    }
+
+    @GetMapping("getbystaff/{staffId}")
+    public ResponseEntity<List<Enquiry>> getEnquiryByStaff(@PathVariable int staffId) {
+        List<Enquiry> enquries =  enquiryService.getEnquiryByStaff(staffId);
+        if (enquries != null) {
+            return new ResponseEntity<>(enquries, HttpStatus.OK);
+        }
+        return  new ResponseEntity<>(null, HttpStatus.NOT_FOUND);    
     }
 }
