@@ -31,37 +31,4 @@ public class Placement {
 
     @Column(name = "CTC")
     private float CTC;
-
-    // Getters and Setters
-    public int getPlacement_id() {
-        return placementID;
-    }
-
-    public void setPlacement_id(int placement_id) {
-        this.placementID = placement_id;
-    }
-
-    public Student getStudent() {
-        return studentID;
-    }
-
-    public void setStudent(Student student) {
-        this.studentID = student;
-    }
-
-    public Recruiter getRecruiter() {
-        return recruiterID;
-    }
-
-    public void setRecruiter(Recruiter recruiter) {
-        this.recruiterID = recruiter;
-    }
-
-    public float getCTC() {
-        return CTC;
-    }
-
-    public void setCTC(float CTC) {
-        this.CTC = CTC;
-    }
 }
