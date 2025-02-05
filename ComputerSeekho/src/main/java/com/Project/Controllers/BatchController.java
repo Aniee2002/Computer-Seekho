@@ -30,7 +30,6 @@ public class BatchController{
     public ResponseEntity<String> addBatch(@RequestBody Batch b)
     {
        Batch added = batchService.addBatch(b);
-       System.out.println(b+":in controller");
        if(added!=null)
        {
            return new ResponseEntity<>("Batch added successfully",HttpStatus.CREATED);
@@ -42,7 +41,7 @@ public class BatchController{
     }
 
     @GetMapping("/all")
-    ResponseEntity<List<Batch>> getAllBatches()
+    public ResponseEntity<List<Batch>> getAllBatches()
     {
         List<Batch> batchlist= batchService.getAllBatches();
         if(batchlist.size()>0)
@@ -56,7 +55,7 @@ public class BatchController{
 
     }
     @GetMapping("/get/{course_id}")
-    ResponseEntity<List<Batch>> getByCourseId(@PathVariable int course_id)
+    public ResponseEntity<List<Batch>> getByCourseId(@PathVariable int course_id)
     {
         List<Batch> batchlist= batchService.getByCourseId(course_id);
         if(batchlist.size()>0)
@@ -71,7 +70,7 @@ public class BatchController{
     }
     
     @GetMapping("/get/{batch_name}")
-    ResponseEntity<Optional<Batch>> getByBatchName(@PathVariable String batch_name)
+    public ResponseEntity<Optional<Batch>> getByBatchName(@PathVariable String batch_name)
     {
         Optional<Batch> batch= batchService.getByBatchName(batch_name);
         System.out.println(batch);
@@ -86,7 +85,7 @@ public class BatchController{
         }
     }
     @GetMapping("/get/all/activebatch")
-    ResponseEntity<List<Batch>> getActiveBatch()
+    public ResponseEntity<List<Batch>> getActiveBatch()
     {
         List<Batch> batchlist= batchService.getAllActiveBatches();
         if(batchlist.size()>0)
@@ -100,7 +99,7 @@ public class BatchController{
     }
 
     @DeleteMapping("/delete/{batch_id}")
-    ResponseEntity<String> delete(@PathVariable int batch_id)
+    public ResponseEntity<String> delete(@PathVariable int batch_id)
     {
        batchService.delete(batch_id);
         return new ResponseEntity<>("Batch deleted successfully",HttpStatus.OK);
