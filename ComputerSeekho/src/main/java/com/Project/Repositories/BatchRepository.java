@@ -14,12 +14,12 @@ import com.Project.Entities.Batch;
 public interface BatchRepository extends JpaRepository<Batch,Integer>{
     @Modifying
 	@Transactional
-	@Query("update Batch b set b.batch_is_active = :batch_is_active where b.batch_id = :batch_id")
-	void activateBatch(@Param("batch_is_active") Boolean batch_is_active,@Param("batch_id")int batch_id);
+	@Query("update Batch b set b.batchIsActive = :batchIsActive where b.batchId = :batchId")
+	void activateBatch(@Param("batchIsActive") Boolean batch_is_active,@Param("batchId")int batch_id);
 
 
-    @Query("SELECT b FROM Batch b WHERE b.batch_name = :batch_name")
-    Optional<Batch> findByBatchName(@Param("batch_name") String batch_name);
+    @Query("SELECT b FROM Batch b WHERE b.batchName = :batchName")
+    Optional<Batch> findByBatchName(@Param("batchName") String batch_name);
 
 
 }
