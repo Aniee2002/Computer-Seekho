@@ -22,12 +22,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("/batch")
-public class BatchController {
+public class BatchController{
     @Autowired
     private BatchService batchService;
 
     @PostMapping("/add")
-    public ResponseEntity<Batch> addBatch(@RequestBody Batch b)
+    public ResponseEntity<String> addBatch(@RequestBody Batch b)
     {
        Batch added = batchService.addBatch(b);
        System.out.println(b+":in controller");
@@ -96,27 +96,21 @@ public class BatchController {
         else
         {
             return new ResponseEntity<>(batchlist,HttpStatus.NOT_FOUND);
+        }
     }
 
     @DeleteMapping("/delete/{batch_id}")
     ResponseEntity<String> delete(@PathVariable int batch_id)
     {
-       boolean isdeleted= batchService.delete(batch_id);
-         if(isdeleted)
-         {
-              return new ResponseEntity<>("Batch deleted successfully",HttpStatus.OK);
-         }
-         else
-         {
-              return new ResponseEntity<>("Batch not found",HttpStatus.NOT_FOUND);
-         }
+       batchService.delete(batch_id);
+        return new ResponseEntity<>("Batch deleted successfully",HttpStatus.OK);
 
     }
 
     @PutMapping("/activate/{batch_id}")
     public ResponseEntity<String> deactivateBatch(@PathVariable int batch_id) {
-        int updatedRows = batchService.deactivateBatch(batch_id);
-        if (updatedRows > 0) {
+        Boolean updatedRows = batchService.deactivateBatch(batch_id);
+        if (updatedRows) {
             return new ResponseEntity<>("Batch Deactivated Sucesfully", HttpStatus.OK);
         } else {
             return new ResponseEntity<>("Batch not found",HttpStatus.NOT_FOUND);
@@ -129,5 +123,4 @@ public class BatchController {
         batchService.activateBatch(batch_id,batch_is_active);
         return ResponseEntity.ok("Batch Activated / Deactivates");
     }
-
 }

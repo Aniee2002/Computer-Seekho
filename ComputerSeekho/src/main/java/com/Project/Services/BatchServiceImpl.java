@@ -9,18 +9,12 @@ import org.springframework.stereotype.Service;
 import com.Project.Entities.Batch;
 import com.Project.Repositories.BatchRepository;
 
-import jakarta.transaction.Transactional;
-
 @Service
 public class BatchServiceImpl implements BatchService{
 
     @Autowired
     BatchRepository batchRepository;
 
-    @Override
-    public void addBatch(Batch b) {
-        batchRepository.save(b);
-    }
     public Batch addBatch(Batch b) {
        return batchRepository.save(b);
     }
@@ -35,22 +29,22 @@ public class BatchServiceImpl implements BatchService{
     public void delete(int batchId) {
         batchRepository.deleteById(batchId);
     }
-    @Transactional
-    public int deactivateBatch(int batch_id) {
+
+    public boolean deactivateBatch(int batch_id) {
         Optional<Batch> batchOptional = batchRepository.findById(batch_id);
         if (batchOptional.isPresent()) {
             batchRepository.updateBatchIsActive(batch_id);
-            return 1;
+            return true;
              
         } else {
-            return 0;
+            return false;
         }
     }
     @Override
     public List<Batch> getAllActiveBatches() {
         return batchRepository.findAllActiveBatch();
     }
-    @Override
+
     public void activateBatch(int batchId,Boolean batchIsActive) {
         batchRepository.activateBatch(batchIsActive,batchId);
     }
