@@ -15,7 +15,7 @@ public class Followup implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "followup_id")
-    private int followup_id;
+    private int followupId;
 
     @ManyToOne
     @JoinColumn(name = "enquiry_id", referencedColumnName = "enquiry_id")
@@ -26,20 +26,20 @@ public class Followup implements Serializable {
     private Staff staff;
 
     @Column(name = "followup_date")
-    private LocalDate followup_date;
+    private LocalDate followupDate;
 
     @Column(name = "followup_msg")
-    private String followup_msg;
+    private String followupMsg;
 
     @Column(name = "is_active")
-    private boolean is_active;
+    private boolean isActive;
 
     public void setFollowupId(int followup_id){
-        this.followup_id = followup_id;
+        this.followupId = followup_id;
     }
 
     public int getFollowupId(){
-        return followup_id;
+        return followupId;
     }
 
     public int getEnquiryId() {
@@ -51,26 +51,26 @@ public class Followup implements Serializable {
     }
 
     public void setFollowupDate(LocalDate followup_date){
-        this.followup_date = followup_date;
+        this.followupDate = followup_date;
     }
 
     public LocalDate getFollowupDate(){
-        return followup_date;
+        return followupDate;
     }
 
     public void setFollowupMsg(String followup_msg){
-        this.followup_msg = followup_msg;
+        this.followupMsg = followup_msg;
     }
 
     public String getFollowupMsg(){
-        return followup_msg;
+        return followupMsg;
     }
 
     public void setActive(boolean is_active){
-        this.is_active = is_active;
+        this.isActive = is_active;
     }
 
     public Boolean getActive(){
-        return is_active;
+        return isActive;
     }   
 }
