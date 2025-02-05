@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.Project.Services.StudentService;
 import com.Project.DTO.ApiResponse;
+import com.Project.DTO.StudentDto;
 import com.Project.Entities.Student;
 
 
@@ -32,9 +33,9 @@ public class StudentController {
         return ResponseEntity.status(HttpStatus.CREATED).body(student.get());
     }
 
-    @GetMapping("/all")
-    public ResponseEntity<List<Student>> getAllStudents() {
-        List<Student> students = studentService.getAllStudents();
+    @GetMapping("/getAll")
+    public ResponseEntity<List<StudentDto>> getAllStudents() {
+        List<StudentDto> students = studentService.getAllStudents();
         if(students == null) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }

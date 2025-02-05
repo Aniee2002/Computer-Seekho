@@ -44,9 +44,9 @@ public class Student {
 
     @ManyToOne
     @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
-    private Batch batchId;
+    private Batch batch;
 
     @ManyToOne
     @JoinColumn(name = "course_id", referencedColumnName = "course_id")
-    private Course courseId;
+    private Course course;
 }
