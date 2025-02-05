@@ -33,13 +33,13 @@ public class ClosureReasonController {
         return ResponseEntity.status(HttpStatus.OK).body(closureReasons);
     }
 
-    @PostMapping
+    @PostMapping("/add")
     public ResponseEntity<ClosureReason> addClosureReason(@RequestBody ClosureReason closureReason) {
         ClosureReason closureReason2 = closureReasonService.addClosureReason(closureReason);
         return ResponseEntity.status(HttpStatus.CREATED).body(closureReason2);
     }
 
-    @PutMapping
+    @PutMapping("/update")
     public ResponseEntity<ClosureReason> updateClosureReason(@RequestBody ClosureReason closureReason) {
         boolean result = closureReasonService.updateClosureReason(closureReason);
         if (result) {

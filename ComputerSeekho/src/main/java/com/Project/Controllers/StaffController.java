@@ -33,18 +33,18 @@ public class StaffController {
     ResponseEntity<ApiResponse> saveStaff(@RequestBody Staff staff) {
         Staff isAdded =  staffService.saveStaff(staff);
         if (isAdded != null) {
-            return new ResponseEntity<>(new ApiResponse("Staff added successfully",201,LocalDateTime.now()), HttpStatus.CREATED);
+            return new ResponseEntity<>(new ApiResponse("Staff added successfully",LocalDateTime.now()), HttpStatus.CREATED);
         }
-            return  new ResponseEntity<>(new ApiResponse("Staff not added",500,LocalDateTime.now()), HttpStatus.INTERNAL_SERVER_ERROR);     
+            return  new ResponseEntity<>(new ApiResponse("Staff not added",LocalDateTime.now()), HttpStatus.INTERNAL_SERVER_ERROR);     
     }
 
     @PutMapping("/update")
     ResponseEntity<ApiResponse> updateStaff(@RequestBody Staff staff) {
         boolean isUpdated = staffService.updateStaff(staff);
         if (isUpdated) {
-            return new ResponseEntity<>(new ApiResponse("Staff updated successfully",200,LocalDateTime.now()), HttpStatus.OK);
+            return new ResponseEntity<>(new ApiResponse("Staff updated successfully",LocalDateTime.now()), HttpStatus.OK);
         }
-            return  new ResponseEntity<>(new ApiResponse("Cannot found staff",404,LocalDateTime.now()), HttpStatus.NOT_FOUND);     
+            return  new ResponseEntity<>(new ApiResponse("Cannot found staff",LocalDateTime.now()), HttpStatus.NOT_FOUND);     
     }
 
     @GetMapping("/get/{staffUsername}")
@@ -61,9 +61,9 @@ public class StaffController {
         System.out.println(staffId);
         boolean isDeleted = staffService.deleteByStaffId(staffId);
         if (isDeleted) {
-            return new ResponseEntity<>(new ApiResponse("Staff deleted successfully",200,LocalDateTime.now()), HttpStatus.OK);
+            return new ResponseEntity<>(new ApiResponse("Staff deleted successfully",LocalDateTime.now()), HttpStatus.OK);
         } 
-            return  new ResponseEntity<>(new ApiResponse("Staff Not Found",200,LocalDateTime.now()), HttpStatus.NOT_FOUND);     
+            return  new ResponseEntity<>(new ApiResponse("Staff Not Found",LocalDateTime.now()), HttpStatus.NOT_FOUND);     
     }
 
     @GetMapping("/getAll")

@@ -1,5 +1,6 @@
 package com.Project.Controllers;
 
+import com.Project.DTO.ApiResponse;
 import com.Project.Entities.Album;
 import com.Project.Services.AlbumService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -16,21 +18,18 @@ public class AlbumController {
     @Autowired
     private AlbumService albumService;
 
-    // Add a new album
-    @PostMapping
+    @PostMapping("/add")
     public ResponseEntity<Album> createAlbum(@RequestBody Album album) {
         Album savedAlbum = albumService.saveAlbum(album);
         return new ResponseEntity<>(savedAlbum, HttpStatus.CREATED);
     }
 
-    // Get all albums
-    @GetMapping
+    @GetMapping("/getAll")
     public ResponseEntity<List<Album>> getAllAlbums() {
         List<Album> albums = albumService.getAllAlbums();
         return new ResponseEntity<>(albums, HttpStatus.OK);
     }
 
-    // Get an album by ID
     @GetMapping("/{id}")
     public ResponseEntity<Album> getAlbumById(@PathVariable("id") int albumId) {
         Album album = albumService.getAlbumById(albumId);
@@ -38,17 +37,17 @@ public class AlbumController {
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<String> updateAlbum(@PathVariable("id") int albumId, @RequestBody Album albumDetails) {
+    public ResponseEntity<ApiResponse> updateAlbum(@PathVariable("id") int albumId, @RequestBody Album albumDetails) {
         if(albumService.updateAlbum(albumDetails)){
-            return new ResponseEntity<>("Album updated successfully", HttpStatus.OK);
+            return new ResponseEntity<>(new ApiResponse("Album updated successfully",LocalDateTime.now()), HttpStatus.OK);
         } else {
-            return new ResponseEntity<>("Album not found", HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(new ApiResponse("Album not found",LocalDateTime.now()), HttpStatus.NOT_FOUND);
         }
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<HttpStatus> deleteAlbum(@PathVariable("id") int albumId) {
+    public ResponseEntity<ApiResponse> deleteAlbum(@PathVariable("id") int albumId) {
         albumService.deleteAlbum(albumId);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(new ApiResponse("Deleted Successfully",LocalDateTime.now()),HttpStatus.OK);
     }
 }
