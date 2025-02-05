@@ -23,13 +23,13 @@ public class Batch {
     @Column(name = "batch_end_time")
     private LocalDate batchEndTime;
 
-    @ManyToOne
-    @JoinColumn(name = "course_id", nullable = false)
-    private Course course;
-
     @Column(name = "batch_is_active")
     private Boolean batchIsActive;
 
+    @ManyToOne
+    @JoinColumn(name = "course_id", referencedColumnName = "course_id")
+    private Course courseId;
+  
     public int getBatchId() {
         return batchId;
     }
