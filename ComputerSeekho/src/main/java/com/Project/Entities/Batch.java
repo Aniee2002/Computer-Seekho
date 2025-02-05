@@ -28,6 +28,6 @@ public class Batch {
 
     @ManyToOne
     @JoinColumn(name = "course_id", referencedColumnName = "course_id")
-    private Course courseId;
+    private Course course;
   
 }
