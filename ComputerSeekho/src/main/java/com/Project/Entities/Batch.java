@@ -30,51 +30,59 @@ public class Batch {
     @Column(name = "batch_is_active")
     private Boolean batchIsActive;
 
-    public int getBatch_id() {
+    public int getBatchId() {
         return batchId;
     }
 
-    public void setBatch_id(int batch_id) {
-        this.batchId = batch_id;
+    public void setBatchId(int batchId) {
+        this.batchId = batchId;
     }
 
-    public String getBatch_name() {
+    public String getBatchName() {
         return batchName;
     }
 
-    public void setBatch_name(String batch_name) {
-        this.batchName = batch_name;
+    public void setBatchName(String batchName) {
+        this.batchName = batchName;
     }
 
-    public LocalDate getBatch_start_time() {
+    public LocalDate getBatchStartTime() {
         return batchStartTime;
     }
 
-    public void setBatch_start_time(LocalDate batch_start_time) {
-        this.batchStartTime = batch_start_time;
+    public void setBatchStartTime(LocalDate batchStartTime) {
+        this.batchStartTime = batchStartTime;
     }
 
-    public LocalDate getBatch_end_time() {
+    public LocalDate getBatchEndTime() {
         return batchEndTime;
     }
 
-    public void setBatch_end_time(LocalDate batch_end_time) {
-        this.batchEndTime = batch_end_time;
+    public void setBatchEndTime(LocalDate batchEndTime) {
+        this.batchEndTime = batchEndTime;
     }
 
-    public int getCourse_id() {
-        return course.getCourseId();
-    }
+    // public Course getCourse() {
+    //     return course;
+    // }
 
-    public void setCourse_id(int course_id) {
-        this.course.setCourseId(course_id);
-    }
+    // public void setCourse(Course course) {
+    //     this.course = course;
+    // }
 
-    public Boolean getBatch_is_active() {
+    public Boolean getBatchIsActive() {
         return batchIsActive;
     }
 
-    public void setBatch_is_active(Boolean batch_is_active) {
-        this.batchIsActive = batch_is_active;
+    public void setBatchIsActive(Boolean batchIsActive) {
+        this.batchIsActive = batchIsActive;
+    }
+
+    public int getCourseId(){
+        return course.getCourseId();
+    }
+
+    public void setCourseId(int courseId){
+        course.setCourseId(courseId);
     }
 }

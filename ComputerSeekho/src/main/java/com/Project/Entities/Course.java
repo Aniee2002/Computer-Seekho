@@ -16,7 +16,7 @@ public class Course {
     @Column(length = 100, name = "course_name") 
     private String courseName;
 
-    @Column(length = 200, name = "course_descriptor") 
+    @Column(length = 500, name = "course_descriptor") 
     private String courseDescription;
 
     @Column(name = "course_duration")
