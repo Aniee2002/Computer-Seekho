@@ -7,10 +7,12 @@ import com.Project.Entities.Batch;
 
 
 public interface BatchService {
-    void addBatch(Batch b);
+    Batch addBatch(Batch b);
     List<Batch> getAllBatches();
     Optional<Batch> getByBatchName(String batch_name);
-    void delete(int batch_id);
-    void activateBatch(int batch_id,Boolean batch_is_active);
-    
+    boolean delete(int batch_id);
+    int deactivateBatch(int batch_id);
+    List<Batch> getAllActiveBatches();
+    List<Batch> getByCourseId(int course_id);
+
 }

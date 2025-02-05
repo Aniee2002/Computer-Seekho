@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,10 +13,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.Project.Entities.Batch;
 import com.Project.Services.BatchService;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("/batch")
@@ -26,35 +29,98 @@ public class BatchController {
     @PostMapping("/add")
     public ResponseEntity<Batch> addBatch(@RequestBody Batch b)
     {
-        batchService.addBatch(b);
-        return ResponseEntity.ok(b);
+       Batch added = batchService.addBatch(b);
+       System.out.println(b+":in controller");
+       if(added!=null)
+       {
+           return new ResponseEntity<>("Batch added successfully",HttpStatus.CREATED);
+       }
+       else
+       {
+           return new ResponseEntity<>("Batch not added",HttpStatus.BAD_REQUEST);
+       }
     }
 
     @GetMapping("/all")
-    public List<Batch> getAllBatches()
+    ResponseEntity<List<Batch>> getAllBatches()
     {
-        return batchService.getAllBatches();
-    }
-    
-    @GetMapping("/get/{batch_name}")
-    public ResponseEntity<Batch> getByBatchName(@PathVariable String batch_name)
-    {
-        Optional<Batch> batch = batchService.getByBatchName(batch_name);
-        if(batch.isPresent())
+        List<Batch> batchlist= batchService.getAllBatches();
+        if(batchlist.size()>0)
         {
-            return ResponseEntity.ok(batch.get());
+            return new ResponseEntity<>(batchlist,HttpStatus.OK);
         }
         else
         {
-            return ResponseEntity.notFound().build();
+            return new ResponseEntity<>(batchlist,HttpStatus.NOT_FOUND);
         }
+
+    }
+    @GetMapping("/get/{course_id}")
+    ResponseEntity<List<Batch>> getByCourseId(@PathVariable int course_id)
+    {
+        List<Batch> batchlist= batchService.getByCourseId(course_id);
+        if(batchlist.size()>0)
+        {
+            return new ResponseEntity<>(batchlist,HttpStatus.OK);
+        }
+        else
+        {
+            return new ResponseEntity<>(batchlist,HttpStatus.NOT_FOUND);
+        }
+
+    }
+    
+    @GetMapping("/get/{batch_name}")
+    ResponseEntity<Optional<Batch>> getByBatchName(@PathVariable String batch_name)
+    {
+        Optional<Batch> batch= batchService.getByBatchName(batch_name);
+        System.out.println(batch);
+        if(batch.isPresent())
+        {
+            return new ResponseEntity<>(batch,HttpStatus.FOUND);
+        }
+        else
+        {
+            return new ResponseEntity<>(batch,HttpStatus.NOT_FOUND);
+            
+        }
+    }
+    @GetMapping("/get/all/activebatch")
+    ResponseEntity<List<Batch>> getActiveBatch()
+    {
+        List<Batch> batchlist= batchService.getAllActiveBatches();
+        if(batchlist.size()>0)
+        {
+            return new ResponseEntity<>(batchlist,HttpStatus.OK);
+        }
+        else
+        {
+            return new ResponseEntity<>(batchlist,HttpStatus.NOT_FOUND);
     }
 
     @DeleteMapping("/delete/{batch_id}")
-    public ResponseEntity<String> delete(@PathVariable int batch_id)
+    ResponseEntity<String> delete(@PathVariable int batch_id)
     {
-        batchService.delete(batch_id);
-        return ResponseEntity.ok("Batch Deleted");
+       boolean isdeleted= batchService.delete(batch_id);
+         if(isdeleted)
+         {
+              return new ResponseEntity<>("Batch deleted successfully",HttpStatus.OK);
+         }
+         else
+         {
+              return new ResponseEntity<>("Batch not found",HttpStatus.NOT_FOUND);
+         }
+
+    }
+
+    @PutMapping("/activate/{batch_id}")
+    public ResponseEntity<String> deactivateBatch(@PathVariable int batch_id) {
+        int updatedRows = batchService.deactivateBatch(batch_id);
+        if (updatedRows > 0) {
+            return new ResponseEntity<>("Batch Deactivated Sucesfully", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("Batch not found",HttpStatus.NOT_FOUND);
+        }
     }
 
     @PutMapping("/activate/{batch_id}/{batch_is_active}")
@@ -63,6 +129,5 @@ public class BatchController {
         batchService.activateBatch(batch_id,batch_is_active);
         return ResponseEntity.ok("Batch Activated / Deactivates");
     }
-    
 
 }

@@ -13,7 +13,8 @@ import com.Project.Repositories.CourseRepositories;
 public class CourseServiceImpl implements CourseService {
 
     @Autowired
-    CourseRepositories courseRepositories;
+    private CourseRepositories courseRepositories;
+  
     @Override
     public Optional<Course> getCourseById(int courseId) {
         return courseRepositories.findById(courseId);

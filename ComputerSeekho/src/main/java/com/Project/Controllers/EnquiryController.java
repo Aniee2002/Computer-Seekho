@@ -65,4 +65,3 @@ public class EnquiryController {
         return  new ResponseEntity<>(null, HttpStatus.NOT_FOUND);    
     }
 }
-
