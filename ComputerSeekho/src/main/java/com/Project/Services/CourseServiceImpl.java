@@ -3,6 +3,7 @@ package com.Project.Services;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.Project.Entities.Course;
@@ -11,6 +12,7 @@ import com.Project.Repositories.CourseRepositories;
 @Service
 public class CourseServiceImpl implements CourseService {
 
+    @Autowired
     CourseRepositories courseRepositories;
     @Override
     public Optional<Course> getCourseById(int courseId) {

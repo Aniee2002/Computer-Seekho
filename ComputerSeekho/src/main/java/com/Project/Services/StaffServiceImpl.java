@@ -19,8 +19,8 @@ public class StaffServiceImpl implements StaffService {
 
     @Override
     public Staff saveStaff(Staff staff) {
-        staff.setStaffRole("ROLE_ADMIN");
-        staff.setStaffUsername("rootuser");
+        staff.setStaffRole("ROLE_"+staff.getStaffRole());
+        staff.setStaffUsername(staff.getStaffEmail());
         staff.setStaffPassword(passwordEncoder.encode("rootpassword"));
         return staffRepository.save(staff);
     }

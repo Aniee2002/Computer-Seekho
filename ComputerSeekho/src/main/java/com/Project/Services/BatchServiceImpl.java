@@ -17,6 +17,7 @@ public class BatchServiceImpl implements BatchService{
 
     @Override
     public void addBatch(Batch b) {
+        System.out.print(b);
         batchRepository.save(b);
     }
 
