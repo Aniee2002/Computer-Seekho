@@ -30,7 +30,6 @@ public class BatchController{
     public ResponseEntity<String> addBatch(@RequestBody Batch b)
     {
        Batch added = batchService.addBatch(b);
-       System.out.println(b+":in controller");
        if(added!=null)
        {
            return new ResponseEntity<>("Batch added successfully",HttpStatus.CREATED);
