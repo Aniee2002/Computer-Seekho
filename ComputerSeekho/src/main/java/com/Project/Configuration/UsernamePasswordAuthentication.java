@@ -1,5 +1,7 @@
 package com.Project.Configuration;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -10,6 +12,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
+import com.Project.Controllers.AuthController;
 import com.Project.Entities.Staff;
 import com.Project.Services.StaffService;
 
@@ -18,6 +21,7 @@ import java.util.List;
 
 @Component
 public class UsernamePasswordAuthentication implements AuthenticationProvider {
+    private static final Logger logger = LoggerFactory.getLogger(AuthController.class);
     @Autowired
     StaffService service;
     @Autowired
@@ -39,6 +43,8 @@ public class UsernamePasswordAuthentication implements AuthenticationProvider {
             throw new BadCredentialsException("User not found with username: " + username);
             
         }
+        logger.info("User '{}' signed in successfully with roles: {}", username, authorities);
+        logger.info("Login date and time: {}", java.time.LocalDateTime.now());
         return new UsernamePasswordAuthenticationToken(username,pass,authorities);
     }
 
