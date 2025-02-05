@@ -85,4 +85,11 @@ public class Batch {
     public void setCourseId(int courseId){
         course.setCourseId(courseId);
     }
+    public boolean getBatch_is_active() {
+        return batch_is_active;
+    }
+
+    public void setBatch_is_active(boolean batch_is_active) {
+        this.batch_is_active = batch_is_active;
+    }
 }

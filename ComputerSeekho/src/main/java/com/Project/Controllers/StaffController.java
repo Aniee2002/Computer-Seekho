@@ -1,5 +1,7 @@
 package com.Project.Controllers;
 
+import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.Project.Entities.Staff;
 import com.Project.Services.StaffService;
+import com.Project.DTO.ApiResponse;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,23 +31,21 @@ public class StaffController {
     private StaffService staffService;
 
     @PostMapping("/add")
-    ResponseEntity<String> saveStaff(@RequestBody Staff staff) {
+    ResponseEntity<ApiResponse> saveStaff(@RequestBody Staff staff) {
         Staff isAdded =  staffService.saveStaff(staff);
         if (isAdded != null) {
-            return new ResponseEntity<>("Staff added successfully", HttpStatus.CREATED);
-        } else {
-            return  new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);     
+            return new ResponseEntity<>(new ApiResponse("Staff added successfully",201,LocalDateTime.now()), HttpStatus.CREATED);
         }
+            return  new ResponseEntity<>(new ApiResponse("Staff not added",500,LocalDateTime.now()), HttpStatus.INTERNAL_SERVER_ERROR);     
     }
 
     @PutMapping("/update")
-    ResponseEntity<String> updateStaff(@RequestBody Staff staff) {
+    ResponseEntity<ApiResponse> updateStaff(@RequestBody Staff staff) {
         boolean isUpdated = staffService.updateStaff(staff);
         if (isUpdated) {
-            return new ResponseEntity<>("Staff updated successfully", HttpStatus.OK);
-        } else {
-            return  new ResponseEntity<>("Cannot Found Staff", HttpStatus.NOT_FOUND);     
+            return new ResponseEntity<>(new ApiResponse("Staff updated successfully",200,LocalDateTime.now()), HttpStatus.OK);
         }
+            return  new ResponseEntity<>(new ApiResponse("Cannot found staff",404,LocalDateTime.now()), HttpStatus.NOT_FOUND);     
     }
 
     @GetMapping("/get/{staffUsername}")
@@ -52,24 +53,23 @@ public class StaffController {
         Staff staff = staffService.findByStaffUsername(staffUsername);
         if (staff != null) {
             return new ResponseEntity<>(staff, HttpStatus.OK);
-        } else {
-            return  new ResponseEntity<>(null, HttpStatus.NOT_FOUND);     
         }
+            return  new ResponseEntity<>(null, HttpStatus.NOT_FOUND);     
     }
 
-    @DeleteMapping("/delete/{staffUsername}")
-    ResponseEntity<String> deleteStaff(@PathVariable String staffUsername) {
-        boolean isDeleted = staffService.deleteByStaffUsername(staffUsername);
+    @DeleteMapping("/delete/{staffId}")
+    ResponseEntity<ApiResponse> deleteStaff(@PathVariable int staffId) {
+        System.out.println(staffId);
+        boolean isDeleted = staffService.deleteByStaffId(staffId);
         if (isDeleted) {
-            return new ResponseEntity<>("Staff deleted successfully", HttpStatus.OK);
-        } else {
-            return  new ResponseEntity<>("Staff Not Found with username "+staffUsername, HttpStatus.NOT_FOUND);     
-        }
+            return new ResponseEntity<>(new ApiResponse("Staff deleted successfully",200,LocalDateTime.now()), HttpStatus.OK);
+        } 
+            return  new ResponseEntity<>(new ApiResponse("Staff Not Found",200,LocalDateTime.now()), HttpStatus.NOT_FOUND);     
     }
 
     @GetMapping("/getAll")
     ResponseEntity<List<Staff>> getAllStaff() {
-        return new ResponseEntity<>(staffService.getAllStaff(),HttpStatus.FOUND);
+        return new ResponseEntity<>(staffService.getAllStaff(),HttpStatus.OK);
     }
     
 }

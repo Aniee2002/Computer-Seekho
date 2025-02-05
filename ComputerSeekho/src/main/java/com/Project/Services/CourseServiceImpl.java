@@ -14,7 +14,7 @@ public class CourseServiceImpl implements CourseService {
 
     @Autowired
     private CourseRepositories courseRepositories;
-    
+  
     @Override
     public Optional<Course> getCourseById(int courseId) {
         return courseRepositories.findById(courseId);
