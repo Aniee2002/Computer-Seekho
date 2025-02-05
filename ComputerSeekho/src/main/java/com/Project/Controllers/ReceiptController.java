@@ -1,5 +1,6 @@
 package com.Project.Controllers;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.Project.DTO.ApiResponse;
 import com.Project.Entities.Receipt;
 import com.Project.Services.ReceiptService;
 
@@ -26,7 +28,7 @@ public class ReceiptController {
         if(receipt == null) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
-        return ResponseEntity.status(HttpStatus.CREATED).body(receipt);
+        return ResponseEntity.status(HttpStatus.OK).body(receipt);
     }
 
     @GetMapping("/all")
@@ -35,11 +37,11 @@ public class ReceiptController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<Receipt> addReceipt(Receipt receipt) {
+    public ResponseEntity<ApiResponse> addReceipt(Receipt receipt) {
         Receipt receipt2 = receiptService.addReceipt(receipt);
         if(receipt2 == null) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
-        return ResponseEntity.status(HttpStatus.CREATED).body(receipt2);
+        return ResponseEntity.status(HttpStatus.CREATED).body(new ApiResponse("Receipt added successfully", LocalDateTime.now()));
     }
 }

@@ -1,5 +1,6 @@
 package com.Project.Controllers;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.Project.Services.StudentService;
+import com.Project.DTO.ApiResponse;
 import com.Project.Entities.Student;
 
 
@@ -40,10 +42,9 @@ public class StudentController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<Student> addStudent(@RequestBody Student student) {
-        // Student student = new Student();
-        Student student2= studentService.addStudent(student);
-        return ResponseEntity.status(HttpStatus.CREATED).body(student2);
+    public ResponseEntity<ApiResponse> addStudent(@RequestBody Student student) {
+        studentService.addStudent(student);
+        return ResponseEntity.status(HttpStatus.CREATED).body(new ApiResponse("Student added successfully", null));
     }
 
     @PutMapping("/update")
@@ -53,9 +54,9 @@ public class StudentController {
     }
 
     @DeleteMapping("/delete/{studentId}")
-    public String deleteStudent(@PathVariable int studentId) {
+    public ResponseEntity<ApiResponse> deleteStudent(@PathVariable int studentId) {
         studentService.deleteStudent(studentId);
-        return "Student deleted with id: " + studentId;
+        return new ResponseEntity<>(new ApiResponse("Student deleted with id: " + studentId, LocalDateTime.now()),HttpStatus.OK);
     }
 
     @GetMapping("/getbybatch/{batchid}")

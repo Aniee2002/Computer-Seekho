@@ -1,5 +1,6 @@
 package com.Project.Controllers;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.Project.DTO.ApiResponse;
 import com.Project.Entities.Recruiter;
 import com.Project.Services.RecruiterService;
 
@@ -24,10 +26,10 @@ public class RecruiterController {
     private RecruiterService recruiterService;
 
     @PostMapping("/add")
-    public ResponseEntity<Recruiter> addRecruiter(@RequestBody Recruiter recruiter)
+    public ResponseEntity<ApiResponse> addRecruiter(@RequestBody Recruiter recruiter)
     {
-        Recruiter savedRecruiter = recruiterService.addRecruiter(recruiter);
-        return new ResponseEntity<>(savedRecruiter,HttpStatus.CREATED);
+        recruiterService.addRecruiter(recruiter);
+        return new ResponseEntity<>(new ApiResponse("Recuiter data added successfully",LocalDateTime.now()),HttpStatus.CREATED);
     }
 
     @GetMapping("/getAll")
