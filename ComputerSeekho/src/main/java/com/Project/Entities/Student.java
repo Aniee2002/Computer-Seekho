@@ -39,11 +39,14 @@ public class Student {
     @Column(name = "student_mobile")
     private String studentMobile;
 
+    @Column(name = "student_email", length = 30)
+    private String studentEmail;
+
     @ManyToOne
     @JoinColumn(name = "batch_id", referencedColumnName = "batch_id")
-    private Batch batch;
+    private Batch batchId;
 
     @ManyToOne
     @JoinColumn(name = "course_id", referencedColumnName = "course_id")
-    private Course course_id;
+    private Course courseId;
 }
