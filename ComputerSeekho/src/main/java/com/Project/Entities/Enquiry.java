@@ -31,12 +31,6 @@ public class Enquiry {
     @Column(name = "enquirer_query")
     private String enquirerQuery;
 
-    @Column(name = "closure_reason")
-    private String closureReason;
-
-    @Column(name = "enquiry_processed_flag")
-    private boolean enquiryProcessedFlag;
-
     @Column(name = "course_name")
     private String courseName;
 
@@ -107,22 +101,6 @@ public class Enquiry {
 
     public void setEnquirerQuery(String enquirerQuery) {
         this.enquirerQuery = enquirerQuery;
-    }
-
-    public String getClosureReason() {
-        return closureReason;
-    }
-
-    public void setClosureReason(String closureReason) {
-        this.closureReason = closureReason;
-    }
-
-    public boolean isEnquiryProcessedFlag() {
-        return enquiryProcessedFlag;
-    }
-
-    public void setEnquiryProcessedFlag(boolean enquiryProcessedFlag) {
-        this.enquiryProcessedFlag = enquiryProcessedFlag;
     }
 
     public String getCourseId() {

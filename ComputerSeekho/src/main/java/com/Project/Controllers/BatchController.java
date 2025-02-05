@@ -54,7 +54,7 @@ public class BatchController{
         }
 
     }
-    @GetMapping("/get/{course_id}")
+    @GetMapping("/getbycourse/{course_id}")
     public ResponseEntity<List<Batch>> getByCourseId(@PathVariable int course_id)
     {
         List<Batch> batchlist= batchService.getByCourseId(course_id);
