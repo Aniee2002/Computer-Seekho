@@ -26,9 +26,12 @@ public interface BatchRepository extends JpaRepository<Batch,Integer>{
     @Query(value = "UPDATE Batch SET batchIsActive = false WHERE batchName = :batchName", nativeQuery = true)
     int updateBatchIsActive(@Param("batchName") int batchId);
 
+
     @Query("SELECT b FROM Batch b WHERE b.batchIsActive = true")
     List<Batch> findAllActiveBatch();
 
-    @Query(value = "SELECT * FROM Batch WHERE courseId = :courseId", nativeQuery = true)
+    @Query(value = """
+            SELECT b FROM Batch b WHERE course_id = :courseId"""
+            , nativeQuery = true)
     List<Batch> findByCourseId(@Param("courseId") int courseId);
 }
