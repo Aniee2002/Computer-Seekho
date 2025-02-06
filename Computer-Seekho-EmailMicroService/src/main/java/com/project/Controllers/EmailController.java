@@ -1,8 +1,16 @@
-package main.java.com.project.Controllers;
+package com.project.Controllers;
 
 import java.util.Map;
 
-import main.java.com.Services.EmailSenderService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.project.Services.EmailSenderService;
+
 @RestController
 public class EmailController {
     @Autowired

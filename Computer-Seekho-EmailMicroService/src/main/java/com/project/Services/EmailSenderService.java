@@ -1,10 +1,21 @@
-package main.java.com.Services;
+package com.project.Services;
 
-import java.net.PasswordAuthentication;
+
+import jakarta.mail.Message;
+import jakarta.mail.PasswordAuthentication;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Properties;
-@Component
+import org.springframework.stereotype.Service;
+
+import jakarta.mail.Session;
+import jakarta.mail.Transport;
+import jakarta.mail.internet.InternetAddress;
+import jakarta.mail.internet.MimeBodyPart;
+import jakarta.mail.internet.MimeMessage;
+import jakarta.mail.internet.MimeMultipart;
+
+@Service
 public class EmailSenderService {
     
 	public void sendAdmissionEmail(String to, String studentName) {
@@ -45,7 +56,7 @@ public class EmailSenderService {
         htmlPart.setContent(emailTemplate, "text/html");
 
         // Create a multipart message
-        Multipart multipart = new MimeMultipart();
+        MimeMultipart multipart = new MimeMultipart();
         multipart.addBodyPart(htmlPart);
 
         // Set the multipart content to the message

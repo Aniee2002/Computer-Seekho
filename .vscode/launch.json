@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "EmailMicroServiceApplication",
+            "request": "launch",
+            "mainClass": "com.project.EmailMicroService.EmailMicroServiceApplication",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-ComputerSeekhoApplication<ComputerSeekho>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
