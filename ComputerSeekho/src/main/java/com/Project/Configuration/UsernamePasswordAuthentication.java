@@ -33,6 +33,8 @@ public class UsernamePasswordAuthentication implements AuthenticationProvider {
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
 
         Staff staff = service.findByStaffUsername(username);
+
+        System.out.println(staff);
         if (staff != null) {
             if(passwordEncoder.matches(pass,staff.getStaffPassword())) {
                 authorities.add(new SimpleGrantedAuthority(staff.getStaffRole()));

@@ -57,7 +57,7 @@ public class StudentController {
     @DeleteMapping("/delete/{studentId}")
     public ResponseEntity<ApiResponse> deleteStudent(@PathVariable int studentId) {
         studentService.deleteStudent(studentId);
-        return new ResponseEntity<>(new ApiResponse("Student deleted with id: " + studentId, LocalDateTime.now()),HttpStatus.OK);
+        return new ResponseEntity<>(new ApiResponse("Student deleted successfully", LocalDateTime.now()),HttpStatus.OK);
     }
 
     @GetMapping("/getbybatch/{batchid}")
