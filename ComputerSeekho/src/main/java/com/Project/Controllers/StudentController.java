@@ -1,7 +1,9 @@
 package com.Project.Controllers;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
 import com.Project.Services.StudentService;
 import com.Project.DTO.ApiResponse;
 import com.Project.Entities.Student;
@@ -25,6 +29,9 @@ import com.Project.Entities.Student;
 public class StudentController {
     @Autowired
     private StudentService studentService;
+
+    @Autowired
+    private RestTemplate restTemplate;
 
     @GetMapping("/get/{id}")
     public ResponseEntity<Student> getStudentById(@PathVariable int id) {
@@ -43,7 +50,19 @@ public class StudentController {
 
     @PostMapping("/add")
     public ResponseEntity<ApiResponse> addStudent(@RequestBody Student student) {
-        studentService.addStudent(student);
+        Student student2= studentService.addStudent(student);
+        // Call Email microservice
+        String emailServiceUrl = "http://localhost:9003/email";
+        Map<String, Object> emailRequest = new HashMap<>();
+        emailRequest.put("to", student2.getStudentEmail());
+        emailRequest.put("studentName", student2.getStudentName());
+
+        try {
+            restTemplate.postForObject(emailServiceUrl, emailRequest, String.class);
+           
+        } catch (Exception e) {
+            System.err.println("An error occurred while sending the email: " + e.getMessage());
+        }
         return ResponseEntity.status(HttpStatus.CREATED).body(new ApiResponse("Student added successfully", null));
     }
 
