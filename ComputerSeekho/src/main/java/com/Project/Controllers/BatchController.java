@@ -3,6 +3,8 @@ package com.Project.Controllers;
 import java.util.List;
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +25,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RestController
 @RequestMapping("/batch")
 public class BatchController{
+
+    private static final Logger logger = LoggerFactory.getLogger(AuthController.class);
+
     @Autowired
     private BatchService batchService;
 
@@ -72,6 +77,7 @@ public class BatchController{
     @GetMapping("/get/{batch_name}")
     public ResponseEntity<Optional<Batch>> getByBatchName(@PathVariable String batch_name)
     {
+        logger.info("Searching {}",batch_name);
         Optional<Batch> batch= batchService.getByBatchName(batch_name);
         System.out.println(batch);
         if(batch.isPresent())
