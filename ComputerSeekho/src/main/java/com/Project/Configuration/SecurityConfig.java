@@ -27,6 +27,7 @@ public class SecurityConfig {
         @Bean
         SecurityFilterChain securityFilterChain(HttpSecurity security) throws Exception {
             security.csrf(crf->crf.disable());
+            
             security.sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.NEVER));
             security.addFilterAfter(new JWTokenGenerationFilter(), BasicAuthenticationFilter.class);
             security.addFilterBefore(new JWTTokenValidatorFilter(), BasicAuthenticationFilter.class);

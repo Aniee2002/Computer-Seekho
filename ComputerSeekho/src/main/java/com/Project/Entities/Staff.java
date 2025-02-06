@@ -41,6 +41,10 @@ public class Staff {
     @Pattern(regexp = "\\d{10}", message = "Mobile number must be 10 digits")
     private String staffMobile;
 
+    @Column(name = "staff_gender")
+    @NotBlank(message = "Select Gender")
+    private String staffGender;
+
     @Column(name = "staff_username")
     @NotBlank(message = "Username is required")
     @Size(min = 5, max = 30, message = "Username must be between 5 and 30 characters")

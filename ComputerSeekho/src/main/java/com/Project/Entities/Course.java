@@ -28,8 +28,8 @@ public class Course {
     @Column(name = "course_fee")
     private double courseFee;
 
-    @Column(name = "course_is_active")
-    private Boolean courseIsActive;
+    // @Column(name = "course_is_active")
+    // private Boolean courseIsActive;
 
     @Column(length = 100, name = "cover_photo") 
     private String coverPhoto;
@@ -82,13 +82,13 @@ public class Course {
         this.courseFee = courseFee;
     }
 
-    public Boolean getCourseIsActive() {
-        return courseIsActive;
-    }
+    // public Boolean getCourseIsActive() {
+    //     return courseIsActive;
+    // }
 
-    public void setCourseIsActive(Boolean courseIsActive) {
-        this.courseIsActive = courseIsActive;
-    }
+    // public void setCourseIsActive(Boolean courseIsActive) {
+    //     this.courseIsActive = courseIsActive;
+    // }
 
     public String getCoverPhoto() {
         return coverPhoto;

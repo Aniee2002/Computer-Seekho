@@ -27,7 +27,11 @@ public class StaffServiceImpl implements StaffService {
 
     @Override
     public Staff findByStaffUsername(String staffUsername) {
-        return staffRepository.findByStaffUsername(staffUsername).get();
+        Optional<Staff> staff =  staffRepository.findByStaffUsername(staffUsername);
+        if(staff.isPresent()){
+            return staff.get();
+        }
+        return null;
     }
 
     

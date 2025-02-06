@@ -21,6 +21,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.Project.Services.StudentService;
 import com.Project.DTO.ApiResponse;
+import com.Project.DTO.StudentDto;
 import com.Project.Entities.Student;
 
 
@@ -39,9 +40,9 @@ public class StudentController {
         return ResponseEntity.status(HttpStatus.CREATED).body(student.get());
     }
 
-    @GetMapping("/all")
-    public ResponseEntity<List<Student>> getAllStudents() {
-        List<Student> students = studentService.getAllStudents();
+    @GetMapping("/getAll")
+    public ResponseEntity<List<StudentDto>> getAllStudents() {
+        List<StudentDto> students = studentService.getAllStudents();
         if(students == null) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
@@ -75,7 +76,7 @@ public class StudentController {
     @DeleteMapping("/delete/{studentId}")
     public ResponseEntity<ApiResponse> deleteStudent(@PathVariable int studentId) {
         studentService.deleteStudent(studentId);
-        return new ResponseEntity<>(new ApiResponse("Student deleted with id: " + studentId, LocalDateTime.now()),HttpStatus.OK);
+        return new ResponseEntity<>(new ApiResponse("Student deleted successfully", LocalDateTime.now()),HttpStatus.OK);
     }
 
     @GetMapping("/getbybatch/{batchid}")

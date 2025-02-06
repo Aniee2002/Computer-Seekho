@@ -24,7 +24,7 @@ public class CourseController {
     @Autowired
     private CourseService courseService;
 
-    @GetMapping("/{id}")
+    @GetMapping("get/{id}")
     public ResponseEntity<Course> getCourseById(@PathVariable int id) {
         Course course = courseService.getCourseById(id).get();
         if(course == null) {
@@ -32,7 +32,7 @@ public class CourseController {
         }
         return ResponseEntity.status(HttpStatus.CREATED).body(course);
     }
-    @GetMapping("/all")
+    @GetMapping("/getAll")
     public ResponseEntity<List<Course>> getAllCourses() {
         List<Course> courses = courseService.getAllCourses();
         if(courses == null) {
