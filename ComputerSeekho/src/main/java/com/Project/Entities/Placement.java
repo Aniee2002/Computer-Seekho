@@ -29,6 +29,7 @@ public class Placement {
     @JoinColumn(name = "recruiter_id", referencedColumnName = "recruiter_id")
     private Recruiter recruiterID;
 
-    @Column(name = "CTC")
-    private float CTC;
+    @ManyToOne
+    @JoinColumn(name = "batch_id",referencedColumnName = "batch_id")
+    private Batch batch;
 }

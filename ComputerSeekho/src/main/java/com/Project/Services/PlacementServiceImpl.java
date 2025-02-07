@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.Project.DTO.PlacedStudentDTO;
 import com.Project.Entities.Placement;
 import com.Project.Repositories.PlacementRepository;
 
@@ -20,17 +21,12 @@ public class PlacementServiceImpl implements PlacementService {
     }
 
     @Override
-    public Placement getPlacementById(int placementId) {
-        return placementRepository.findById(placementId).get();
-    }
-
-    @Override
     public List<Placement> getAllPlacements() {
         return placementRepository.findAll();
     }
 
-    // @Override
-    // public List<Placement> getbyStudent(int studentID) {
-    //     return placementRepository.findByStudentID(studentID);
-    // }
+    @Override
+    public List<PlacedStudentDTO> getPlacedStudentByBatchId(int batchId) {
+        return placementRepository.findByBatchId(batchId);
+    }
 }
