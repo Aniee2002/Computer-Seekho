@@ -26,7 +26,7 @@ public class Batch {
     @Column(name = "batch_is_active")
     private Boolean batchIsActive;
 
-    @ManyToOne
+    @ManyToOne  
     @JoinColumn(name = "course_id", referencedColumnName = "course_id")
     private Course course;
   
