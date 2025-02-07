@@ -50,7 +50,7 @@ public class EnquiryServiceImpl implements EnquiryService {
     }
 
     @Override
-    public List<Enquiry> getEnquiryByStaff(int staffId) {
-        return enquiryRepository.getbystaffList(staffId);
+    public List<Enquiry> getEnquiryByStaff(String  staffUsername) {
+        return enquiryRepository.getbystaffList(staffUsername);
     }
 }

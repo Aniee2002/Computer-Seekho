@@ -44,13 +44,13 @@ public class EnquiryController {
         return new ResponseEntity<>(new ApiResponse("Enquiry update successfully", LocalDateTime.now()),HttpStatus.OK);
     }
 
-    @DeleteMapping("delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<ApiResponse> deleteEnquiry(@PathVariable int id) {
         enquiryService.deleteEnquiry(id);
         return new ResponseEntity<>(new ApiResponse("Enquiry deleted successfully", LocalDateTime.now()), HttpStatus.OK);
     }
 
-    @GetMapping("getid/{id}")
+    @GetMapping("/getid/{id}")
     public ResponseEntity<Enquiry> getEnquiryById(@PathVariable int id) {
         Enquiry enquiry =  enquiryService.getEnquiryById(id);
         if (enquiry == null) {
@@ -59,9 +59,9 @@ public class EnquiryController {
         return new ResponseEntity<>(enquiry, HttpStatus.OK);
     }
 
-    @GetMapping("getbystaff/{staffId}")
-    public ResponseEntity<List<Enquiry>> getEnquiryByStaff(@PathVariable int staffId) {
-        List<Enquiry> enquries =  enquiryService.getEnquiryByStaff(staffId);
+    @GetMapping("getbystaff/{staffUsername}")
+    public ResponseEntity<List<Enquiry>> getEnquiryByStaff(@PathVariable String staffUsername) {
+        List<Enquiry> enquries =  enquiryService.getEnquiryByStaff(staffUsername);
         if (enquries != null) {
             return new ResponseEntity<>(enquries, HttpStatus.OK);
         }
