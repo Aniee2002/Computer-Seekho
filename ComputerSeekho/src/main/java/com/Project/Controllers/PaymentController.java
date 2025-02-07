@@ -10,7 +10,7 @@ import com.Project.Services.PaymentService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/payments")
+@RequestMapping("/payment")
 public class PaymentController {
 
     @Autowired
@@ -31,7 +31,7 @@ public class PaymentController {
         return paymentService.getAllPayments();
     }
 
-    @PostMapping
+    @PostMapping("/add")
     public Payment createPayment(@RequestBody Payment payment) {
         return paymentService.savePayment(payment);
     }

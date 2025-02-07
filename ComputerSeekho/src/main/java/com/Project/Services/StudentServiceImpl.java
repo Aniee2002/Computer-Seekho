@@ -6,8 +6,6 @@ import org.springframework.stereotype.Service;
 import com.Project.DTO.StudentDto;
 import com.Project.Entities.Student;
 import com.Project.Repositories.StudentRepositories;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -32,7 +30,11 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Student addStudent(Student student) {
-        return studentRepositories.save(student);
+        Student student1 = studentRepositories.save(student);
+        System.out.println(student.getStudentId());
+        studentRepositories.updatePayment(student1.getStudentId());
+        return student1;
+
     }
 
     @Override
