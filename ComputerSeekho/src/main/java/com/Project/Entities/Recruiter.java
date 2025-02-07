@@ -24,9 +24,13 @@ public class Recruiter {
     @NotBlank(message = "Recruiter name is mandatory")
     @Size(min = 3,max = 50 ,message="Recruiter name must be between 3 and 50")
     private String recruiterName;
-
+    
     @Column(name = "recruiter_location")
     @NotBlank(message = "Recruiter location is mandatory")
     @Size(min = 3,max = 50,message = "Recruiter location must be between 3 and 50")
     private String recruiterLocation;
+
+    @Column(name = "recruiter_image")
+    @NotBlank(message = "add recruiter image")
+    private String recruiterPhotoUrl;
 }

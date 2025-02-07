@@ -31,7 +31,8 @@ public interface BatchRepository extends JpaRepository<Batch,Integer>{
     List<Batch> findAllActiveBatch();
 
     @Query(value = """
-            SELECT b FROM Batch b WHERE course_id = :courseId"""
-            , nativeQuery = true)
+        SELECT b.batch_id,b.batch_end_time,b.batch_is_active,b.batch_name,b.batch_start_time,b.course_id,b.batch_photo_url 
+        FROM Batch b WHERE b.course_id = ?1""",
+        nativeQuery = true)
     List<Batch> findByCourseId(@Param("courseId") int courseId);
 }
