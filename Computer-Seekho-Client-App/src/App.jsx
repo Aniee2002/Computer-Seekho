@@ -8,6 +8,7 @@ import AssembleAbout from './components/AboutUs/AssembleAbout';
 import AboutUs from './components/AboutUs/AboutUs'
 import AssembledCourse from './components/MainCourse/AssembledCourse';
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -15,12 +16,13 @@ const router = createBrowserRouter([
   },
   {
     path: "/About",
-    // element: <AssembleAbout/>
-    element:<AboutUs/>
+    element: <AssembleAbout/>
+    // element:<AboutUs/>
   },
   {
     path:"/Gallery",
     element : <Gallery/>
+    // element: <AssembleGallery/>
    
   },
   {

@@ -9,7 +9,7 @@ import Footer from "../Footer/Footer";
 const Staff = () => {
   return (
     <>
-    <Navbar/>
+    
     <h1 className="tag">Our Elites</h1>
     <div className="wrapper">
       <div className="card">
