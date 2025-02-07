@@ -1,0 +1,47 @@
+/* ====== General Styling ====== */
+.heading-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    text-align: center;
+    background-color: white;
+  }
+  
+  /* ====== Heading Content ====== */
+  .heading-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-weight: bold;
+  }
+  
+  /* ====== Icon Styling ====== */
+  .icon {
+    font-family: serif;
+    font-size: 40px;
+    color: red;
+  }
+  
+  /* ====== Heading Text ====== */
+  .heading-text {
+    font-size: 32px;
+    font-weight: bold;
+    color: #1a202c; /* Dark navy color */
+    text-transform: uppercase;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  
+  /* ====== Pulse Animation ====== */
+  @keyframes pulse {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
