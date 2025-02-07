@@ -1,0 +1,49 @@
+/* Heading Container */
+.heading-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    background-color: white;
+    text-align: center;
+  }
+  
+  /* Heading Content */
+  .heading-content {
+    display: flex;
+    align-items: center;
+    gap: 16px; /* Spacing between icon and text */
+    font-size: 32px; /* Equivalent to text-4xl */
+    font-weight: bold;
+    color: #1e3a8a; /* Equivalent to text-navy-900 */
+  }
+  
+  /* Icon */
+  .heading-icon {
+    font-family: serif;
+    font-size: 40px; /* Equivalent to text-5xl */
+    color: #ef4444; /* Equivalent to text-red-500 */
+  }
+  
+  /* Heading Text */
+  .heading-text {
+    font-size: 32px;
+    font-weight: bold;
+    color: #1f2937; /* Equivalent to text-gray-900 */
+    text-transform: uppercase;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  
+  /* Pulse Animation */
+  @keyframes pulse {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
