@@ -3,9 +3,9 @@ package com.Project.Services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.Project.DTO.PaymentDTO;
 import com.Project.Entities.Payment;
 import com.Project.Repositories.PaymentRepository;
-import com.Project.Services.PaymentService;
 
 import java.util.List;
 
@@ -40,5 +40,10 @@ public class PaymentServiceImpl implements PaymentService {
     @Override
     public void deletePayment(int paymentId) {
         paymentRepository.deleteById(paymentId);
+    }
+
+    @Override
+    public PaymentDTO getPaymentDTOById(int paymentId) {
+       return paymentRepository.getPaymentOptional(paymentId).get();
     }
 }
