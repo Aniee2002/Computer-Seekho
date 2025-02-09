@@ -5,10 +5,8 @@ const Name = () => {
   return (
     <div className="heading-container">
       <div className="heading-content">
-        <i className="icon"></i> {/* Icon Placeholder */}
-        <span className="heading-text">
-          USM's Shriram Mantri Vidyanidhi Info Tech Academy
-        </span>
+        <h2>Our Origin</h2>
+        <p>We are a part of Upanagar Shikshan Mandal (USM), a pioneering educational trust in the western suburbs of Mumbai. Commencing in 1956, USM has blossomed into 14 educational institutes that impart quality education from primary school to Post-Graduate courses.</p>
       </div>
     </div>
   );
