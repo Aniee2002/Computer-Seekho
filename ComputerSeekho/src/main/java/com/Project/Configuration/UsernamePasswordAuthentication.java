@@ -31,7 +31,7 @@ public class UsernamePasswordAuthentication implements AuthenticationProvider {
         String username = authentication.getName();
         String pass = authentication.getCredentials().toString();
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
-
+        
         Staff staff = service.findByStaffUsername(username);
 
         System.out.println(staff);

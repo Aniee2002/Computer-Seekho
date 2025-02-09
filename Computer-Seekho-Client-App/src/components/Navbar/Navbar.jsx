@@ -5,7 +5,7 @@ import "./Navbar.css"; // Import the CSS file
 // Menu links
 const MenuLinks = [
   { id: 1, name: "Home", link: "/#" },
-  { id: 2, name: "Placement", link: "/#Placement" },
+  { id: 2, name: "Placement", link: "/Placement" },
   { id: 3, name: "Courses", link: "CourseDetails" },
   { id: 4, name: "Beyond Classes", link: "Gallery" },
   { id: 5, name: "Faculty", link: "#faculty" },
