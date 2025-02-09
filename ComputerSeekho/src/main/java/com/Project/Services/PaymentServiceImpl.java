@@ -3,9 +3,9 @@ package com.Project.Services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.Project.DTO.PaymentDTO;
 import com.Project.Entities.Payment;
 import com.Project.Repositories.PaymentRepository;
-import com.Project.Services.PaymentService;
 
 import java.util.List;
 
@@ -27,7 +27,9 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     public Payment savePayment(Payment payment) {
-        return paymentRepository.save(payment);
+        Payment payment2 = paymentRepository.save(payment);
+        paymentRepository.updatePaymentDue(payment.getStudent().getStudentId(), payment2.getAmount());
+        return payment2;
     }
 
     // @Override
@@ -43,5 +45,10 @@ public class PaymentServiceImpl implements PaymentService {
     @Override
     public boolean existsByStudentId(int studentId) {
         return paymentRepository.existsByStudentStudentId(studentId);
+    }
+
+    @Override
+    public PaymentDTO getPaymentDTOById(int paymentId) {
+       return paymentRepository.getPaymentOptional(paymentId).get();
     }
 }

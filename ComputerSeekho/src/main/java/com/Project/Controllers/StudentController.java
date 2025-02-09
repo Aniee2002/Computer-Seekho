@@ -49,9 +49,9 @@ public class StudentController {
         return ResponseEntity.status(HttpStatus.CREATED).body(students);
     }
 
-    @PostMapping("/add")
-    public ResponseEntity<ApiResponse> addStudent(@RequestBody Student student) {
-        Student student2= studentService.addStudent(student);
+    @PostMapping("/add/{enquiryId}")
+    public ResponseEntity<ApiResponse> addStudent(@RequestBody Student student, @PathVariable int enquiryId) {
+        Student student2= studentService.addStudent(student,enquiryId);
         // Call Email microservice
         String emailServiceUrl = "http://localhost:9003/email";
         Map<String, Object> emailRequest = new HashMap<>();

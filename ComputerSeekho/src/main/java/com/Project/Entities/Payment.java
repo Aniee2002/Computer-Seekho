@@ -27,7 +27,7 @@ public class Payment {
     private Student student;
 
     @Column(name = "amount")
-    private double amount;
+    private int amount;
 
     // Getters and setters
     public int getPaymentId() {
@@ -62,11 +62,11 @@ public class Payment {
         this.student = student;
     }
 
-    public double getAmount() {
+    public int getAmount() {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(int amount) {
         this.amount = amount;
     }
 }

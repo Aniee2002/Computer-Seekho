@@ -2,6 +2,8 @@ package com.Project.Configuration;
 
 
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 import org.springframework.context.annotation.Bean;
@@ -43,7 +45,7 @@ public class SecurityConfig {
                 @Override
                 public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
                      CorsConfiguration cfg = new CorsConfiguration();
-                     cfg.setAllowedOrigins(Collections.singletonList("http://localhost:5173"));
+                     cfg.setAllowedOrigins(Arrays.asList("http://localhost:5173", "http://localhost:5174"));
                      cfg.setAllowedMethods(Collections.singletonList("*"));
                      cfg.setAllowedHeaders(Collections.singletonList("*"));
                      cfg.setAllowCredentials(true);

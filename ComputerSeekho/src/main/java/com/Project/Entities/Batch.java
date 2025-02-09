@@ -26,6 +26,9 @@ public class Batch {
     @Column(name = "batch_is_active")
     private Boolean batchIsActive;
 
+    @Column(name = "batch_photo_url")
+    private String batchPhoto;
+
     @ManyToOne
     @JoinColumn(name = "course_id", referencedColumnName = "course_id")
     private Course course;
