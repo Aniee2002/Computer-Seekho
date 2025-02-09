@@ -71,4 +71,3 @@ public class PaymentController {
 
     //as we are not using update and delete payment methods in this project
     //we have commented them out
-}
