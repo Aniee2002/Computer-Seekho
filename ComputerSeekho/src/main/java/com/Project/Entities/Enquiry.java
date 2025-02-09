@@ -35,7 +35,7 @@ public class Enquiry {
     private String courseName;
 
     @ManyToOne
-    @JoinColumn(name = "staff_id", referencedColumnName = "staff_id")
+    @JoinColumn(name = "staff_id")
     private Staff staff;
 
     @Column(name = "student_name")
@@ -44,7 +44,13 @@ public class Enquiry {
     @Column(name = "enquiry_counter")
     private int enquiryCounter;
 
+    @Column(name = "closure_reason")
+    private String closureReason;
+
     @Column(name = "follow_up_date")
     private LocalDate followUpDate;
+
+    @Column(name = "enquiry_is_active", columnDefinition = "BOOLEAN DEFAULT TRUE")
+    private boolean enquiryIsActive = true;
 
 }

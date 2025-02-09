@@ -10,4 +10,5 @@ public interface StaffService {
     boolean updateStaff(Staff staff);
     boolean deleteByStaffId(int staffId) ;
     List<Staff> getAllStaff();
+    int getStaffIdByStaffUsername(String username);
 }
