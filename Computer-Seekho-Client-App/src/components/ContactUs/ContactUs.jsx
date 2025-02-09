@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 import "./ContactUs.css";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
@@ -58,7 +58,7 @@ const ContactUs = () => {
         body: JSON.stringify(formData)
       });
       if (response.ok) {
-        alert("Your message has been sent successfully!");
+        toast.success("Your message has been sent successfully!");
         setFormData({
           enquirerName: "",
           email: "",
@@ -79,19 +79,6 @@ const ContactUs = () => {
     <div>
       <div>
         <Navbar />
-       {/* <div className="section">
-          <div className="banner">
-            <div className="container">
-              <div className="row">
-                <div className="col-lg-12">
-                  <div className="title-page">Contact Us</div>
-                  <p className="content-page">Any query</p>
-                  <p className="content-page">Lets interact !</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>*/}
         {/* Main Body */}
         <div className="section contact">
           <div className="container">

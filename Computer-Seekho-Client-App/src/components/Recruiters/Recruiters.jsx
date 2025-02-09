@@ -6,8 +6,10 @@ import Img4 from "../images/onmobile.png";
 import Img5 from "../images/nse.png";
 import CardStacker from "./CardStacker";
 import "./Res.css"; // Import the CSS file
+import { useNavigate } from "react-router-dom";
 
 const Recruiters = () => {
+  const navigate = useNavigate();
   const data = [
     {
       title: "Altair",
@@ -55,7 +57,7 @@ const Recruiters = () => {
       <CardStacker data={data} />
 
       {/* Read More Button */}
-      <button className="read-more-btn">Read More</button>
+      <button className="read-more-btn" onClick={()=> navigate("/AllRecruiters")}>Read More</button>
     </div>
   );
 };
