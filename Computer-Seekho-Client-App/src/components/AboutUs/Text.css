@@ -1,47 +1,34 @@
-/* ====== General Styling ====== */
+/* Importing a modern font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
 .heading-container {
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: 80px;
-    text-align: center;
-    background-color: white;
-  }
-  
-  /* ====== Heading Content ====== */
-  .heading-content {
-    display: flex;
     align-items: center;
-    gap: 16px;
-    font-weight: bold;
-  }
-  
-  /* ====== Icon Styling ====== */
-  .icon {
-    font-family: serif;
-    font-size: 40px;
-    color: red;
-  }
-  
-  /* ====== Heading Text ====== */
-  .heading-text {
-    font-size: 32px;
-    font-weight: bold;
-    color: #1a202c; /* Dark navy color */
-    text-transform: uppercase;
-    animation: pulse 2s ease-in-out infinite;
-  }
-  
-  /* ====== Pulse Animation ====== */
-  @keyframes pulse {
-    0% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.7;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  
+    min-height: 30vh;
+    text-align: center;
+    padding: 20px;
+    background: #f5f2f2;
+}
+
+.heading-content {
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;  /* Stack children (h3 & p) vertically */
+    align-items: center;     /* Center them horizontally */
+}
+
+h2 {
+    /* font-size: 40px; */
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    color: orange;
+    margin-bottom: 10px; /* Adds space between h3 and p */
+}
+
+p {
+    font-size: 16px;
+    color: #555;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+}

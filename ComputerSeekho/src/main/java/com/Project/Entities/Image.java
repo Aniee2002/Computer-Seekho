@@ -3,9 +3,9 @@ package com.Project.Entities;
 import jakarta.persistence.*;
 import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "images")
-@Data
 public class Image {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,10 +14,16 @@ public class Image {
 
     @Column(name = "image_url", length = 255, nullable = false)
     private String imageUrl;
-
     @ManyToOne
     @JoinColumn(name = "album_id", referencedColumnName = "album_id")
     private Album album;
+
+     @Column(name = "image_title", length  = 255, nullable = false)
+    private String imageTitle;
+
+    @Column(name = "image_description", length = 255, nullable = false)
+    private String imageDescrption;
+
 
     // Getters and Setters
     public int getImageId() {

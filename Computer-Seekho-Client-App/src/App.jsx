@@ -11,6 +11,7 @@ import Batch from './components/Batch/Batch';
 import Placedstudent from './components/Batch/BatchWiseStudent';
 import ContactUs from './components/ContactUs/ContactUs';
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -18,12 +19,13 @@ const router = createBrowserRouter([
   },
   {
     path: "/About",
-    // element: <AssembleAbout/>
-    element:<AboutUs/>
+    element: <AssembleAbout/>
+    // element:<AboutUs/>
   },
   {
     path:"/Gallery",
     element : <Gallery/>
+    // element: <AssembleGallery/>
    
   },
   {

@@ -1,12 +1,16 @@
 import React from 'react'
 import Origin from './Origin';
-import aboutus from './AboutUs'
+import Staff from './AboutUs';
+import Navbar from '../Navbar/Navbar';
+import CardsForMoreValue from './CardsForMoreValue';
 
 const AssembleAbout = () => {
   return (
    <>
+      <Navbar/>
       <Origin/>
-      <aboutus/>
+      <CardsForMoreValue/>
+      <Staff/>
     </>
   )
 }
