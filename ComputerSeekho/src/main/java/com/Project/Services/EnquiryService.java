@@ -11,4 +11,5 @@ public interface EnquiryService {
     Enquiry getEnquiryById(int enquiryId);
     List<Enquiry> getAllEnquiries();
     List<Enquiry> getEnquiryByStaff(String staffUsername);
+    int updateMessage(int enquiryId,String message);
 }

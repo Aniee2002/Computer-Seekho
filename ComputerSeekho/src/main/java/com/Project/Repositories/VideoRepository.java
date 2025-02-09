@@ -18,9 +18,9 @@ public interface VideoRepository extends JpaRepository<Video,Integer>{
 	void activateVideo(@Param("videoIsActive") Boolean  videoIsActive,@Param("videoId")int videoId);
 
 	// @Query("select v from Video v where v.batch_id = ?1")
-	// public List<Video> findByBatchId(int batch_id);
+	// List<Video> findByBatchId(int batch_id);
 
 	// @Query("select v from Video v where v.course_id = ?1")
-	// public List<Video> findbyCourseID(int course_id);
+	// List<Video> findbyCourseID(int course_id);
 
 }
