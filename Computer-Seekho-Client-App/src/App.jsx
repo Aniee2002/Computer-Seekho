@@ -9,6 +9,7 @@ import AboutUs from './components/AboutUs/AboutUs'
 import AssembledCourse from './components/MainCourse/AssembledCourse';
 import Batch from './components/Batch/Batch';
 import Placedstudent from './components/Batch/BatchWiseStudent';
+import ContactUs from './components/ContactUs/ContactUs';
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
   {
     path: "/BatchWiseStudent/:batchId",
     element: <Placedstudent/>
+  },
+  {
+    path: "/ContactUs",
+    element: <ContactUs/>
   }
 ]);
 
