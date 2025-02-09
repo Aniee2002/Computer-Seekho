@@ -24,5 +24,10 @@ public interface StaffRepository extends JpaRepository<Staff,Integer>{
     @Transactional
     @Modifying
     @Query(value = "DELETE FROM Staff WHERE staff_username = :staffUsername", nativeQuery = true)
-    void deleteByStaffUsername(String staffUsername);
+    void deleteByStaffUsername(@Param("staffUsername")String staffUsername);
+
+    @Query(value = """
+        select staff_id from staff where staff_username =:username
+        """,nativeQuery = true)
+    public int getStaffIdByStaffUsername(@Param("username") String username);
 } 

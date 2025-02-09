@@ -15,7 +15,8 @@ import jakarta.transaction.Transactional;
 @Transactional
 public interface EnquiryRepository extends JpaRepository<Enquiry, Integer>{
     @Query(value= """
-    select * from Enquiry where Enquiry.staff_id = (select staff_id from staff where staff_username = :staffUsername) order by follow_up_date
+    select * from Enquiry where Enquiry.staff_id = (select staff_id from staff where staff_username = :staffUsername) AND enquiry_is_active = true order by follow_up_date
     """ , nativeQuery = true)
     public List<Enquiry> getbystaffList(@Param(value = "staffUsername") String  staffUsername);
+
 }

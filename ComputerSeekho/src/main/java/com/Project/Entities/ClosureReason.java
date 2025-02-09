@@ -15,20 +15,7 @@ public class ClosureReason {
     @Column(name = "closure_reason_desc")
     private String closureReasonDesc;
 
-    // Getters and Setters
-    public int getClosureReasonId() {
-        return closureReasonId;
-    }
+    @Column(name= "enquirer_name")
+    private String enquirerName;
 
-    public void setClosureReasonId(int closureReasonId) {
-        this.closureReasonId = closureReasonId;
-    }
-
-    public String getClosureReasonDesc() {
-        return closureReasonDesc;
-    }
-
-    public void setClosureReasonDesc(String closureReasonDesc) {
-        this.closureReasonDesc = closureReasonDesc;
-    }
 }
