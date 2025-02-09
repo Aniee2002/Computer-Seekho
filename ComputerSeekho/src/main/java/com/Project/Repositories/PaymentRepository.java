@@ -29,22 +29,4 @@ public interface PaymentRepository extends JpaRepository<Payment, Integer> {
     "JOIN p.paymentTypeId pt " +
     "WHERE p.paymentId = :id")
     Optional<PaymentDTO> getPaymentOptional(@Param("id") int id);
-
-
-    // @Query("SELECT new com.Project.DTO.PaymentDTO("+
-    // "p.student.studentName, p.student.studentEmail, p.paymentTypeId.paymentTypeDesc, p.paymentId, p.amount,p.paymentDate)"+
-    // "FROM Payment p "+
-    // "JOIN p.student "+
-    // "JOIN p.paymentTypeId "+
-    // "WHERE p.paymentId = :id")
-    // Optional<PaymentDTO> getPaymentOptional(@Param("id") int id);
-
-    // @Query(value="""
-    //         SELECT s.student_name, s.student_email, pt.payment_type_desc, p.payment_id, p.amount
-    //         FROM student s
-    //         JOIN payments p ON s.student_id = p.student_id
-    //         JOIN payment_type pt ON p.payment_type_id = pt.payment_type_id
-    //         WHERE p.payment_id = ?1
-    //         """,nativeQuery = true)
-    // Optional<PaymentDTO> getPaymentOptional(int paymentID); 
 }
