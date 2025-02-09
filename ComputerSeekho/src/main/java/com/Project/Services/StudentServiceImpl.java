@@ -30,7 +30,7 @@ public class StudentServiceImpl implements StudentService {
     public List<StudentDto> getAllStudents() {
        return studentRepositories.findAll().stream()
        .map(student -> new StudentDto(student.getStudentId(),student.getPhotoUrl(),student.getStudentName()
-       ,student.getStudentMobile(),student.getCourse().getCourseName(),student.getBatch().getBatchName())).collect(Collectors.toList());
+       ,student.getStudentMobile(),student.getCourse().getCourseName(),student.getBatch().getBatchName(),student.getPaymentDue())).collect(Collectors.toList());
     }
     
 
