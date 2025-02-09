@@ -4,9 +4,11 @@ import com.Project.Entities.Payment;
 import java.util.List;
 
 public interface PaymentService {
-    Payment getPaymentById(int paymentId);
+    Payment getPaymentById(int id);
     List<Payment> getAllPayments();
     Payment savePayment(Payment payment);
-    Payment updatePayment(Payment payment);
-    void deletePayment(int paymentId);
+    //Payment updatePayment(Payment payment);
+    boolean existsByStudentId(int studentId);
+   // void deletePayment(int paymentId);
 }
+
