@@ -77,41 +77,41 @@ const ContactUs = () => {
 
   return (
     <div>
-    <div>
-        <Navbar/>
-      {/* <div className="section">
-        <div className="banner">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-12">
-                <div className="title-page">Contact Us</div>
-                <p className="content-page">Any query</p>
-                <p className="content-page">Lets interact !</p>
+      <div>
+        <Navbar />
+        <div className="section">
+          <div className="banner">
+            <div className="container">
+              <div className="row">
+                <div className="col-lg-12">
+                  <div className="title-page">Contact Us</div>
+                  <p className="content-page">Any query</p>
+                  <p className="content-page">Lets interact !</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div> */}
-      {/* Main Body */}
-      <div className="section contact">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-6">
-              <h3 className="contact-page">CONNECT WITH US</h3>
-              <div className="address">
-                <p>ADDRESS: SM VITA, Gulmohar Road, MHADA Colony, Vile Parle West, Mumbai, Maharashtra 400049</p>
-                <p>PHONE: +91 93240 95272</p>
-                <p>EMAIL: smvita.academic@gmail.com</p>
+        {/* Main Body */}
+        <div className="section contact">
+          <div className="container">
+            <div className="contact-container">
+              <div className="connect-with-us">
+                <h3 className="contact-page">CONNECT WITH US</h3>
+                <div className="address">
+                  <p>ADDRESS: SM VITA, Gulmohar Road, MHADA Colony, Vile Parle West, Mumbai, Maharashtra 400049</p>
+                  <p>PHONE: +91 93240 95272</p>
+                  <p>EMAIL: smvita.academic@gmail.com</p>
+                </div>
+                <div className="map">
+                  <iframe className="gmap_iframe" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0"
+                    src="https://maps.google.com/maps?width=652&amp;height=400&amp;hl=en&amp;q=Sm-VITA&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                    width="100%" height="450" allowFullScreen="" loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"></iframe>
+                </div>
               </div>
-              <div className="map">
-                <iframe className="gmap_iframe" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0"
-                  src="https://maps.google.com/maps?width=652&amp;height=400&amp;hl=en&amp;q=Sm-VITA&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-                  width="100%" height="450" allowFullScreen="" loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"></iframe>
-              </div>
-            </div>
-            <div className="col-lg-7">
-              <div className="content">
+              {/* </div> */}
+              <div className="get-a-callback">
                 <h3 className="contact-page">GET A CALLBACK</h3>
                 <form onSubmit={handleSubmit}>
                   <div className="form-group">
@@ -129,27 +129,27 @@ const ContactUs = () => {
                     <input type="tel" className="form-control border-0" id="mobile" name="mobile" placeholder="Phone" onChange={handleChange} value={formData.mobile} />
                     {errors.mobile && <p className="error">{errors.mobile}</p>}
                   </div>
-                  <div className="form-group">
-                    <label>Course</label>
-                    <input type="text" className="form-control border-0" id="courseName" name="courseName" placeholder="Course" onChange={handleChange} value={formData.courseName} />
-                    {errors.courseName && <p className="error">{errors.courseName}</p>}
-                  </div>
-                  <div className="form-group">
-                    <label>Message</label>
-                    <textarea name="enquiryMessage" className="form-control border-0" id="enquiryMessage" rows="6" placeholder="Message" onChange={handleChange} value={formData.enquiryMessage}></textarea>
-                    {errors.enquiryMessage && <p className="error">{errors.enquiryMessage}</p>}
-                  </div>
-                  <input id="submit" type="submit" className="btn btn-pri btn-pill float-right mb-4" value="Send" />
-                </form>
+              
+              <div className="form-group">
+                <label>Course</label>
+                <input type="text" className="form-control border-0" id="courseName" name="courseName" placeholder="Course" onChange={handleChange} value={formData.courseName} />
+                {errors.courseName && <p className="error">{errors.courseName}</p>}
               </div>
-            </div>
+              <div className="form-group">
+                <label>Message</label>
+                <textarea name="enquiryMessage" className="form-control border-0" id="enquiryMessage" rows="6" placeholder="Message" onChange={handleChange} value={formData.enquiryMessage}></textarea>
+                {errors.enquiryMessage && <p className="error">{errors.enquiryMessage}</p>}
+              </div>
+              <input id="submit" type="submit" className="btn btn-pri btn-pill float-right mb-4" value="Send" />
+            </form>
+          </div>
           </div>
         </div>
-      </div>
-      {/* <Footer/> */}
-    </div>
-      <Footer/>
-      </div>
+        </div >
+  {/* <Footer/> */ }
+      </div >
+  <Footer />
+    </div >
   );
 };
 
