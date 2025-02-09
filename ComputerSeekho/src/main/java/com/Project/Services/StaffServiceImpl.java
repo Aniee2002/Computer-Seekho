@@ -68,4 +68,9 @@ public class StaffServiceImpl implements StaffService {
     public List<Staff> getAllStaff() {
         return staffRepository.findAll();
     }
+
+    @Override
+    public int getStaffIdByStaffUsername(String username){
+        return staffRepository.getStaffIdByStaffUsername(username);
+    }
 }

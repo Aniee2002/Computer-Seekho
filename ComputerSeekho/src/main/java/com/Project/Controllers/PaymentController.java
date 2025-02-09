@@ -66,6 +66,7 @@ public class PaymentController {
         }
         return  new ResponseEntity<>(new ApiResponse("Payment unsuccessfull",LocalDateTime.now()), HttpStatus.INTERNAL_SERVER_ERROR);
     }
+}
 
     // @PutMapping("/{id}")
     // public ResponseEntity<Payment> updatePayment(@PathVariable int id, @RequestBody Payment paymentDetails) {
@@ -97,4 +98,3 @@ public class PaymentController {
 
     //as we are not using update and delete payment methods in this project
     //we have commented them out
-}
