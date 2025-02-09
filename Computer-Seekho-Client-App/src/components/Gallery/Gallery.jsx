@@ -107,7 +107,11 @@ const Gallery = () => {
                         <div
                             key={album.image_id || index}
                             className="item"
-                            style={{ backgroundImage: `url(${album.image_url})` }}
+                            style={{ backgroundImage: `url(${album.imageUrl})` }}
+
+
+
+
                         >
                             <div className="content">
                                 <div className="title">{album.image_title}</div>
