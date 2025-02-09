@@ -1,22 +1,32 @@
 package com.Project.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
+import com.Project.DTO.ApiResponse;
+import com.Project.DTO.PaymentDTO;
 import com.Project.Entities.Payment;
 import com.Project.Services.PaymentService;
 
+import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
-@RequestMapping("/api/payments")
+@RequestMapping("/payment")
 public class PaymentController {
 
     @Autowired
     private PaymentService paymentService;
 
-    @GetMapping("/{id}")
+    @Autowired
+    private RestTemplate restTemplate;
+
+    @GetMapping("/get/{id}")
     public ResponseEntity<Payment> getPaymentById(@PathVariable int id) {
         Payment payment = paymentService.getPaymentById(id);
         if (payment != null) {
@@ -26,14 +36,35 @@ public class PaymentController {
         }
     }
 
-    @GetMapping
-    public List<Payment> getAllPayments() {
-        return paymentService.getAllPayments();
+    @GetMapping("/getAll")
+    public ResponseEntity<List<Payment>> getAllPayments() {
+        List<Payment> payments = paymentService.getAllPayments();
+        return ResponseEntity.ok(payments);
     }
 
-    @PostMapping
-    public Payment createPayment(@RequestBody Payment payment) {
-        return paymentService.savePayment(payment);
+    @PostMapping("/add")
+    public ResponseEntity<ApiResponse> createPayment(@RequestBody Payment payment) {
+        Payment payment2 = paymentService.savePayment(payment);
+        PaymentDTO paymentDTO = paymentService.getPaymentDTOById(payment2.getPaymentId());
+        String emailServiceUrl = "http://localhost:9003/emailpayment";
+        Map<String, Object> emailRequest = new HashMap<>();
+        System.out.println(paymentDTO.getStudentEmail());
+        emailRequest.put("email", paymentDTO.getStudentEmail());
+        emailRequest.put("amount", String.valueOf(paymentDTO.getAmount()));
+        emailRequest.put("date", paymentDTO.getPaymentDate().toString());
+        emailRequest.put("Type", paymentDTO.getPaymentTypeDesc());
+        emailRequest.put("studentName", paymentDTO.getStudentName());
+        emailRequest.put("paymentId", String.valueOf(payment2.getPaymentId()));
+        try {
+            restTemplate.postForObject(emailServiceUrl, emailRequest, String.class);
+           
+        } catch (Exception e) {
+            System.err.println("An error occurred while sending the email: " + e.getMessage());
+        }
+        if (paymentDTO != null) {
+            return new ResponseEntity<>(new ApiResponse("Payment successfully",LocalDateTime.now()), HttpStatus.CREATED);
+        }
+        return  new ResponseEntity<>(new ApiResponse("Payment unsuccessfull",LocalDateTime.now()), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     // @PutMapping("/{id}")

@@ -22,12 +22,12 @@ public class Payment {
     @Column(name = "payment_date")
     private LocalDate paymentDate;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "student_id", referencedColumnName = "student_id")
     private Student student;
 
     @Column(name = "amount")
-    private double amount;
+    private int amount;
 
     // Getters and setters
     public int getPaymentId() {
@@ -62,11 +62,11 @@ public class Payment {
         this.student = student;
     }
 
-    public double getAmount() {
+    public int getAmount() {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(int amount) {
         this.amount = amount;
     }
 }
