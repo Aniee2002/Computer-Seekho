@@ -30,13 +30,18 @@ public class PaymentServiceImpl implements PaymentService {
         return paymentRepository.save(payment);
     }
 
-    @Override
-    public Payment updatePayment(Payment payment) {
-        return paymentRepository.save(payment);
-    }
+    // @Override
+    // public Payment updatePayment(Payment payment) {
+    //     return paymentRepository.save(payment);
+    // }
+
+    // @Override
+    // public void deletePayment(int paymentId) {
+    //     paymentRepository.deleteById(paymentId);
+    // }
 
     @Override
-    public void deletePayment(int paymentId) {
-        paymentRepository.deleteById(paymentId);
+    public boolean existsByStudentId(int studentId) {
+        return paymentRepository.existsByStudentStudentId(studentId);
     }
 }
