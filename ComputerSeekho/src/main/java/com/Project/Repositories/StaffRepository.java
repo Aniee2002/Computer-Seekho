@@ -29,5 +29,5 @@ public interface StaffRepository extends JpaRepository<Staff,Integer>{
     @Query(value = """
         select staff_id from staff where staff_username =:username
         """,nativeQuery = true)
-    public int getStaffIdByStaffUsername(@Param("username") String username);
+    int getStaffIdByStaffUsername(@Param("username") String username);
 } 
