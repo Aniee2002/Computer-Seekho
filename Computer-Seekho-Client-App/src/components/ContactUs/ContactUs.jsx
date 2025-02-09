@@ -79,7 +79,7 @@ const ContactUs = () => {
     <div>
     <div>
         <Navbar/>
-      <div className="section">
+      {/* <div className="section">
         <div className="banner">
           <div className="container">
             <div className="row">
@@ -91,7 +91,7 @@ const ContactUs = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Main Body */}
       <div className="section contact">
         <div className="container">
