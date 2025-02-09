@@ -1,6 +1,7 @@
 package com.Project.Entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Entity
@@ -15,20 +16,11 @@ public class ClosureReason {
     @Column(name = "closure_reason_desc")
     private String closureReasonDesc;
 
-    // Getters and Setters
-    public int getClosureReasonId() {
-        return closureReasonId;
-    }
+    @Column(name = "enquirer_name")
+    private String enquirerName;
 
-    public void setClosureReasonId(int closureReasonId) {
-        this.closureReasonId = closureReasonId;
-    }
-
-    public String getClosureReasonDesc() {
-        return closureReasonDesc;
-    }
-
-    public void setClosureReasonDesc(String closureReasonDesc) {
+    public ClosureReason(String closureReasonDesc,String enquirerName){
         this.closureReasonDesc = closureReasonDesc;
+        this.enquirerName = enquirerName;
     }
 }
