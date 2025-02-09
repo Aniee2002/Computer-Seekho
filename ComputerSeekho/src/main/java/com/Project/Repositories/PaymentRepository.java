@@ -7,5 +7,6 @@ import com.Project.Entities.Payment;
 
 @Repository
 public interface PaymentRepository extends JpaRepository<Payment, Integer> {
-    boolean existsByStudentStudentId(int studentId);
+    boolean existsByStudentStudentId(int studentId); 
 }
+
