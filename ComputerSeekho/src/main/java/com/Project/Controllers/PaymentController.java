@@ -1,12 +1,15 @@
 package com.Project.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.Project.DTO.ApiResponse;
 import com.Project.Entities.Payment;
 import com.Project.Services.PaymentService;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -16,25 +19,27 @@ public class PaymentController {
     @Autowired
     private PaymentService paymentService;
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Payment> getPaymentById(@PathVariable int id) {
-        Payment payment = paymentService.getPaymentById(id);
-        if (payment != null) {
-            return ResponseEntity.ok(payment);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
-    }
-
     @GetMapping
     public List<Payment> getAllPayments() {
         return paymentService.getAllPayments();
     }
 
-    @PostMapping
-    public Payment createPayment(@RequestBody Payment payment) {
-        return paymentService.savePayment(payment);
+
+    @GetMapping("/{id}")
+    public Payment getPaymentById(@PathVariable Integer id) {
+        return paymentService.getPaymentById(id);
     }
+
+    @PostMapping
+    public ResponseEntity<ApiResponse> createPayment(@RequestBody Payment payment) {
+        if (payment.getStudent().getStudentId() < 0) {
+            return new ResponseEntity<>(new ApiResponse("Student ID cannot be negative", LocalDateTime.now()), HttpStatus.BAD_REQUEST);
+        }
+
+        paymentService.savePayment(payment);
+        return new ResponseEntity<>(new ApiResponse("Payment added successfully", LocalDateTime.now()), HttpStatus.CREATED);
+    }
+}
 
     // @PutMapping("/{id}")
     // public ResponseEntity<Payment> updatePayment(@PathVariable int id, @RequestBody Payment paymentDetails) {
