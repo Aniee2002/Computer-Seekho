@@ -1,46 +1,53 @@
-import React from "react";
-import image from './images/nitin_hd.jpg';
-import image2 from './images/ketki_hd.jpg';
-import image3 from './images/nitin_hd.jpg';
+import React, { useState, useEffect } from "react";
 import './staff.css';
-import Navbar from "../Navbar/Navbar";
-import Footer from "../Footer/Footer";
 
 const Staff = () => {
+    const [staffList, setStaffList] = useState([]);
+    
+      // Fetch staff data from the backend
+     useEffect(()=>{
+        const fetchStaff = async() =>{
+            try{
+                const response = await fetch("http://localhost:8080/staff/getAll",{
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                });
+                if(!response.ok) {
+                    throw new Error("Failed to Fetch");
+                }
+                const data = await response.json();
+                const formattedStaff = data.map(staff => ({
+                    name: staff.staffName,
+                    role: staff.staffRole,
+                    img: staff.photoUrl,
+                    email: staff.staffEmail
+                }));
+                setStaffList(formattedStaff);
+            }catch(error){
+                console.error("Error Fetching Data", error);
+            }
+        };
+    
+        fetchStaff();
+     }, [])
   return (
-    <>
-    <Navbar/>
-    <h1 className="tag">Our Elites</h1>
+    <div>
+      <h1 className="tag">Our Elites</h1>
     <div className="wrapper">
-      <div className="card">
-        <img src={image} alt="Staff1" />
-        <div className="info">
-          <h1>Nitin vijaykar</h1>
-          <p>A profound teacher at sm-vita with over 25 years of experience</p>
-          <a href="#" className="btn">Read ...</a>
+      {staffList.map((staff,index) => (
+        <div className="card">
+          <img src = {staff.img} alt="Staff1"/>
+          <div className="info">
+            <h1>{staff.name}</h1>
+            {/* <p>A profound teacher at sm-vita with over 25 years of experience</p>
+            <a href='#' className="btn">Read...</a> */}
+          </div>
         </div>
+      ))}
       </div>
-
-      <div className="card">
-        <img src={image2} alt="Staff2" />
-        <div className="info">
-          <h1>Ketki Acharya</h1>
-          <p>A profound teacher at sm-vita with over 25 years of experience</p>
-          <a href="#" className="btn">Read ...</a>
-        </div>
       </div>
-
-      <div className="card">
-        <img src={image3} alt="Staff3" />
-        <div className="info">
-          <h1>Amar Panchal</h1>
-          <p>A profound teacher at sm-vita with over 25 years of experience</p>
-          <a href="#" className="btn">Read ...</a>
-        </div>
-      </div>
-    </div>
-    <Footer/>
-    </>
   );
 }
 
