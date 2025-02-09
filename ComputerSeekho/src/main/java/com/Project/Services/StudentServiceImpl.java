@@ -4,7 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.Project.DTO.StudentDto;
+import com.Project.Entities.ClosureReason;
 import com.Project.Entities.Student;
+import com.Project.Repositories.EnquiryRepository;
 import com.Project.Repositories.StudentRepositories;
 import java.util.List;
 import java.util.Optional;
@@ -14,6 +16,10 @@ import java.util.stream.Collectors;
 public class StudentServiceImpl implements StudentService {
     @Autowired
     private StudentRepositories studentRepositories;
+    @Autowired
+    private ClosureReasonService closureReasonService;
+    @Autowired
+    private EnquiryRepository enquiryRepository;
 
     @Override
     public Optional<Student> getStudentById(int studentId) {
@@ -29,8 +35,14 @@ public class StudentServiceImpl implements StudentService {
     
 
     @Override
-    public Student addStudent(Student student) {
-        return studentRepositories.save(student);
+    public Student addStudent(Student student,int enquiryId) {
+        Student student1 = studentRepositories.save(student);
+        studentRepositories.updatePayment(student1.getStudentId());
+
+        closureReasonService.addClosureReason(new ClosureReason("Admitted Successfully",student1.getStudentName()));
+		enquiryRepository.deactivateEnquiry(enquiryId);
+        return student1;
+
     }
 
     @Override
