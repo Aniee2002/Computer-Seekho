@@ -41,8 +41,8 @@ public class Enquiry {
     @Column(name = "student_name")
     private String studentName;
 
-    @Column(name = "inquiry_counter")
-    private int inquiryCounter;
+    @Column(name = "enquiry_counter")
+    private int enquiryCounter;
 
     @Column(name = "follow_up_date")
     private LocalDate followUpDate;
