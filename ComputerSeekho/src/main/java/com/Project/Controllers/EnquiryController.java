@@ -67,4 +67,19 @@ public class EnquiryController {
         }
         return  new ResponseEntity<>(null, HttpStatus.NOT_FOUND);    
     }
+
+    @PutMapping("/updateMessage/{id}")
+    public ResponseEntity<ApiResponse> updateMessage(@PathVariable int id, String message) {
+        Enquiry newEnquiry = enquiryService.getEnquiryById(id);
+        if (newEnquiry == null) {
+            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        }
+       int n= enquiryService.updateMessage(id, message);
+       if(n>0)
+        return new ResponseEntity<>(new ApiResponse("Message updated successfully", LocalDateTime.now()),HttpStatus.OK);
+        else
+        return new ResponseEntity<>(new ApiResponse("Message not updated", LocalDateTime.now()),HttpStatus.INTERNAL_SERVER_ERROR);
+    }
 }
+
+

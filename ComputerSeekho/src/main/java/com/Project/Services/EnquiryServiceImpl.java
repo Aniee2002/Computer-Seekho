@@ -53,4 +53,16 @@ public class EnquiryServiceImpl implements EnquiryService {
     public List<Enquiry> getEnquiryByStaff(String  staffUsername) {
         return enquiryRepository.getbystaffList(staffUsername);
     }
+
+    @Override
+    public int updateMessage(int enquiryId,String message) {
+        
+        Optional<Enquiry> existingEnquiry = enquiryRepository.findById(enquiryId);
+        if (existingEnquiry.isPresent()) {
+            int n= enquiryRepository.updateMessage(enquiryId,message);
+            return n;
+        } else {
+            throw new RuntimeException("Enquiry not found with ID: " + enquiryId);
+        }
+    }
 }

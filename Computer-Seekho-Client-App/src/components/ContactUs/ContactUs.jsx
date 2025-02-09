@@ -79,19 +79,6 @@ const ContactUs = () => {
     <div>
       <div>
         <Navbar />
-        {/* <div className="section">
-          <div className="banner">
-            <div className="container">
-              <div className="row">
-                <div className="col-lg-12">
-                  <div className="title-page">Contact Us</div>
-                  <p className="content-page">Any query</p>
-                  <p className="content-page">Lets interact !</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
         {/* Main Body */}
         <div className="section contact">
           <div className="container">
