@@ -15,6 +15,7 @@ import jakarta.transaction.Transactional;
 
 @Repository
 public interface PaymentRepository extends JpaRepository<Payment, Integer> {
+    boolean existsByStudentStudentId(int studentId); 
 
     @Modifying
     @Transactional

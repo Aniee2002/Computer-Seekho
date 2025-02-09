@@ -70,5 +70,12 @@ public class StaffController {
     ResponseEntity<List<Staff>> getAllStaff() {
         return new ResponseEntity<>(staffService.getAllStaff(),HttpStatus.OK);
     }
+
+    @GetMapping("/username/{staffusername}")
+    ResponseEntity<ApiResponse>getStaffIdByStaffUsername(@PathVariable String staffusername){
+        int id = staffService.getStaffIdByStaffUsername(staffusername);
+        System.out.println(id);
+        return new ResponseEntity<>(new ApiResponse(new Integer(id).toString(), LocalDateTime.now()), HttpStatus.OK);
+    }
     
 }

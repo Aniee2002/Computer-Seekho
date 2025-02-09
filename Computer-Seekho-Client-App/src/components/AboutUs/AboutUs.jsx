@@ -9,10 +9,10 @@ import Footer from "../Footer/Footer";
 const Staff = () => {
   return (
     <>
-    <Navbar/>
+    
     <h1 className="tag">Our Elites</h1>
     <div className="wrapper">
-      <div className="card">
+      <div className="cardOfAbout">
         <img src={image} alt="Staff1" />
         <div className="info">
           <h1>Nitin vijaykar</h1>
@@ -21,7 +21,7 @@ const Staff = () => {
         </div>
       </div>
 
-      <div className="card">
+      <div className="cardOfAbout">
         <img src={image2} alt="Staff2" />
         <div className="info">
           <h1>Ketki Acharya</h1>
@@ -30,7 +30,7 @@ const Staff = () => {
         </div>
       </div>
 
-      <div className="card">
+      <div className="cardOfAbout">
         <img src={image3} alt="Staff3" />
         <div className="info">
           <h1>Amar Panchal</h1>

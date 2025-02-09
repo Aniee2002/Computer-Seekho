@@ -11,6 +11,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
 import com.Project.Configuration.SecurityConstant;
+import com.Project.Services.StaffServiceImpl;
 
 import javax.crypto.SecretKey;
 import java.io.IOException;
@@ -21,6 +22,7 @@ import java.util.Date;
 import java.util.List;
 
 public class JWTokenGenerationFilter extends OncePerRequestFilter {
+
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

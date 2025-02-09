@@ -14,4 +14,5 @@ public class StudentDto {
     private String mobile;
     private String course;
     private String batch;
+    private int pendingFees;
 }
