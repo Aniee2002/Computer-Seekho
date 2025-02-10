@@ -155,8 +155,8 @@ const openEnquiryForm = () => {
                 .filter((item) =>
                   search === "" ||
                   item.enquirerName.toLowerCase().includes(search.toLowerCase()) ||
-                  item.course.toLowerCase().includes(search.toLowerCase()) ||
-                  item.enquirerName.includes(search) || item.followUpDate.includes(search)
+                  item.courseName.toLowerCase().includes(search.toLowerCase()) ||
+                  item.followUpDate.includes(search)
                 )
                 .map((item, idx) => (
                   <tr key={idx}>

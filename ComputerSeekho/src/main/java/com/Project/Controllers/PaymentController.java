@@ -9,7 +9,9 @@ import org.springframework.web.client.RestTemplate;
 import com.Project.DTO.ApiResponse;
 import com.Project.DTO.PaymentDTO;
 import com.Project.Entities.Payment;
+import com.Project.Entities.Student;
 import com.Project.Services.PaymentService;
+import com.Project.Services.StudentService;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
@@ -19,6 +21,9 @@ import java.util.Map;
 @RestController
 @RequestMapping("/payment")
 public class PaymentController {
+
+    @Autowired
+    private StudentService studentService;
 
     @Autowired
     private PaymentService paymentService;
@@ -44,6 +49,10 @@ public class PaymentController {
 
     @PostMapping("/add")
     public ResponseEntity<ApiResponse> createPayment(@RequestBody Payment payment) {
+        Student student = studentService.getStudentById(payment.getStudent().getStudentId()).get();
+        if(student.getPaymentDue()-payment.getAmount()<0){
+            return new ResponseEntity<>(new ApiResponse("Payment Amount Exceeded Payment Dues", LocalDateTime.now()),HttpStatus.NOT_ACCEPTABLE);
+        }
         Payment payment2 = paymentService.savePayment(payment);
         PaymentDTO paymentDTO = paymentService.getPaymentDTOById(payment2.getPaymentId());
         String emailServiceUrl = "http://localhost:9003/emailpayment";

@@ -28,6 +28,7 @@ public class PaymentServiceImpl implements PaymentService {
     @Override
     public Payment savePayment(Payment payment) {
         Payment payment2 = paymentRepository.save(payment);
+        System.out.println(payment2.getStudent().getPaymentDue());
         paymentRepository.updatePaymentDue(payment.getStudent().getStudentId(), payment2.getAmount());
         return payment2;
     }

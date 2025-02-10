@@ -34,7 +34,7 @@ const Staff = () => {
      }, [])
   return (
     <div>
-      <h1 className="tag">Our Elites</h1>
+      {/* <h1 className="tag">Our Elites</h1> */}
     <div className="wrapper">
       {staffList.map((staff,index) => (
         <div className="card">
