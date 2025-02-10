@@ -8,7 +8,7 @@ const Card = ({ newsTitle, newsDescrption, newsUrl }) => {
       <div className="overlay1">
         <h3>{newsTitle}</h3>
         <p>{newsDescrption}</p>
-        <a href="#">Read More</a>
+       
       </div>
     </div>
   );
