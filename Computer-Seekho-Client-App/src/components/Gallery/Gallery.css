@@ -23,7 +23,7 @@ header{
     z-index: 1000;
 }
 
-header nav a{
+header  a{
     color: #fff;
     margin-right: 5px;
     padding: 5px 10px;
