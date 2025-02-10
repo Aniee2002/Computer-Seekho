@@ -1,63 +1,65 @@
-import React from "react";
-import Img1 from "../images/altair.png";
-import Img2 from "../images/atos.png";
-import Img3 from "../images/tata.png";
-import Img4 from "../images/onmobile.png";
-import Img5 from "../images/nse.png";
-import CardStacker from "./CardStacker";
-import "./Res.css"; // Import the CSS file
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import './Res.css';
 
-const Recruiters = () => {
-  const data = [
-    {
-      title: "Altair",
-      subtitle: "Bangalore Base",
-      rating: "4.7",
-      backgroundColors: { top: "#51D1F7", bottom: "#5B8FEF" },
-      image: Img1,
-    },
-    {
-      title: "Atos",
-      subtitle: "Chennai Base",
-      rating: "4.8",
-      backgroundColors: { top: "#F85B6B", bottom: "#E83842" },
-      image: Img2,
-    },
-    {
-      title: "Tata",
-      subtitle: "Mumbai Base",
-      rating: "4.9",
-      backgroundColors: { top: "#28DFAB", bottom: "#26CBCF" },
-      image: Img3,
-    },
-    {
-      title: "OnMobile",
-      subtitle: "Pune Base",
-      rating: "4.9",
-      backgroundColors: { top: "#6F3FF1", bottom: "#6E3CCA" },
-      image: Img4,
-    },
-    {
-      title: "NSE",
-      subtitle: "Mumbai Base",
-      rating: "5.0",
-      backgroundColors: { top: "#FBDA35", bottom: "#E3A237" },
-      image: Img5,
-    },
-  ];
+const Recruiter = () => {
+  const [recruiters, setRecruiters] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const navigate = useNavigate(); // Initialize navigate
+
+  // Fetch recruiters data
+  useEffect(() => {
+    const fetchRecruiters = async () => {
+      try {
+        const response = await fetch('http://localhost:8080/recruiter/getAll'); // API endpoint
+        if (!response.ok) {
+          throw new Error('Failed to fetch recruiters data');
+        }
+        const data = await response.json();
+        // Limit to 5 recruiters
+        setRecruiters(data.slice(0, 5));
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchRecruiters();
+  }, []);
+
+  if (loading) {
+    return <div className="major-recruiters">Loading recruiters...</div>;
+  }
+
+  if (error) {
+    return <div className="major-recruiters">Error: {error}</div>;
+  }
 
   return (
-    <div className="app-container">
-      {/* Title */}
-      <h1 className="title">OUR MAJOR RECRUITERS</h1>
-
-      {/* CardStacker */}
-      <CardStacker data={data} />
-
-      {/* Read More Button */}
-      <button className="read-more-btn">Read More</button>
+    <div className="major-recruiters">
+      <h2 className="section-title">Major Recruiters</h2>
+      <div className="recruiters-grid">
+        {recruiters.map((recruiter, index) => (
+          <div key={index} className="recruiter-card">
+            <img
+              src={recruiter.recruiterPhotoUrl || 'https://via.placeholder.com/100'} // Fallback to placeholder
+              alt={recruiter.recruiterName}
+              className="recruiter-logo"
+            />
+            <h3 className="recruiter-name">{recruiter.recruiterName}</h3>
+          </div>
+        ))}
+      </div>
+      <button
+        className="see-more-button"
+        onClick={() => navigate('/AllRecruiters')} // Navigate to /ourrecruiters
+      >
+        SEE MORE
+      </button>
     </div>
   );
 };
 
-export default Recruiters;
+export default Recruiter;

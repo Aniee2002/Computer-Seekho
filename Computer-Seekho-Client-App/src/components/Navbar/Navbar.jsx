@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from "react";
-import logo from "../images/Logo.png";
+// import logo from "../images/Logo.png";
 import "./Navbar.css"; // Import the CSS file
 
 // Menu links
 const MenuLinks = [
-  { id: 1, name: "Home", link: "/#" },
+  { id: 1, name: "Home", link: "/" },
   { id: 2, name: "Placement", link: "/Placement" },
   { id: 3, name: "Courses", link: "CourseDetails" },
   { id: 4, name: "Beyond Classes", link: "Gallery" },
-  { id: 5, name: "Faculty", link: "#faculty" },
-  { id: 6, name: "About Us", link: "About" },
-  { id: 7, name: "Contact Us", link: "#contact-us" },
-];
+  { id: 5, name: "About Us", link: "About" },
+  { id: 6, name: "Contact Us", link: "#contact-us" }
 
 // Dropdown items for "Courses"
 const courseDropdown = ["PG-DAC", "PG-DBDA", "Pre-CAT"];
@@ -42,10 +40,10 @@ const Navbar = () => {
     <div className={`navbar ${isSticky ? "sticky" : ""}`}>
       <div className="navbar-container">
         <div className="">
-          {/* Logo */}
-          <a href="#" className="navbar-logo">
+
+          {/* <a href="#" className="navbar-logo">
             <img src={logo} alt="SmVita Logo" />
-          </a>
+          </a> */}
 
           {/* Navigation Menu */}
           <div className="navbar-menu">
