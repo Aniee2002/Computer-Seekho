@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./MainCourse.css";
+import StaffDetails from "./StaffDetails.jsx"; // ✅ Import StaffDetails component
 
 const MainCourse = () => {
   const [openSection, setOpenSection] = useState(null);
@@ -36,7 +37,7 @@ const MainCourse = () => {
         "Inheritance & Polymorphism",
         "Exception Handling",
         "File Handling in C++",
-        "Templates & STL"
+        "Templates & STL",
       ],
     },
     {
@@ -50,7 +51,7 @@ const MainCourse = () => {
         "Git & Version Control",
         "Agile Development & Scrum",
         "DevOps & Continuous Integration",
-        "Introduction to Docker & Kubernetes"
+        "Introduction to Docker & Kubernetes",
       ],
     },
     {
@@ -65,9 +66,9 @@ const MainCourse = () => {
         "File I/O & Serialization",
         "Java Collections Framework",
         "Multithreading & Synchronization",
-        "Lambda Expressions & Stream API"
+        "Lambda Expressions & Stream API",
       ],
-    }
+    },
   ];
 
   return (
@@ -85,10 +86,20 @@ const MainCourse = () => {
       <div className="course-overview">
         <h2>Overview</h2>
         <ul>
-          <li><strong>Course Name:</strong> PG-DAC</li>
-          <li><strong>Duration:</strong> 6 months</li>
-          <li><strong>Eligibility:</strong> Graduates in Engineering, MCA, M.Sc. (IT/Computer Science), or equivalent</li>
-          <li><strong>Objective:</strong> Advanced computing & software development</li>
+          <li>
+            <strong>Course Name:</strong> PG-DAC
+          </li>
+          <li>
+            <strong>Duration:</strong> 6 months
+          </li>
+          <li>
+            <strong>Eligibility:</strong> Graduates in Engineering, MCA, M.Sc.
+            (IT/Computer Science), or equivalent
+          </li>
+          <li>
+            <strong>Objective:</strong> Advanced computing & software
+            development
+          </li>
         </ul>
       </div>
 
@@ -98,10 +109,17 @@ const MainCourse = () => {
         <div className="accordion">
           {courseSections.map((section, index) => (
             <div key={index} className="accordion-item">
-              <button className="accordion-header" onClick={() => toggleSection(index)}>
+              <button
+                className="accordion-header"
+                onClick={() => toggleSection(index)}
+              >
                 {section.title}
               </button>
-              <div className={accordion-content `${openSection === index ? "open" : ""}`}>
+              <div
+                className={`accordion-content ${
+                  openSection === index ? "open" : ""
+                }`}
+              >
                 <ul>
                   {section.details.map((detail, i) => (
                     <li key={i} className="lecture-item">
@@ -114,6 +132,9 @@ const MainCourse = () => {
           ))}
         </div>
       </div>
+
+      {/* ✅ StaffDetails Component Below Course Content */}
+      <StaffDetails />
     </div>
   );
 };

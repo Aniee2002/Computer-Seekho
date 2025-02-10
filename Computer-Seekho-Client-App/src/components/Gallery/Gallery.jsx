@@ -16,6 +16,7 @@ const Gallery = () => {
     let runTimeOut;
     let runNextAuto;
 
+    // ✅ Fetch data from API
     useEffect(() => {
         fetch('http://localhost:8080/image/all')
             .then((response) => {
@@ -26,7 +27,6 @@ const Gallery = () => {
             })
             .then((data) => {
                 setAlbums(data);
-                console.log(data);
                 setIsLoading(false);
             })
             .catch((error) => {
@@ -35,7 +35,7 @@ const Gallery = () => {
             });
     }, []);
 
-
+    // ✅ Next & Previous Button Logic
     useEffect(() => {
         const nextBtn = carouselRef.current?.querySelector('.next');
         const prevBtn = carouselRef.current?.querySelector('.prev');
@@ -46,13 +46,15 @@ const Gallery = () => {
 
         const showSlider = (type) => {
             const sliderItemsDom = list.querySelectorAll('.item');
+            if (sliderItemsDom.length === 0) return;
+
             if (type === 'next') {
-                list.appendChild(sliderItemsDom[0]);
-                carouselRef.current.classList.add('next');
+                list.appendChild(sliderItemsDom[0]); // Moves first image to the end
             } else {
-                list.prepend(sliderItemsDom[sliderItemsDom.length - 1]);
-                carouselRef.current.classList.add('prev');
+                list.prepend(sliderItemsDom[sliderItemsDom.length - 1]); // Moves last image to the start
             }
+
+            carouselRef.current.classList.add(type);
             clearTimeout(runTimeOut);
 
             runTimeOut = setTimeout(() => {
@@ -70,7 +72,7 @@ const Gallery = () => {
 
         const resetTimeAnimation = () => {
             runningTime.style.animation = 'none';
-            runningTime.offsetHeight; // trigger reflow
+            runningTime.offsetHeight; // Trigger reflow
             runningTime.style.animation = null;
             runningTime.style.animation = 'runningTime 7s linear 1 forwards';
         };
@@ -86,7 +88,10 @@ const Gallery = () => {
             clearTimeout(runNextAuto);
             clearTimeout(runTimeOut);
         };
-    }, []);
+    }, [albums]); // Runs when albums change
+
+    if (isLoading) return <p>Loading...</p>;
+    if (error) return <p>Error: {error}</p>;
 
     return (
         <>
@@ -101,13 +106,13 @@ const Gallery = () => {
                 <div className="list" ref={listRef}>
                     {albums.map((album, index) => (
                         <div
-                            key={album.image_id || index}
+                            key={album.imageId || index}
                             className="item"
-                            style={{ backgroundImage: `url(${album.image_url  || 'default.jpg'})` }}
+                            style={{ backgroundImage: url(${album.imageUrl || album.image_url}) }}
                         >
                             <div className="content">
-                                <div className="title">{album.image_title}</div>
-                                <div className="des">{album.image_description}</div>
+                                <div className="title">{album.imageTitle}</div>
+                                <div className="des">{album.imageDescrption}</div>
                                 <div className="btn">
                                     <button>See More</button>
                                     <button>Subscribe</button>
@@ -115,7 +120,6 @@ const Gallery = () => {
                             </div>
                         </div>
                     ))}
-
                 </div>
 
                 <div className="arrows">
@@ -131,4 +135,4 @@ const Gallery = () => {
     );
 };
 
-export default Gallery;
+export default Gallery;
