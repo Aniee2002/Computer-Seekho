@@ -12,4 +12,5 @@ public interface EnquiryService {
     List<Enquiry> getAllEnquiries();
     List<Enquiry> getEnquiryByStaff(String staffUsername);
     int updateMessage(int enquiryId,String message);
+    void deactivateEnquiry(int enquiryId,String message);
 }

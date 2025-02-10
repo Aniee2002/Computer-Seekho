@@ -27,6 +27,6 @@ public interface EnquiryRepository extends JpaRepository<Enquiry, Integer>{
     void deactivateEnquiry(int enquiryId);
 
     @Modifying
-    @Query("UPDATE Enquiry e SET e.enquirerQuery = :enquirerQuery, e.inquiryCounter = e.inquiryCounter + 1 WHERE e.enquiryId = :enquiryId")
-    int updateMessage(@Param("enquiryId") Integer enquiryId, @Param("enquirerQuery") String enquirerQuery);
+    @Query("UPDATE Enquiry e SET e.enquirerQuery = :enquirerQuery, e.enquiryCounter = e.enquiryCounter + 1 WHERE e.enquiryId = :enquiryId")
+    int updateMessage(@Param("enquiryId") int enquiryId, @Param("enquirerQuery") String enquirerQuery);
 }
