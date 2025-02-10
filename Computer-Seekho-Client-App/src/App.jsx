@@ -5,11 +5,11 @@ import { createBrowserRouter, RouterProvider,} from "react-router-dom";;
 
 import Gallery from './components/Gallery/Gallery';
 import AssembleAbout from './components/AboutUs/AssembleAbout';
-import AboutUs from './components/AboutUs/AboutUs'
 import AssembledCourse from './components/MainCourse/AssembledCourse';
 import Batch from './components/Batch/Batch';
 import Placedstudent from './components/Batch/BatchWiseStudent';
 import ContactUs from './components/ContactUs/ContactUs';
+import AllRecruiters from './components/Recruiters/AllRecruiters';
 
 
 const router = createBrowserRouter([
@@ -20,7 +20,6 @@ const router = createBrowserRouter([
   {
     path: "/About",
     element: <AssembleAbout/>
-    // element:<AboutUs/>
   },
   {
     path:"/Gallery",
@@ -43,6 +42,10 @@ const router = createBrowserRouter([
   {
     path: "/ContactUs",
     element: <ContactUs/>
+  },
+  {
+    path: "/AllRecruiters",
+    element: <AllRecruiters/>
   }
 ]);
 
