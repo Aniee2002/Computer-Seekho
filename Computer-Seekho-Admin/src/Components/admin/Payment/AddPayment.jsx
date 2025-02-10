@@ -41,7 +41,7 @@ const AddPayment = () => {
 
         const selectedPaymentType = paymentTypes.find(type => type.paymentTypeId === parseInt(formData.paymentTypeId));
 
-        fetch('http://localhost:8080/payment/add', {
+        const response = fetch('http://localhost:8080/payment/add', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -60,7 +60,8 @@ const AddPayment = () => {
                 setPayments([...payments, newPayment]);
                 setFormData({ studentId: '', amount: '', paymentDate: new Date().toISOString().split('T')[0], paymentTypeId: '' });
                 setErrorMessage('');
-                toast.success('Payment added successfully');
+                toast.success('Payment added successfully',{ position: "top-center" });
+                // toast.success(response.json().message)
                 navigate("/admin/payment");
             })
             .catch(error => {

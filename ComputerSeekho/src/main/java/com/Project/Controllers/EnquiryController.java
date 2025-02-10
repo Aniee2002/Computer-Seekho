@@ -21,7 +21,7 @@ public class EnquiryController {
     @PostMapping("/create")
     public ResponseEntity<ApiResponse> createEnquiry(@RequestBody Enquiry enquiry) {
         enquiryService.createEnquiry(enquiry);
-        return new ResponseEntity<>(new ApiResponse("ApiResponse", LocalDateTime.now()),HttpStatus.CREATED);
+        return new ResponseEntity<>(new ApiResponse("Enquiry Added", LocalDateTime.now()),HttpStatus.CREATED);
     }
 
     @GetMapping("/getAll")

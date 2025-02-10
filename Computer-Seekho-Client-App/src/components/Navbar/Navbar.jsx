@@ -9,8 +9,8 @@ const MenuLinks = [
   { id: 3, name: "Courses", link: "CourseDetails" },
   { id: 4, name: "Beyond Classes", link: "Gallery" },
   { id: 5, name: "About Us", link: "About" },
-  { id: 6, name: "Contact Us", link: "#contact-us" }
-
+  { id: 6, name: "Contact Us", link: "/ContactUs" }
+]
 // Dropdown items for "Courses"
 const courseDropdown = ["PG-DAC", "PG-DBDA", "Pre-CAT"];
 

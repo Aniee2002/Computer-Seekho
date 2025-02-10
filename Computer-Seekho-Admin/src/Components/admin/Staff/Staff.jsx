@@ -100,8 +100,8 @@ function Staff() {
           className="role-dropdown"
         >
           <option value="">All Roles</option>
-          <option value="ROLE_Teaching">Teaching</option>
-          <option value="ROLE_NonTeaching">NonTeaching</option>
+          <option value="ROLE_TEACHING">Teaching</option>
+          <option value="ROLE_NON_TEACHING">NonTeaching</option>
         </select>
       </div>
 
