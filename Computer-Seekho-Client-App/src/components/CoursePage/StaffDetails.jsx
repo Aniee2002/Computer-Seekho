@@ -5,23 +5,29 @@ const StaffDetails = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:8080/staff/getAll")
-      .then(response => {
+    const fetchData = async () => {
+      try {
+        console.log("Fetching staff data...");
+        const response = await fetch("http://localhost:8080/staff/getAll");
+  
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
-        return response.json();
-      })
-      .then(data => {
-        console.log("Fetched staff data:", data);
+  
+        const data = await response.json();
+        console.log("Fetched staff data:", data); // ✅ Log response to debug
+  
         setStaffList(data);
-        setLoading(false);
-      })
-      .catch(error => {
+      } catch (error) {
         console.error("Error fetching staff data:", error);
-        setLoading(false);
-      });
+      } finally {
+        setLoading(false); // ✅ Ensure loading stops even if there's an error
+      }
+    };
+  
+    fetchData();
   }, []);
+  
 
   return (
     <div>
