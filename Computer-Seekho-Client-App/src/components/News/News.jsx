@@ -1,50 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
 
-import landscape1 from "../images/PG-DAC-logo.jpeg";
-import landscape2 from "../images/PG-DBDA-logo.jpeg";
-import landscape3 from "../images/PRE-CAT-logo.jpeg";
-
-const placements = [
-  {
-    name: "Anurag Patil",
-    description: "Just got placement in Tata Power as Senior Software Dev",
-    image: landscape1,
-  },
-  {
-    name: "Anurag Patil",
-    description: "Just got placement in Tata Power as Senior Software Dev",
-    image: landscape2,
-  },
-  {
-    name: "Anurag Patil",
-    description: "Just got placement in Tata Power as Senior Software Dev",
-    image: landscape3,
-  },
-  {
-    name: "Anurag Patil",
-    description: "Just got placement in Tata Power as Senior Software Dev",
-    image: landscape3,
-  },
-  {
-    name: "Anurag Patil",
-    description: "Just got placement in Tata Power as Senior Software Dev",
-    image: landscape3,
-  },
-  {
-    name: "Anurag Patil",
-    description: "Just got placement in Tata Power as Senior Software Dev",
-    image: landscape3,
-  },
-];
-
-const Card = ({ name, description, image }) => {
+const Card = ({ newsTitle, newsDescrption, newsUrl }) => {
   return (
-    <div className="box">
-      <img src={image} alt="news" />
-      <div className="overlay">
-        <h3>{name}</h3>
-        <p>{description}</p>
+    <div className="box1">
+      <img src={newsUrl} alt="news" />
+      <div className="overlay1">
+        <h3>{newsTitle}</h3>
+        <p>{newsDescrption}</p>
         <a href="#">Read More</a>
       </div>
     </div>
@@ -52,13 +15,37 @@ const Card = ({ name, description, image }) => {
 };
 
 const PlacementCards = () => {
-  return (
-    <div id="card-area">
-      <div className="wrapper">
-        {/* Bold heading at the top */}
-        <h1 className="gossip-heading">Gossip at Vita</h1>
+  const [placements, setPlacements] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-        <div className="box-area">
+  useEffect(() => {
+    fetch("http://localhost:8080/News/all") // Replace with your actual API URL
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch placements");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setPlacements(data);
+        setLoading(false);
+        console.log(data);
+      })
+      .catch((error) => {
+        setError(error.message);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) return <p>Loading placements...</p>;
+  if (error) return <p>Error: {error}</p>;
+
+  return (
+    <div id="card-area1">
+      <div className="wrapper1">
+        <h1 className="gossip-heading1">Gossip at Vita</h1>
+        <div className="box-area1">
           {placements.map((placement, index) => (
             <Card key={index} {...placement} />
           ))}

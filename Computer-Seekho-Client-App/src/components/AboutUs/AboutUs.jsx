@@ -10,11 +10,11 @@ const Staff = () => {
   return (
     <>
     
-    <h1 className="tag">Our Elites</h1>
-    <div className="wrapper">
+    <h1 className="tag2">Our Elites</h1>
+    <div className="wrapper2">
       <div className="cardOfAbout">
         <img src={image} alt="Staff1" />
-        <div className="info">
+        <div className="info2">
           <h1>Nitin vijaykar</h1>
           <p>A profound teacher at sm-vita with over 25 years of experience</p>
           <a href="#" className="btn">Read ...</a>
@@ -23,7 +23,7 @@ const Staff = () => {
 
       <div className="cardOfAbout">
         <img src={image2} alt="Staff2" />
-        <div className="info">
+        <div className="info2">
           <h1>Ketki Acharya</h1>
           <p>A profound teacher at sm-vita with over 25 years of experience</p>
           <a href="#" className="btn">Read ...</a>
@@ -32,10 +32,10 @@ const Staff = () => {
 
       <div className="cardOfAbout">
         <img src={image3} alt="Staff3" />
-        <div className="info">
+        <div className="info2">
           <h1>Amar Panchal</h1>
           <p>A profound teacher at sm-vita with over 25 years of experience</p>
-          <a href="#" className="btn">Read ...</a>
+          <a href="#" className="btn2">Read ...</a>
         </div>
       </div>
     </div>

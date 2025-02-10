@@ -1,18 +1,30 @@
-import React from 'react'
-import Origin from './Origin';
-import Staff from './AboutUs';
+import React, { lazy, Suspense } from 'react';
 import Navbar from '../Navbar/Navbar';
-import CardsForMoreValue from './CardsForMoreValue';
+import './Spinner.css'
+
+// Lazy loading components
+const Origin = lazy(() => import('./Origin'));
+const Staff = lazy(() => import('./AboutUs'));
+const CardsForMoreValue = lazy(() => import('./CardsForMoreValue'));
+
+// Spinner Component
+const Spinner = () => (
+  <div className="spinner-container">
+    <div className="spinner"></div>
+  </div>
+);
 
 const AssembleAbout = () => {
   return (
-   <>
-      <Navbar/>
-      <Origin/>
-      <CardsForMoreValue/>
-      <Staff/>
+    <>
+      <Navbar />
+      <Suspense fallback={<Spinner />}>
+        <Origin />
+        <CardsForMoreValue />
+        <Staff />
+      </Suspense>
     </>
-  )
-}
+  );
+};
 
-export default AssembleAbout
+export default AssembleAbout;

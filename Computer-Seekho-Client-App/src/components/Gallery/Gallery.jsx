@@ -16,7 +16,6 @@ const Gallery = () => {
     let runTimeOut;
     let runNextAuto;
 
-    // ✅ Fetch data from API (Replaces Redux)
     useEffect(() => {
         fetch('http://localhost:8080/image/all')
             .then((response) => {
@@ -36,7 +35,7 @@ const Gallery = () => {
             });
     }, []);
 
-    // **DO NOT CHANGE ANIMATION LOGIC**
+
     useEffect(() => {
         const nextBtn = carouselRef.current?.querySelector('.next');
         const prevBtn = carouselRef.current?.querySelector('.prev');
@@ -89,9 +88,6 @@ const Gallery = () => {
         };
     }, []);
 
-    if (isLoading) return <p>Loading...</p>;
-    if (error) return <p>Error: {error}</p>;
-
     return (
         <>
             <Navbar />
@@ -107,7 +103,7 @@ const Gallery = () => {
                         <div
                             key={album.image_id || index}
                             className="item"
-                            style={{ backgroundImage: `url(${album.image_url})` }}
+                            style={{ backgroundImage: `url(${album.image_url  || 'default.jpg'})` }}
                         >
                             <div className="content">
                                 <div className="title">{album.image_title}</div>
