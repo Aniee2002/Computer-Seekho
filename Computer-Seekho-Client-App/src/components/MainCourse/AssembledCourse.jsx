@@ -1,12 +1,15 @@
 import React from 'react'
 import MainCourse from './MainCourse'
-import StaffCss from './StaffDetails'
+
+import StaffDetails from '../Staff/StaffDetails.jsx'
+import Footer from '../Footer/Footer.jsx'
 
 const AssembledCourse = () => {
   return (
     <div>
       <MainCourse/>
-      <StaffCss/>
+      <StaffDetails/>
+      <Footer/>
     </div>
   )
 }

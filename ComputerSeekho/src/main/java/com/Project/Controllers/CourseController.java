@@ -35,11 +35,10 @@ public class CourseController {
     @GetMapping("/getAll")
     public ResponseEntity<List<Course>> getAllCourses() {
         List<Course> courses = courseService.getAllCourses();
-        if(courses == null) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
-        }
-        return ResponseEntity.status(HttpStatus.CREATED).body(courses);
+        System.out.println("Fetched courses: " + courses);
+        return ResponseEntity.ok(courses);
     }
+    
 
     @PostMapping("/add")
     public ResponseEntity<ApiResponse> addCourse(@RequestBody Course course) {

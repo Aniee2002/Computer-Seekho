@@ -12,7 +12,7 @@ const CoursePage = () => {
   useEffect(() => {
     const fetchCourseData = async () => {
       try {
-        const response = await fetch("http://localhost:8080/course/find/Pgdac");
+        const response = await fetch("http://localhost:8080/course/getAll");
         const data = await response.json();
         setCourseData(data);
       } catch (error) {
