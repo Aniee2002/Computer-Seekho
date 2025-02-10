@@ -12,12 +12,12 @@
     background: #f5f2f2;
     
   }
-  .tag{
+  .tag2{
     left: 45%;
     color: navy;
     font: bold;
   }
-  .wrapper {
+  .wrapper2 {
     display: flex;
     width: 1000px;
     justify-content: space-around;
@@ -39,7 +39,7 @@
     box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
     transition: 0.5s ease-in-out;
   }
-  .tag{
+  .tag2{
     position: relative;
     align-items: center;
     justify-content: center;
@@ -77,7 +77,7 @@
     z-index: 1;
   }
 
-  .cardOfAbout .info{
+  .cardOfAbout .info2{
     position: relative;
     z-index: 3;
     color: #fff;
@@ -86,23 +86,23 @@
     transition: 0.5s all;
   }
 
-  .cardOfAbout:hover .info {
+  .cardOfAbout:hover .info2 {
     opacity: 1;
     transform: translateY(0);
   }
 
-  .cardOfAbout .info h1{
+  .cardOfAbout .info2 h1{
     margin: 0;
   }
 
-  .cardOfAbout .info p {
+  .cardOfAbout .info2 p {
     letter-spacing: 1px;
     font-size: 15px;
     margin-top: 8px;
     margin-bottom: 20px;
   }
 
-  .cardOfAbout .info .btn{
+  .cardOfAbout .info2 .btn2{
     text-decoration: none;
     padding: 0.5rem 1rem;
     background: #fff;
@@ -115,7 +115,7 @@
   margin-bottom: 10px;
   }
 
-  .cardOfAbout .info .btn:hover {
+  .cardOfAbout .info .btn2:hover {
     background: #000;
     color: #fff;
   }
