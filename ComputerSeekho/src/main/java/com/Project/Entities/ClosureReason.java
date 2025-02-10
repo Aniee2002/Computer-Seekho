@@ -3,10 +3,13 @@ package com.Project.Entities;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "closure_reason")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class ClosureReason {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +23,7 @@ public class ClosureReason {
     private String enquirerName;
 
     public ClosureReason(String closureReasonDesc,String enquirerName){
-        this.closureReasonDesc = closureReasonDesc;
+        this.closureReasonDesc =closureReasonDesc;
         this.enquirerName = enquirerName;
     }
 }

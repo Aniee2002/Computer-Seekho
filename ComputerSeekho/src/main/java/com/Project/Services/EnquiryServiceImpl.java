@@ -4,7 +4,10 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.Project.Entities.ClosureReason;
 import com.Project.Entities.Enquiry;
+import com.Project.Repositories.ClosureReasonRepository;
 import com.Project.Repositories.EnquiryRepository;
 
 @Service
@@ -12,6 +15,9 @@ public class EnquiryServiceImpl implements EnquiryService {
 
     @Autowired
     private EnquiryRepository enquiryRepository;
+
+    @Autowired
+    private ClosureReasonService closureReasonService;
 
     @Override
     public Enquiry createEnquiry(Enquiry enquiry) {
@@ -64,5 +70,12 @@ public class EnquiryServiceImpl implements EnquiryService {
         } else {
             throw new RuntimeException("Enquiry not found with ID: " + enquiryId);
         }
+    }
+
+    @Override
+    public void deactivateEnquiry(int enquiryId,String message) {
+        Optional<Enquiry> enquiry = enquiryRepository.findById(enquiryId);
+        closureReasonService.addClosureReason(new ClosureReason(message, enquiry.get().getEnquirerName()));
+        enquiryRepository.deactivateEnquiry(enquiryId);
     }
 }
