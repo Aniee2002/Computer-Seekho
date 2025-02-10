@@ -1,4 +1,4 @@
-*{
+/* *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,33 +8,34 @@
 body{
     background: black;
     color: white;
-}
-.wrapper{
+} */
+.wrapper1{
     padding: 10px 10%;
     
 }
-#card-area{
+#card-area1{
     padding: 50px 0;
 }
-.box-area{
+.box-area1{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
     grid-gap: 40px;
     margin-top: 50px;
 }
-.box{
+.box1{
     border-radius: 10px;
     position: relative;
     overflow: hidden;
     box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
 }
-.box img{
+.box1 img{
     width: 100%;
     border-radius: 10px;
     display: block;
     transition: transform 0.5s;
+    background: cover;
 }
-.overlay{
+.overlay1{
     height: 0;
     width: 100%;
     background: linear-gradient(transparent, black 90%);
@@ -52,15 +53,16 @@ body{
     font-size: 14px;
     transition: height 0.5s;    
 }
-.overlay h3{
-    font-weight: 500;
+.overlay1 h3{
+    font-weight: 400;
+    color: white;
     margin-bottom: 5px;
     margin-top: 80%;
     font-family: bebas neue;
     font-size: 30px;
     letter-spacing: 2px;
 }
-.overlay a{
+.overlay1 a{
     margin-top: 10px;
     color: #262626;
     text-decoration: none;
@@ -70,13 +72,13 @@ body{
     text-align: center;
     padding: 5px 15px;
 }
-.box:hover img{
+.box1:hover img{
     transform: scale(1.2);
 }
-.box:hover .overlay{
+.box1:hover .overlay1{
     height: 100%;
 }
-.gossip-heading {
+.gossip-heading1 {
     text-align: center;
     font-size: 2rem;
     font-weight: bold;

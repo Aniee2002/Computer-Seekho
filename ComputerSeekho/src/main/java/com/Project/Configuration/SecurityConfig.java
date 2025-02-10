@@ -35,8 +35,11 @@ public class SecurityConfig {
 
             security.authorizeHttpRequests(Auth-> Auth
             .requestMatchers("/auth/signIn").authenticated()
-            // .requestMatchers("/staff/getAll").hasRole("ADM")
-            // .requestMatchers("/staff/getAll").hasRole("TEACHING")
+            // .requestMatchers("/staff/**").hasAnyRole("TEACHING", "NON_TEACHING")
+            // .requestMatchers("/enquiries/**").hasAnyRole("TEACHING", "NON_TEACHING")
+            // .requestMatchers("/payment/**").hasAnyRole("TEACHING", "NON_TEACHING")
+            // .requestMatchers("/paymentTypes/**").hasAnyRole("TEACHING", "NON_TEACHING")
+            // .requestMatchers("/student/**").hasAnyRole("TEACHING", "NON_TEACHING")          
             .requestMatchers("/**").permitAll());
             security.httpBasic(Customizer.withDefaults());
 

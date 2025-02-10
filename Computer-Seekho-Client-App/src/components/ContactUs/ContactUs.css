@@ -1,12 +1,12 @@
 /* General Styling */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f9fa;
-    color: #333;
-  }
-  
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
   /* Section Styling */
   .section {
     padding: 60px 0;
@@ -141,3 +141,31 @@ body {
     }
   }
   
+  /* Flexbox container for side-by-side layout */
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+/* Flexbox items */
+.connect-with-us, .get-a-callback {
+  flex: 1;
+  margin: 10px;
+}
+
+/* Additional styling for form and content */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.error {
+  color: red;
+  font-size: 0.9em;
+}

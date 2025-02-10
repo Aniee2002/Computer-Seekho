@@ -26,7 +26,7 @@ public class EmailSenderService {
     String paymentAmount = (String) paymentDetails.get("amount");
     String paymentMethod = (String) paymentDetails.get("Type");
     String paymentDate = (String) paymentDetails.get("date");
-    String paymentID = (String) paymentDetails.get("date");
+    String paymentID = (String) paymentDetails.get("paymentId");
 
     Properties props = new Properties();
     props.put("mail.smtp.host", "smtp.gmail.com");
