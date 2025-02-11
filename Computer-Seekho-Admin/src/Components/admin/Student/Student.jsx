@@ -85,7 +85,7 @@ const Student = () => {
                 <th style={{color:"white",textAlign:'center'}}>Courses</th>
                 <th style={{color:"white",textAlign:'center'}}>Batch</th>
                 <th style={{color:"white",textAlign:'center'}}>Pending Fees</th>
-                <th style={{color:"white",textAlign:'center'}}>Action</th>
+                <th style={{color:"white",textAlign:'center'}}> </th>
               </tr>
             </thead>
           </table>
@@ -113,12 +113,12 @@ const Student = () => {
                       <td>{item.batch}</td>
                       <td>{item.pendingFees}</td>
                       <td>  
-                        <button
+                        {/* <button
                           className="button-delete"
                           onClick={() => openConfirmDialog(item.id)} // Fix: Use item.id consistently
                         >
                           Delete
-                        </button>
+                        </button> */}
                       </td>
                     </tr>
                   ))}

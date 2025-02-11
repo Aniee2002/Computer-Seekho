@@ -116,7 +116,6 @@ const ContactUs = () => {
                     <input type="tel" className="form-control border-0" id="mobile" name="mobile" placeholder="Phone" onChange={handleChange} value={formData.mobile} />
                     {errors.mobile && <p className="error">{errors.mobile}</p>}
                   </div>
-              
               <div className="form-group">
                 <label>Course</label>
                 <input type="text" className="form-control border-0" id="courseName" name="courseName" placeholder="Course" onChange={handleChange} value={formData.courseName} />
