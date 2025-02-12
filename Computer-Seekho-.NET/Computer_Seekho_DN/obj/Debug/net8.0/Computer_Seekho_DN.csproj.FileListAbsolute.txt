@@ -130,3 +130,5 @@ E:\Computer-Seekho\Computer-Seekho-.NET\Computer_Seekho_DN\obj\Debug\net8.0\refi
 E:\Computer-Seekho\Computer-Seekho-.NET\Computer_Seekho_DN\obj\Debug\net8.0\Computer_Seekho_DN.pdb
 E:\Computer-Seekho\Computer-Seekho-.NET\Computer_Seekho_DN\obj\Debug\net8.0\Computer_Seekho_DN.genruntimeconfig.cache
 E:\Computer-Seekho\Computer-Seekho-.NET\Computer_Seekho_DN\obj\Debug\net8.0\ref\Computer_Seekho_DN.dll
+E:\Computer-Seekho\Computer-Seekho-.NET\Computer_Seekho_DN\bin\Debug\net8.0\BCrypt.Net-Next.dll
+E:\Computer-Seekho\Computer-Seekho-.NET\Computer_Seekho_DN\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

@@ -48,6 +48,7 @@ public class StaffServiceImpl implements StaffService {
             return false;
     }
 
+    
     private boolean isStaffExist(int staffId) {
         Optional<Staff> staff = staffRepository.findById(staffId);
         System.out.println("Staff is present: " + staff.get());

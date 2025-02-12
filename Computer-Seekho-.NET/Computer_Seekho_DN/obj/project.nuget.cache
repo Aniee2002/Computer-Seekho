@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "KJ/t9gALsuk=",
+  "dgSpecHash": "IyoMqOtpAkk=",
   "success": true,
   "projectFilePath": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Computer_Seekho_DN.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\anura\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\anura\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\anura\\.nuget\\packages\\google.protobuf\\3.25.1\\google.protobuf.3.25.1.nupkg.sha512",
     "C:\\Users\\anura\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
