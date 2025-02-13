@@ -132,3 +132,12 @@ E:\Computer-Seekho\Computer-Seekho-.NET\Computer_Seekho_DN\obj\Debug\net8.0\Comp
 E:\Computer-Seekho\Computer-Seekho-.NET\Computer_Seekho_DN\obj\Debug\net8.0\ref\Computer_Seekho_DN.dll
 E:\Computer-Seekho\Computer-Seekho-.NET\Computer_Seekho_DN\bin\Debug\net8.0\BCrypt.Net-Next.dll
 E:\Computer-Seekho\Computer-Seekho-.NET\Computer_Seekho_DN\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+E:\Computer-Seekho\Computer-Seekho-.NET\Computer_Seekho_DN\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\Computer-Seekho\Computer-Seekho-.NET\Computer_Seekho_DN\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll
+E:\Computer-Seekho\Computer-Seekho-.NET\Computer_Seekho_DN\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+E:\Computer-Seekho\Computer-Seekho-.NET\Computer_Seekho_DN\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\Computer-Seekho\Computer-Seekho-.NET\Computer_Seekho_DN\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+E:\Computer-Seekho\Computer-Seekho-.NET\Computer_Seekho_DN\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+E:\Computer-Seekho\Computer-Seekho-.NET\Computer_Seekho_DN\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\Computer-Seekho\Computer-Seekho-.NET\Computer_Seekho_DN\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+E:\Computer-Seekho\Computer-Seekho-.NET\Computer_Seekho_DN\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

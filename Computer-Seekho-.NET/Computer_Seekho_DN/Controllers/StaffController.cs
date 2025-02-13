@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Computer_Seekho_DN.Controllers;
 
-[Route("api/[controller]")]
+[Route("[controller]")]
 [ApiController]
 public class StaffController : ControllerBase
 {
@@ -16,7 +16,7 @@ public class StaffController : ControllerBase
     {
         _staffService = staffService;
     }
-
+    
     // GET: api/staff
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Staff>>> GetAllStaff()

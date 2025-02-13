@@ -3,36 +3,100 @@
   "WorkspaceRootPath": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\models\\staff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:models\\staff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\controllers\\staffcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:controllers\\staffcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\service\\staffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:service\\staffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\repository\\computerseekhodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:repository\\computerseekhodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\service\\authsevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:service\\authsevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\service\\paymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:service\\paymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\service\\ipaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:service\\ipaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\controllers\\paymenttypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:controllers\\paymenttypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\service\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:service\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\service\\staffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:service\\staffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\service\\istaffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:service\\istaffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\service\\courseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:service\\courseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\service\\icourseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:service\\icourseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\repository\\computerseekhodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:repository\\computerseekhodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\controllers\\staffcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:controllers\\staffcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\service\\paymenttypeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:service\\paymenttypeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\service\\ipaymenttypeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:service\\ipaymenttypeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\models\\staff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:models\\staff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\models\\album.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:models\\album.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\models\\batch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:models\\batch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\models\\paymenttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:models\\paymenttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\dto\\paymentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:dto\\paymentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\models\\getintouch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -41,10 +105,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\models\\enquiry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:models\\enquiry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Models\\ComputerSeekhoDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -63,44 +123,122 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
-              "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Properties\\launchSettings.json",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAACYAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-02-12T10:07:31.856Z",
+              "Title": "Payment.cs",
+              "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Models\\Payment.cs",
+              "RelativeDocumentMoniker": "Models\\Payment.cs",
+              "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Models\\Payment.cs",
+              "RelativeToolTip": "Models\\Payment.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T07:19:41.006Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Staff.cs",
-              "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Models\\Staff.cs",
-              "RelativeDocumentMoniker": "Models\\Staff.cs",
-              "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Models\\Staff.cs",
-              "RelativeToolTip": "Models\\Staff.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAYAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "AuthSevice.cs",
+              "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Service\\AuthSevice.cs",
+              "RelativeDocumentMoniker": "Service\\AuthSevice.cs",
+              "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Service\\AuthSevice.cs",
+              "RelativeToolTip": "Service\\AuthSevice.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAYwDUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T09:41:13.784Z",
+              "WhenOpened": "2025-02-13T06:33:09.56Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "ComputerSeekhoDbContext.cs",
-              "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Repository\\ComputerSeekhoDbContext.cs",
-              "RelativeDocumentMoniker": "Repository\\ComputerSeekhoDbContext.cs",
-              "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Repository\\ComputerSeekhoDbContext.cs",
-              "RelativeToolTip": "Repository\\ComputerSeekhoDbContext.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAA+wEAAAAALAAAAAAAAAA==",
+              "Title": "PaymentTypeController.cs",
+              "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Controllers\\PaymentTypeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PaymentTypeController.cs",
+              "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Controllers\\PaymentTypeController.cs",
+              "RelativeToolTip": "Controllers\\PaymentTypeController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAuwA8AAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T07:13:36.027Z"
+              "WhenOpened": "2025-02-13T06:00:34.468Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
+              "Title": "PaymentController.cs",
+              "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Controllers\\PaymentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PaymentController.cs",
+              "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Controllers\\PaymentController.cs",
+              "RelativeToolTip": "Controllers\\PaymentController.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAgwCkAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T14:32:00.463Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IpaymentService.cs",
+              "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Service\\IpaymentService.cs",
+              "RelativeDocumentMoniker": "Service\\IpaymentService.cs",
+              "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Service\\IpaymentService.cs",
+              "RelativeToolTip": "Service\\IpaymentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T12:16:39.817Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PaymentService.cs",
+              "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Service\\PaymentService.cs",
+              "RelativeDocumentMoniker": "Service\\PaymentService.cs",
+              "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Service\\PaymentService.cs",
+              "RelativeToolTip": "Service\\PaymentService.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAqwCgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T12:19:54.867Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-12T07:13:03.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T06:51:34.003Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "StaffService.cs",
+              "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Service\\StaffService.cs",
+              "RelativeDocumentMoniker": "Service\\StaffService.cs",
+              "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Service\\StaffService.cs",
+              "RelativeToolTip": "Service\\StaffService.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAzwBMAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T06:16:40.305Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "IstaffService.cs",
               "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Service\\IstaffService.cs",
               "RelativeDocumentMoniker": "Service\\IstaffService.cs",
@@ -112,79 +250,92 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "StaffService.cs",
-              "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Service\\StaffService.cs",
-              "RelativeDocumentMoniker": "Service\\StaffService.cs",
-              "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Service\\StaffService.cs",
-              "RelativeToolTip": "Service\\StaffService.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAgwDQAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 14,
+              "Title": "ComputerSeekhoDbContext.cs",
+              "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Repository\\ComputerSeekhoDbContext.cs",
+              "RelativeDocumentMoniker": "Repository\\ComputerSeekhoDbContext.cs",
+              "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Repository\\ComputerSeekhoDbContext.cs",
+              "RelativeToolTip": "Repository\\ComputerSeekhoDbContext.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAqwEAAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T06:16:40.305Z"
+              "WhenOpened": "2025-02-12T07:13:36.027Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Enquiry.cs",
-              "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Models\\Enquiry.cs",
-              "RelativeDocumentMoniker": "Models\\Enquiry.cs",
-              "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Models\\Enquiry.cs",
-              "RelativeToolTip": "Models\\Enquiry.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA4AAAAAAAAAA==",
+              "DocumentIndex": 13,
+              "Title": "IcourseService.cs",
+              "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Service\\IcourseService.cs",
+              "RelativeDocumentMoniker": "Service\\IcourseService.cs",
+              "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Service\\IcourseService.cs",
+              "RelativeToolTip": "Service\\IcourseService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-11T10:51:12.841Z"
+              "WhenOpened": "2025-02-13T06:31:35.245Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "GetInTouch.cs",
-              "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Models\\GetInTouch.cs",
-              "RelativeDocumentMoniker": "Models\\GetInTouch.cs",
-              "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Models\\GetInTouch.cs",
-              "RelativeToolTip": "Models\\GetInTouch.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 12,
+              "Title": "CourseService.cs",
+              "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Service\\CourseService.cs",
+              "RelativeDocumentMoniker": "Service\\CourseService.cs",
+              "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Service\\CourseService.cs",
+              "RelativeToolTip": "Service\\CourseService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-11T10:50:48.339Z"
+              "WhenOpened": "2025-02-13T06:31:58.648Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-02-12T07:13:03.173Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T07:14:01.583Z"
+              "WhenOpened": "2025-02-12T07:14:01.583Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Service\\IAuthService.cs",
+              "RelativeDocumentMoniker": "Service\\IAuthService.cs",
+              "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Service\\IAuthService.cs",
+              "RelativeToolTip": "Service\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T06:33:49.47Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "PaymentTypeService.cs",
+              "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Service\\PaymentTypeService.cs",
+              "RelativeDocumentMoniker": "Service\\PaymentTypeService.cs",
+              "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Service\\PaymentTypeService.cs",
+              "RelativeToolTip": "Service\\PaymentTypeService.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAmwB0AAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T15:07:45.414Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "StaffController.cs",
               "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Controllers\\StaffController.cs",
               "RelativeDocumentMoniker": "Controllers\\StaffController.cs",
               "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Controllers\\StaffController.cs",
               "RelativeToolTip": "Controllers\\StaffController.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAowE0AAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-12T07:09:09.376Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 15,
               "Title": "WeatherForecastController.cs",
               "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Controllers\\WeatherForecastController.cs",
               "RelativeDocumentMoniker": "Controllers\\WeatherForecastController.cs",
@@ -196,13 +347,108 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 18,
+              "Title": "IpaymentTypeService.cs",
+              "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Service\\IpaymentTypeService.cs",
+              "RelativeDocumentMoniker": "Service\\IpaymentTypeService.cs",
+              "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Service\\IpaymentTypeService.cs",
+              "RelativeToolTip": "Service\\IpaymentTypeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T15:05:15.724Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Batch.cs",
+              "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Models\\Batch.cs",
+              "RelativeDocumentMoniker": "Models\\Batch.cs",
+              "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Models\\Batch.cs",
+              "RelativeToolTip": "Models\\Batch.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAkwCQAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T14:40:26.966Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Staff.cs",
+              "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Models\\Staff.cs",
+              "RelativeDocumentMoniker": "Models\\Staff.cs",
+              "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Models\\Staff.cs",
+              "RelativeToolTip": "Models\\Staff.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAIwDIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T09:41:13.784Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "PaymentType.cs",
+              "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Models\\PaymentType.cs",
+              "RelativeDocumentMoniker": "Models\\PaymentType.cs",
+              "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Models\\PaymentType.cs",
+              "RelativeToolTip": "Models\\PaymentType.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAzwBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T15:04:21.091Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Album.cs",
+              "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Models\\Album.cs",
+              "RelativeDocumentMoniker": "Models\\Album.cs",
+              "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Models\\Album.cs",
+              "RelativeToolTip": "Models\\Album.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAkwCIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T05:30:33.174Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "PaymentDTO.cs",
+              "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\DTO\\PaymentDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\PaymentDTO.cs",
+              "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\DTO\\PaymentDTO.cs",
+              "RelativeToolTip": "DTO\\PaymentDTO.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAIAzwAoAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T14:39:16.254Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Enquiry.cs",
+              "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Models\\Enquiry.cs",
+              "RelativeDocumentMoniker": "Models\\Enquiry.cs",
+              "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Models\\Enquiry.cs",
+              "RelativeToolTip": "Models\\Enquiry.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T10:51:12.841Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "GetInTouch.cs",
+              "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Models\\GetInTouch.cs",
+              "RelativeDocumentMoniker": "Models\\GetInTouch.cs",
+              "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Models\\GetInTouch.cs",
+              "RelativeToolTip": "Models\\GetInTouch.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T10:50:48.339Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
               "Title": "ComputerSeekhoDbContext.cs",
               "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Models\\ComputerSeekhoDbContext.cs",
               "RelativeDocumentMoniker": "Models\\ComputerSeekhoDbContext.cs",
               "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Models\\ComputerSeekhoDbContext.cs",
               "RelativeToolTip": "Models\\ComputerSeekhoDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-11T10:50:42.818Z"
             }

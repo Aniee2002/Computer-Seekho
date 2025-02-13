@@ -3,6 +3,7 @@ using Computer_Seekho_DN.Models;
 using Computer_Seekho_DN.Service;
 using Computer_Seekho_DN.Repository;
 using Microsoft.AspNetCore.Cors.Infrastructure;
+using Computer_Seekho_DN.Exception;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,12 +17,17 @@ builder.Services.AddDbContext<ComputerSeekhoDbContext>(options =>
 
 // Register your service dependencies
 builder.Services.AddScoped<IstaffService, StaffService>();
-//builder.Services.AddScoped<INewsService, NewsService>();
+builder.Services.AddScoped<IpaymentService, PaymentService>();
+builder.Services.AddScoped<IpaymentTypeService, PaymentTypeService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<INewsService, NewsService>();
+
 
 
 // Enable Swagger for API documentation (optional)
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddExceptionHandler<AppExceptionHandler>();
 
 var app = builder.Build();
 
@@ -32,6 +38,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseExceptionHandler(_ => { });
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
