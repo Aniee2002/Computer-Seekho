@@ -1,4 +1,8 @@
 
+using Computer_Seekho_DN.Repository;
+using Computer_Seekho_DN.Services;
+using Microsoft.EntityFrameworkCore;
+
 namespace Computer_Seekho_DN
 {
     public class Program
@@ -10,6 +14,15 @@ namespace Computer_Seekho_DN
             // Add services to the container.
 
             builder.Services.AddControllers();
+
+            builder.Services.AddDbContext<ComputerSeekhoDbContext>(options =>
+            options.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+
+
+
+            builder.Services.AddScoped<IClosureReasonService, ClosureReasonService>();
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
