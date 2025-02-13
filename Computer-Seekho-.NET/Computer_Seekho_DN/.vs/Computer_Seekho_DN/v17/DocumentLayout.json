@@ -1,18 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\",
+  "WorkspaceRootPath": "C:\\Users\\admin\\OneDrive\\Desktop\\CDACProject\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\models\\enquiry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:models\\enquiry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|c:\\users\\admin\\onedrive\\desktop\\cdacproject\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\exception\\appexceptionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:exception\\appexceptionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\models\\getintouch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:models\\getintouch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|c:\\users\\admin\\onedrive\\desktop\\cdacproject\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|e:\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\models\\computerseekhodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:models\\computerseekhodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|c:\\users\\admin\\onedrive\\desktop\\cdacproject\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\exception\\notfound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:exception\\notfound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|c:\\users\\admin\\onedrive\\desktop\\cdacproject\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\exception\\errorresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:exception\\errorresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|c:\\users\\admin\\onedrive\\desktop\\cdacproject\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\service\\studentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:service\\studentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|c:\\users\\admin\\onedrive\\desktop\\cdacproject\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\service\\istudentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:service\\istudentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|c:\\users\\admin\\onedrive\\desktop\\cdacproject\\computer-seekho\\computer-seekho-.net\\computer_seekho_dn\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FA760F9-8D29-4F1D-BB0F-EBF161316CFB}|Computer_Seekho_DN.csproj|solutionrelative:controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,45 +38,95 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Enquiry.cs",
-              "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Models\\Enquiry.cs",
-              "RelativeDocumentMoniker": "Models\\Enquiry.cs",
-              "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Models\\Enquiry.cs",
-              "RelativeToolTip": "Models\\Enquiry.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-11T10:51:12.841Z",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\Desktop\\CDACProject\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\admin\\OneDrive\\Desktop\\CDACProject\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-13T06:08:46.909Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GetInTouch.cs",
-              "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Models\\GetInTouch.cs",
-              "RelativeDocumentMoniker": "Models\\GetInTouch.cs",
-              "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Models\\GetInTouch.cs",
-              "RelativeToolTip": "Models\\GetInTouch.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "ErrorResponse.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\Desktop\\CDACProject\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Exception\\ErrorResponse.cs",
+              "RelativeDocumentMoniker": "Exception\\ErrorResponse.cs",
+              "ToolTip": "C:\\Users\\admin\\OneDrive\\Desktop\\CDACProject\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Exception\\ErrorResponse.cs",
+              "RelativeToolTip": "Exception\\ErrorResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-11T10:50:48.339Z",
+              "WhenOpened": "2025-02-12T15:24:56.63Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ComputerSeekhoDbContext.cs",
-              "DocumentMoniker": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Models\\ComputerSeekhoDbContext.cs",
-              "RelativeDocumentMoniker": "Models\\ComputerSeekhoDbContext.cs",
-              "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Models\\ComputerSeekhoDbContext.cs",
-              "RelativeToolTip": "Models\\ComputerSeekhoDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "NotFound.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\Desktop\\CDACProject\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Exception\\NotFound.cs",
+              "RelativeDocumentMoniker": "Exception\\NotFound.cs",
+              "ToolTip": "C:\\Users\\admin\\OneDrive\\Desktop\\CDACProject\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Exception\\NotFound.cs",
+              "RelativeToolTip": "Exception\\NotFound.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-11T10:50:42.818Z",
+              "WhenOpened": "2025-02-12T15:06:06.243Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AppExceptionHandler.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\Desktop\\CDACProject\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Exception\\AppExceptionHandler.cs",
+              "RelativeDocumentMoniker": "Exception\\AppExceptionHandler.cs",
+              "ToolTip": "C:\\Users\\admin\\OneDrive\\Desktop\\CDACProject\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Exception\\AppExceptionHandler.cs",
+              "RelativeToolTip": "Exception\\AppExceptionHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAB2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T11:59:28.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "StudentController.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\Desktop\\CDACProject\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Controllers\\StudentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\StudentController.cs",
+              "ToolTip": "C:\\Users\\admin\\OneDrive\\Desktop\\CDACProject\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Controllers\\StudentController.cs",
+              "RelativeToolTip": "Controllers\\StudentController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBoAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T11:49:21.887Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IStudentService.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\Desktop\\CDACProject\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Service\\IStudentService.cs",
+              "RelativeDocumentMoniker": "Service\\IStudentService.cs",
+              "ToolTip": "C:\\Users\\admin\\OneDrive\\Desktop\\CDACProject\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Service\\IStudentService.cs",
+              "RelativeToolTip": "Service\\IStudentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T11:26:45.305Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "StudentService.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\Desktop\\CDACProject\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Service\\StudentService.cs",
+              "RelativeDocumentMoniker": "Service\\StudentService.cs",
+              "ToolTip": "C:\\Users\\admin\\OneDrive\\Desktop\\CDACProject\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Service\\StudentService.cs",
+              "RelativeToolTip": "Service\\StudentService.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAqwB4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T11:17:31.981Z",
               "EditorCaption": ""
             }
           ]
