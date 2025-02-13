@@ -2,6 +2,7 @@
 using Computer_Seekho_DN.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Computer_Seekho_DN.Exceptions;
 
 namespace Computer_Seekho_DN.Service;
 
@@ -35,13 +36,13 @@ public class StaffService : IstaffService
         return true;
     }
 
-    public async Task<ActionResult<IEnumerable<Staff>>> GetAllStaff()
+    public async Task<IEnumerable<Staff>> GetAllStaff()
     {
 
         return await _context.Staff.ToListAsync();
     }
 
-    public async Task<ActionResult<Staff>> GetStaff(int id)
+    public async Task<Staff> GetStaff(int id)
     {
         return await _context.Staff.FindAsync(id);
     }
@@ -49,6 +50,10 @@ public class StaffService : IstaffService
     public async Task<int> getStaffIdByStaffUsername(string username)
     {
         Staff staff = await _context.Staff.FirstOrDefaultAsync(staff => staff.StaffUsername == username);
+        if (staff == null)
+        {
+            throw new NotFoundException($"Student Not Found with Username {username}");
+        }
         return staff.StaffId;
 
     }

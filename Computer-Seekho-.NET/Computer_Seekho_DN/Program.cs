@@ -3,7 +3,8 @@ using Computer_Seekho_DN.Models;
 using Computer_Seekho_DN.Service;
 using Computer_Seekho_DN.Repository;
 using Microsoft.AspNetCore.Cors.Infrastructure;
-using Computer_Seekho_DN.Exception;
+using Computer_Seekho_DN.Exceptions;
+using Org.BouncyCastle.Security;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,11 +17,17 @@ builder.Services.AddDbContext<ComputerSeekhoDbContext>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
 // Register your service dependencies
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IGetInTouchService, GetInTouchService>();
+builder.Services.AddScoped<ICourseService, CourseService>();
 builder.Services.AddScoped<IstaffService, StaffService>();
 builder.Services.AddScoped<IpaymentService, PaymentService>();
 builder.Services.AddScoped<IpaymentTypeService, PaymentTypeService>();
-builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<INewsService, NewsService>();
+builder.Services.AddScoped<IStudentService, StudentService>();
+builder.Services.AddScoped<IGetInTouchService,GetInTouchService>();
+
+
 
 
 
@@ -39,7 +46,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseExceptionHandler(_ => { });
+app.UseExceptionHandler( _ => { });
 
 app.UseHttpsRedirection();
 app.UseAuthorization();

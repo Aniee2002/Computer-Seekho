@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -11,20 +11,22 @@
 
   <ItemGroup>
     <Compile Remove="Controllers\BatchController.cs" />
+    <Compile Remove="Controllers\ClosureReasonController.cs" />
+    <Compile Remove="Controllers\GetInTouchController.cs" />
+    <Compile Remove="Controllers\GetInTouchService.cs" />
+    <Compile Remove="Controllers\IGetInTouchService.cs" />
+    <Compile Remove="Controllers\ImageController.cs" />
     <Compile Remove="Controllers\RecuriterController.cs" />
-    <Compile Remove="Service\BatchService.cs" />
-    <Compile Remove="Service\IBatchService.cs" />
-    <Compile Remove="Service\IRecruiterService.cs" />
-    <Compile Remove="Service\RecuriterServiceImpl.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="Controllers\BatchController.cs" />
+    <None Include="Controllers\ClosureReasonController.cs" />
+    <None Include="Controllers\GetInTouchController.cs" />
+    <None Include="Service\GetInTouchService.cs" />
+    <None Include="Service\IGetInTouchService.cs" />
+    <None Include="Controllers\ImageController.cs" />
     <None Include="Controllers\RecuriterController.cs" />
-    <None Include="Service\BatchService.cs" />
-    <None Include="Service\IBatchService.cs" />
-    <None Include="Service\IRecruiterService.cs" />
-    <None Include="Service\RecuriterServiceImpl.cs" />
   </ItemGroup>
 
   <ItemGroup>

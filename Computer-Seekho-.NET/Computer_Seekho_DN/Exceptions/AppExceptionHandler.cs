@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Diagnostics;
 
-namespace Computer_Seekho_DN.Exception;
+namespace Computer_Seekho_DN.Exceptions;
 
 public class AppExceptionHandler(ILogger<AppExceptionHandler> logger) : IExceptionHandler
 {

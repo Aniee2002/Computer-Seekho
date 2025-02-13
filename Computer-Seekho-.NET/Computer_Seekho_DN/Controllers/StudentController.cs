@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Computer_Seekho_DN.Service;
 using Computer_Seekho_DN.Models;
+using System.Text.Json;
+using System.Text;
 
 namespace Computer_Seekho_DN.Controllers;
 
@@ -19,7 +21,8 @@ public class StudentController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Student>>> GetAllStudents()
     {
-        return Ok(await _studentService.GetAllStudents());
+        var student = await _studentService.GetAllStudents();
+        return Ok(student);
     }
 
     [HttpDelete("{studentId}")]
@@ -30,10 +33,35 @@ public class StudentController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult> AddStudent(Student student)
+    public async Task<ActionResult<Student>> AddStudent(Student student)
     {
-        _studentService.AddStudent(student);
-        return Ok(new { message = "Student added successfully." });
+        if (student == null)
+        {
+            return BadRequest();
+        }
+        else
+        {
+            await _studentService.AddStudent(student);
+            using (HttpClient client = new HttpClient())
+            {
+                String Url = "http://localhost:9003/email";
+                var data = new Dictionary<string, object>
+             {
+                 { "to", student.StudentEmail },
+                 { "studentName", student.StudentName }
+             };
+                String jsonData = JsonSerializer.Serialize(data);
+                StringContent emailrequest = new StringContent(jsonData, Encoding.UTF8, "application/json");
+                HttpResponseMessage response = await client.PostAsync(Url, emailrequest);
+                if (response.IsSuccessStatusCode)
+                {
+                    return Ok(new { message = "Student added successfully." });
+                }
+                return Ok(new { message = "Student added successfully." });
+            }
+
+
+        }
     }
 
 }

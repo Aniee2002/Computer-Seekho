@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 
 namespace Computer_Seekho_DN.Models;
@@ -64,8 +65,10 @@ public partial class Student
     public virtual Course? Course { get; set; }
 
     [InverseProperty("Student")]
+    [JsonIgnore]
     public virtual ICollection<Payment> Payments { get; set; } = new List<Payment>();
 
     [InverseProperty("Student")]
+    [JsonIgnore]
     public virtual Placement? Placement { get; set; }
 }

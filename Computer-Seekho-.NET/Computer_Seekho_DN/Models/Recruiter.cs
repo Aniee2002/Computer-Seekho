@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 
 namespace Computer_Seekho_DN.Models;
@@ -26,5 +27,6 @@ public partial class Recruiter
     public string RecruiterImage { get; set; } = null!;
 
     [InverseProperty("Recruiter")]
+    [JsonIgnore]
     public virtual ICollection<Placement> Placements { get; set; } = new List<Placement>();
 }

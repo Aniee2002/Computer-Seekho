@@ -1,4 +1,4 @@
-﻿namespace Computer_Seekho_DN.Exception;
+﻿namespace Computer_Seekho_DN.Exceptions;
 
 public class ErrorResponse
 {

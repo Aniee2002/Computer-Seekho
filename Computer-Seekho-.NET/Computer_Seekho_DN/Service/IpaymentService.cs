@@ -6,9 +6,9 @@ namespace Computer_Seekho_DN.Service;
 
 public interface IpaymentService
 {
-    Task<ActionResult<Payment>> getPayment(int id);
-    Task<ActionResult<IEnumerable<Payment>>> getPaymentList();
-    Task<ActionResult<Payment>> Add(Payment payment);
-    Task<ActionResult<PaymentDTO>> getPaymentDTO(int id);
+    Task<Payment> getPayment(int id);
+    Task<IEnumerable<Payment>> getPaymentList();
+    Task<Payment> Add(Payment payment);
+    Task<PaymentDTO> getPaymentDTO(int id);
     Task UpdatePaymentDueAsync(int studentId, int amount);
 }

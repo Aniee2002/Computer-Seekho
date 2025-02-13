@@ -20,14 +20,14 @@ public class PaymentController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Payment>>> GetAllPayments()
     {
-        return await _paymentService.getPaymentList();
+        return Ok(await _paymentService.getPaymentList());
     }
 
     [HttpGet("{id}")]
     public async Task<ActionResult<Payment>> GetPayment(int id)
     {
         var payment = await _paymentService.getPayment(id);
-        if (payment.Value == null)
+        if (payment.Amount == null)
             return NotFound($"Payment with ID {id} not found.");
 
         return payment;
@@ -39,8 +39,8 @@ public class PaymentController : ControllerBase
         if (payment == null)
             return BadRequest("Invalid payment data.");
         var result = await _paymentService.Add(payment);
-        PaymentDTO paymentDTO = (await _paymentService.getPaymentDTO(result.Value.PaymentId)).Value;
+        PaymentDTO paymentDTO = (await _paymentService.getPaymentDTO(result.PaymentId));
         await _paymentService.UpdatePaymentDueAsync(payment.Student.StudentId, (int)payment.Amount);
-        return CreatedAtAction(nameof(GetPayment), new { id = result.Value.PaymentId }, result.Value);
+        return CreatedAtAction(nameof(GetPayment), new { id = result.PaymentId }, result);
     }
 }

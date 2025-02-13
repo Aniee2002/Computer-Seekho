@@ -20,12 +20,12 @@ public class PaymentTypeService : IpaymentTypeService
         return paymentType;
     }
 
-    public async Task<ActionResult<PaymentType>> GetById(int id)
+    public async Task<PaymentType> GetById(int id)
     {
         return await _dbContext.PaymentTypes.FindAsync(id);
     }
 
-    public async Task<ActionResult<IEnumerable<PaymentType>>> GetPaymentTypes()
+    public async Task<IEnumerable<PaymentType>> GetPaymentTypes()
     {
         return await _dbContext.PaymentTypes.ToListAsync();
     }

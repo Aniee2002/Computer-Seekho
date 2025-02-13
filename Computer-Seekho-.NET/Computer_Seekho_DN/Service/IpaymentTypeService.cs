@@ -5,7 +5,7 @@ namespace Computer_Seekho_DN.Service;
 
 public interface IpaymentTypeService
 {
-    Task<ActionResult<IEnumerable<PaymentType>>> GetPaymentTypes();
+    Task<IEnumerable<PaymentType>> GetPaymentTypes();
     Task<PaymentType> Add(PaymentType paymentType);
-    Task<ActionResult<PaymentType>> GetById(int id);
+    Task<PaymentType> GetById(int id);
 }

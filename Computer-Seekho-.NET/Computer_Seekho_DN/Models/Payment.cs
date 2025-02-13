@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 
 namespace Computer_Seekho_DN.Models;
@@ -32,6 +33,7 @@ public partial class Payment
     public virtual PaymentType? PaymentType { get; set; }
 
     [InverseProperty("Payment")]
+    [JsonIgnore]
     public virtual Receipt? Receipt { get; set; }
 
     [ForeignKey("StudentId")]

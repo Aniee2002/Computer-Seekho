@@ -27,14 +27,14 @@ public class CourseController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Course>>> GetAllCourses()
     {
-        return await _courseService.GetAllCourses();
+        return Ok(await _courseService.GetAllCourses());
     }
 
     [HttpPost]
     public async Task<ActionResult<Course>> AddCourse(Course course)
     {
         var createdCourse = await _courseService.AddCourse(course);
-        return CreatedAtAction(nameof(GetCourseById), new { id = createdCourse.Value.CourseId }, createdCourse);
+        return CreatedAtAction(nameof(GetCourseById), new { id = createdCourse.CourseId }, createdCourse);
     }
 
     [HttpPut("{id}")]

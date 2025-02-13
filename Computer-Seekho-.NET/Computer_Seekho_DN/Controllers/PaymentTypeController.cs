@@ -19,7 +19,7 @@ public class PaymentTypeController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<IEnumerable<PaymentType>>> GetAllPayments()
     {
-        return await _paymentTypeService.GetPaymentTypes();
+        return Ok(await _paymentTypeService.GetPaymentTypes());
     }
 
     [HttpGet("{id}")]

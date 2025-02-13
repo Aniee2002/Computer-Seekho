@@ -2,7 +2,7 @@
 using Computer_Seekho_DN.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Computer_Seekho_DN.Exception;
+using Computer_Seekho_DN.Exceptions;
 
 namespace Computer_Seekho_DN.Service;
 
@@ -15,7 +15,7 @@ public class StudentService : IStudentService
         _context = context;
     }
 
-    public async Task<ActionResult<IEnumerable<Student>>> GetAllStudents()
+    public async Task<IEnumerable<Student>> GetAllStudents()
     {
         return await _context.Students
             .Include(s => s.Course)
@@ -24,16 +24,17 @@ public class StudentService : IStudentService
             .ToListAsync();
     }
 
-    public async Task<ActionResult<Student>> GetStudentById(int studentId)
+    public async Task<Student> GetStudentById(int studentId)
     {
         Student? student = await _context.Students.FindAsync(studentId) ?? throw new NotFoundException($"Student not found with id {studentId}");
         return student;
     }
 
-    public async Task AddStudent(Student student)
+    public async Task<Student> AddStudent(Student student)
     {
         _context.Students.Add(student);
         await _context.SaveChangesAsync();
+        return student;
     }
 
     public async Task DeleteByStudentId(int studentId)

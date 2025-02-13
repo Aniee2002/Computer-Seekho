@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 
 namespace Computer_Seekho_DN.Models;
@@ -17,6 +18,7 @@ public partial class PaymentType
     [StringLength(255)]
     public string? PaymentTypeDesc { get; set; }
 
+    [JsonIgnore]
     [InverseProperty("PaymentType")]
     public virtual ICollection<Payment> Payments { get; set; } = new List<Payment>();
 }

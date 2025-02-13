@@ -21,7 +21,7 @@ public class StaffController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Staff>>> GetAllStaff()
     {
-        return await _staffService.GetAllStaff();
+        return Ok(await _staffService.GetAllStaff());
     }
 
     // GET: api/staff/{id}

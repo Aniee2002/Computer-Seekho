@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 
 namespace Computer_Seekho_DN.Models;
@@ -46,5 +47,6 @@ public partial class Staff
     public string StaffUsername { get; set; } = null!;
 
     [InverseProperty("Staff")]
+    [JsonIgnore]
     public virtual ICollection<Enquiry> Enquiries { get; set; } = new List<Enquiry>();
 }

@@ -14,19 +14,19 @@ public class PaymentService : IpaymentService
     {
         _dbContext = dbContext;
     }
-    public async Task<ActionResult<Payment>> Add(Payment payment)
+    public async Task<Payment> Add(Payment payment)
     {
         _dbContext.Payments.Add(payment);
         await _dbContext.SaveChangesAsync();
         return payment;
     }
 
-    public async Task<ActionResult<Payment>> getPayment(int id)
+    public async Task<Payment> getPayment(int id)
     {
         return await _dbContext.Payments.FindAsync(id);
     }
 
-    public async Task<ActionResult<IEnumerable<Payment>>> getPaymentList()
+    public async Task<IEnumerable<Payment>> getPaymentList()
     {
         return await _dbContext.Payments.ToListAsync();
     }
@@ -41,7 +41,7 @@ public class PaymentService : IpaymentService
         }
     }
 
-    public async Task<ActionResult<PaymentDTO?>> getPaymentDTO(int paymentId)
+    public async Task<PaymentDTO?> getPaymentDTO(int paymentId)
     {
         return await (from p in _dbContext.Payments
                       join s in _dbContext.Students on p.StudentId equals s.StudentId
