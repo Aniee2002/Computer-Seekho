@@ -1,36 +1,71 @@
+﻿using Computer_Seekho_DN.Models;
+using Computer_Seekho_DN.Repository;
+using Computer_Seekho_DN.Service;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
-namespace Computer_Seekho_DN
+var builder = WebApplication.CreateBuilder(args);
+
+// Add controllers
+builder.Services.AddControllers();
+
+// Configure MySQL Database Connection
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<ComputerSeekhoDbContext>(options =>
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+
+// Register your service dependencies
+builder.Services.AddScoped<ICourseService, CourseService>();
+builder.Services.AddScoped<INewsService, NewsService>();
+
+// Register IAuthService for dependency injection
+builder.Services.AddScoped<IAuthService, AuthService>();
+
+// Configure JWT authentication
+var jwtSettings = builder.Configuration.GetSection("Jwt");
+var key = Encoding.UTF8.GetBytes(jwtSettings["Key"]);
+
+builder.Services.AddAuthentication(options =>
 {
-    public class Program
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(options =>
+{
+    options.RequireHttpsMetadata = false;
+    options.SaveToken = true;
+    options.TokenValidationParameters = new TokenValidationParameters
     {
-        public static void Main(string[] args)
-        {
-            var builder = WebApplication.CreateBuilder(args);
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(key),
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidIssuer = jwtSettings["Issuer"],
+        ValidAudience = jwtSettings["Audience"],
+        ValidateLifetime = true,
+        ClockSkew = TimeSpan.Zero
+    };
+});
 
-            // Add services to the container.
+builder.Services.AddAuthorization();
 
-            builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+// Optionally add Swagger if needed
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
-            var app = builder.Build();
+var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
-
-            app.UseHttpsRedirection();
-
-            app.UseAuthorization();
-
-
-            app.MapControllers();
-
-            app.Run();
-        }
-    }
+// Middleware pipeline configuration
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
+
+app.UseHttpsRedirection();
+app.UseAuthentication();
+app.UseAuthorization();
+app.MapControllers();
+app.Run();
