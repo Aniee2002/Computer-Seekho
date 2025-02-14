@@ -1,75 +1,69 @@
+﻿using Computer_Seekho_DN.Models;
+using Computer_Seekho_DN.Service;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Computer_Seekho_DN.Models;
-using Computer_Seekho_DN.Services;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
-namespace Computer_Seekho_DN.Controllers
+namespace Computer_Seekho_DN.Controllers;
+
+[Route("closureReason")]
+[ApiController]
+public class ClosureReasonController : ControllerBase
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class ClosureReasonController : ControllerBase
+    private readonly IClosureReasonService _closureReasonService;
+
+    public ClosureReasonController(IClosureReasonService closureReasonService)
     {
-        private readonly IClosureReasonService _closureReasonService;
+        _closureReasonService = closureReasonService;
+    }
 
-        public ClosureReasonController(IClosureReasonService closureReasonService)
+    [HttpGet("getAll")]
+    public async Task<ActionResult<IEnumerable<ClosureReason>>> GetClosureReasons()
+    {
+        var closureReasons = await _closureReasonService.GetAllClosureReasons();
+        return Ok(closureReasons);
+    }
+
+    [HttpGet("get/{id}")]
+    public async Task<ActionResult<ClosureReason>> GetClosureReason(int id)
+    {
+        var closureReason = await _closureReasonService.GetClosureReasonById(id);
+
+        if (closureReason == null)
         {
-            _closureReasonService = closureReasonService;
+            return NotFound(new { message = "Closure reason not found." });
         }
 
-        // GET: api/ClosureReason
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<ClosureReason>>> GetClosureReasons()
+        return Ok(closureReason);
+    }
+
+    [HttpPost("add")]
+    public async Task<ActionResult<ClosureReason>> PostClosureReason(ClosureReason closureReason)
+    {
+        if (closureReason == null)
         {
-            var closureReasons = await _closureReasonService.GetAllClosureReasons();
-            return Ok(closureReasons);
+            return BadRequest(new { message = "Invalid data." });
         }
 
-        // GET: api/ClosureReason/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<ClosureReason>> GetClosureReason(int id)
+        var createdClosureReason = await _closureReasonService.AddClosureReason(closureReason);
+
+        if (createdClosureReason == null)
         {
-            var closureReason = await _closureReasonService.GetClosureReasonById(id);
-
-            if (closureReason == null)
-            {
-                return NotFound(new { message = "Closure reason not found." });
-            }
-
-            return Ok(closureReason);
+            return BadRequest(new { message = "Failed to add closure reason." });
         }
 
-        // POST: api/ClosureReason
-        [HttpPost]
-        public async Task<ActionResult<ClosureReason>> PostClosureReason(ClosureReason closureReason)
+        return Ok(new {message = "Closure Reason Added"});
+    }
+
+    [HttpDelete("delete/{id}")]
+    public async Task<IActionResult> DeleteClosureReason(int id)
+    {
+        var isDeleted = await _closureReasonService.DeleteClosureReason(id);
+
+        if (!isDeleted)
         {
-            if (closureReason == null)
-            {
-                return BadRequest(new { message = "Invalid data." });
-            }
-
-            var createdClosureReason = await _closureReasonService.AddClosureReason(closureReason);
-
-            if (createdClosureReason == null)
-            {
-                return BadRequest(new { message = "Failed to add closure reason." });
-            }
-
-            return CreatedAtAction(nameof(GetClosureReason), new { id = createdClosureReason.ClosureReasonId }, createdClosureReason);
+            return NotFound(new { message = "Closure reason not found." });
         }
 
-        // DELETE: api/ClosureReason/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteClosureReason(int id)
-        {
-            var isDeleted = await _closureReasonService.DeleteClosureReason(id);
-
-            if (!isDeleted)
-            {
-                return NotFound(new { message = "Closure reason not found." });
-            }
-
-            return NoContent();
-        }
+        return NoContent();
     }
 }

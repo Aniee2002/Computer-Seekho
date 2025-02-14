@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Computer_Seekho_DN.Controllers;
 
-[Route("[controller]")]
+[Route("staff")]
 [ApiController]
 public class StaffController : ControllerBase
 {
@@ -18,14 +18,14 @@ public class StaffController : ControllerBase
     }
     
     // GET: api/staff
-    [HttpGet]
+    [HttpGet("getAll")]
     public async Task<ActionResult<IEnumerable<Staff>>> GetAllStaff()
     {
         return Ok(await _staffService.GetAllStaff());
     }
 
     // GET: api/staff/{id}
-    [HttpGet("{id}")]
+    [HttpGet("get/{id}")]
     public async Task<ActionResult<Staff>> GetStaff(int id)
     {
         var staff = await _staffService.GetStaff(id);
@@ -37,7 +37,7 @@ public class StaffController : ControllerBase
     }
 
     // POST: api/staff
-    [HttpPost]
+    [HttpPost("add")]
     public async Task<ActionResult<Staff>> AddStaff([FromBody] Staff staff)
     {
         if (staff == null)
@@ -46,11 +46,11 @@ public class StaffController : ControllerBase
         }
 
         var newStaff = await _staffService.Add(staff);
-        return CreatedAtAction(nameof(GetStaff), new { id = newStaff.StaffId }, newStaff);
+        return Ok(new {message = "Staff Added"});
     }
 
     // PUT: api/staff/{id}
-    [HttpPut("{id}")]
+    [HttpPut("update")]
     public async Task<IActionResult> UpdateStaff([FromBody] Staff staff)
     {
         var updatedStaff = await _staffService.Update(staff);
@@ -63,7 +63,7 @@ public class StaffController : ControllerBase
     }
 
     // DELETE: api/staff/{id}
-    [HttpDelete("{id}")]
+    [HttpDelete("delete/{id}")]
     public async Task<IActionResult> DeleteStaff(int id)
     {
         bool result = await _staffService.DeleteStaff(id);
@@ -75,7 +75,7 @@ public class StaffController : ControllerBase
     }
 
     // GET: api/staff/username/{username}
-    [HttpGet("username/{username}")]
+    [HttpGet("get/{username}")]
     public async Task<ActionResult<int>> GetStaffIdByUsername(string username)
     {
         try

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Computer_Seekho_DN.Controllers;
 
-[Route("api/[controller]")]
+[Route("payment")]
 [ApiController]
 public class PaymentController : ControllerBase
 {
@@ -17,30 +17,53 @@ public class PaymentController : ControllerBase
     {
         _paymentService = paymentService;
     }
-    [HttpGet]
+    [HttpGet("getAll")]
     public async Task<ActionResult<IEnumerable<Payment>>> GetAllPayments()
     {
         return Ok(await _paymentService.getPaymentList());
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("get/{id}")]
     public async Task<ActionResult<Payment>> GetPayment(int id)
     {
         var payment = await _paymentService.getPayment(id);
         if (payment.Amount == null)
             return NotFound($"Payment with ID {id} not found.");
 
-        return payment;
+        return Ok(payment);
     }
 
-    [HttpPost]
+    [HttpPost("add")]
     public async Task<ActionResult<Payment>> AddPayment([FromBody] Payment payment)
     {
         if (payment == null)
-            return BadRequest("Invalid payment data.");
+            return BadRequest("Invalid payment details.");
         var result = await _paymentService.Add(payment);
         PaymentDTO paymentDTO = (await _paymentService.getPaymentDTO(result.PaymentId));
-        await _paymentService.UpdatePaymentDueAsync(payment.Student.StudentId, (int)payment.Amount);
-        return CreatedAtAction(nameof(GetPayment), new { id = result.PaymentId }, result);
+        await _paymentService.UpdatePaymentDueAsync(payment.StudentId, (int)payment.Amount);
+
+        Console.WriteLine(paymentDTO.StudentEmail);
+        using (HttpClient client = new HttpClient())
+        {
+            String Url = "http://localhost:9003/emailpayment";
+            var data = new Dictionary<string, object>
+        {
+            { "email", paymentDTO.StudentEmail },
+            { "studentName", paymentDTO.StudentName },
+            { "amount", paymentDTO.Amount },
+            { "date", paymentDTO.PaymentDate },
+            { "Type", paymentDTO.PaymentTypeDesc},
+            {"paymentId", payment.PaymentId}
+        };
+            String jsonData = JsonSerializer.Serialize(data);
+            StringContent emailrequest = new StringContent(jsonData, Encoding.UTF8, "application/json");
+            HttpResponseMessage response = await client.PostAsync(Url, emailrequest);
+            if (response.IsSuccessStatusCode)
+            {
+                return Ok(new { message = "Payment added successfully." });
+            }
+
+            return Ok(new { message = "Payment added successfully." });
+        }
     }
 }

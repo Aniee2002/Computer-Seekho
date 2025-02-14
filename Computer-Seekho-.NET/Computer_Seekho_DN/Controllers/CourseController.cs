@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Computer_Seekho_DN.Controllers;
 
-[Route("api/Course")]
+[Route("course")]
 [ApiController]
 public class CourseController : ControllerBase
 {
@@ -16,7 +16,7 @@ public class CourseController : ControllerBase
         _courseService = courseService;
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("get/{id}")]
     public async Task<ActionResult<Course>> GetCourseById(int id)
     {
         var course = await _courseService.GetCourseById(id);
@@ -24,20 +24,21 @@ public class CourseController : ControllerBase
         return course;
     }
 
-    [HttpGet]
+    [HttpGet("getAll")]
     public async Task<ActionResult<IEnumerable<Course>>> GetAllCourses()
     {
         return Ok(await _courseService.GetAllCourses());
     }
 
-    [HttpPost]
-    public async Task<ActionResult<Course>> AddCourse(Course course)
+    [HttpPost("add")]
+    public async Task<ActionResult> AddCourse(Course course)
     {
+        if (course == null) return BadRequest(new { message = "Invalid Details" });
         var createdCourse = await _courseService.AddCourse(course);
-        return CreatedAtAction(nameof(GetCourseById), new { id = createdCourse.CourseId }, createdCourse);
+        return Ok(new { message = "Course Added" });
     }
 
-    [HttpPut("{id}")]
+    [HttpPut("update/{id}")]
     public async Task<ActionResult<Course>> UpdateCourse(int id, Course course)
     {
         var updatedCourse = await _courseService.UpdateCourse(id, course);
@@ -45,7 +46,7 @@ public class CourseController : ControllerBase
         return Ok(updatedCourse);
     }
 
-    [HttpDelete("{id}")]
+    [HttpDelete("delete/{id}")]
     public async Task<ActionResult<Course>> DeleteCourse(int id)
     {
         var deletedCourse = await _courseService.DeleteCourse(id);

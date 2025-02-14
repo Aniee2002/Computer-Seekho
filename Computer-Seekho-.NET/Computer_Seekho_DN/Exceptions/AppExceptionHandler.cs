@@ -15,6 +15,12 @@ public class AppExceptionHandler(ILogger<AppExceptionHandler> logger) : IExcepti
             case NotFoundException:
                 httpContext.Response.StatusCode = StatusCodes.Status404NotFound;
                 break;
+            case UnauthorizedException:
+                httpContext.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                break;
+            case InvalidOperationException:
+                httpContext.Response.StatusCode = StatusCodes.Status406NotAcceptable;
+                break;
             default:
                 httpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
                 break;

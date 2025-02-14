@@ -26,7 +26,7 @@ public partial class Payment
     public int? PaymentTypeId { get; set; }
 
     [Column("student_id")]
-    public int? StudentId { get; set; }
+    public int StudentId { get; set; }
 
     [ForeignKey("PaymentTypeId")]
     [InverseProperty("Payments")]

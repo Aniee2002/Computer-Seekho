@@ -16,6 +16,11 @@ public class PaymentService : IpaymentService
     }
     public async Task<Payment> Add(Payment payment)
     {
+        var student = _dbContext.Students.Find(payment.StudentId);
+        if(student.PaymentDue - payment.Amount < 0)
+        {
+            throw new InvalidOperationException("Invalid Payment Amount");
+        }
         _dbContext.Payments.Add(payment);
         await _dbContext.SaveChangesAsync();
         return payment;
@@ -28,7 +33,10 @@ public class PaymentService : IpaymentService
 
     public async Task<IEnumerable<Payment>> getPaymentList()
     {
-        return await _dbContext.Payments.ToListAsync();
+        return await _dbContext.Payments
+            .Include(p=>p.PaymentType)
+            .Include(p=>p.Student)
+            .ToListAsync();
     }
 
     public async Task UpdatePaymentDueAsync(int studentId, int amount)

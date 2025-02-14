@@ -17,7 +17,7 @@ public partial class Student
     public int StudentId { get; set; }
 
     [Column("payment_due")]
-    public int? PaymentDue { get; set; }
+    public int PaymentDue { get; set; }
 
     [Column("photo_url")]
     [StringLength(255)]
@@ -54,7 +54,7 @@ public partial class Student
     public int? BatchId { get; set; }
 
     [Column("course_id")]
-    public int? CourseId { get; set; }
+    public int CourseId { get; set; }
 
     [ForeignKey("BatchId")]
     [InverseProperty("Students")]

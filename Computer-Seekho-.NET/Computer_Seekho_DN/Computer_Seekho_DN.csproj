@@ -10,23 +10,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Controllers\BatchController.cs" />
-    <Compile Remove="Controllers\ClosureReasonController.cs" />
-    <Compile Remove="Controllers\GetInTouchController.cs" />
     <Compile Remove="Controllers\GetInTouchService.cs" />
     <Compile Remove="Controllers\IGetInTouchService.cs" />
-    <Compile Remove="Controllers\ImageController.cs" />
-    <Compile Remove="Controllers\RecuriterController.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Controllers\BatchController.cs" />
-    <None Include="Controllers\ClosureReasonController.cs" />
-    <None Include="Controllers\GetInTouchController.cs" />
     <None Include="Service\GetInTouchService.cs" />
     <None Include="Service\IGetInTouchService.cs" />
-    <None Include="Controllers\ImageController.cs" />
-    <None Include="Controllers\RecuriterController.cs" />
   </ItemGroup>
 
   <ItemGroup>

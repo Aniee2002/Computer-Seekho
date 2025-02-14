@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 [ApiController]
-[Route("api/auth")]
+[Route("auth")]
 public class AuthController : ControllerBase
 {
     private readonly IAuthService service;
@@ -15,7 +15,7 @@ public class AuthController : ControllerBase
         this.service = service;
     }
 
-    [HttpPost]
+    [HttpPost("signin")]
     public async Task<IActionResult> Login()
     {
         if (Request.Headers.TryGetValue("Authorization", out var authHeader))

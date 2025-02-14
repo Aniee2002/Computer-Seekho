@@ -1,4 +1,5 @@
-﻿using Computer_Seekho_DN.Models;
+﻿using Computer_Seekho_DN.Exceptions;
+using Computer_Seekho_DN.Models;
 using Computer_Seekho_DN.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -31,20 +32,12 @@ namespace Computer_Seekho_DN.Service
             // Check if the staff exists in the database
             var staff = await _context.Staff
                 .Where(s => s.StaffUsername == username)
-                .FirstOrDefaultAsync();
+                .FirstOrDefaultAsync() ?? throw new Exception("Invalid Credentials");
 
-            if (staff == null)
+            if (!BCrypt.Net.BCrypt.Verify(password, staff.StaffPassword))
             {
-                throw new Exception("Invalid Credentials");
+                throw new UnauthorizedException("Invalid Password");
             }
-            else
-            {
-                if (!BCrypt.Net.BCrypt.Verify(password, staff.StaffPassword))
-                {
-                    throw new Exception("Invalid Password");
-                }
-            }
-
             return GenerateJwtToken(staff);
         }
 

@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Computer_Seekho_DN.Controllers;
 
-[Route("api/[controller]")]
+[Route("News")]
 [ApiController]
 public class NewsController : ControllerBase
 {
@@ -16,24 +16,24 @@ public class NewsController : ControllerBase
         _newsService = newsService;
     }
 
-    [HttpGet]
+    [HttpGet("all")]
     public async Task<ActionResult<IEnumerable<News>>> GetAllImages()
     {
         var images = await _newsService.GetAllImages();
         return Ok(images);
     }
 
-    [HttpPost]
+    [HttpPost("add")]
     public async Task<ActionResult<News>> SaveImage([FromBody] News image)
     {
         if (image == null)
             return BadRequest("Invalid image data.");
 
         var savedImage = await _newsService.SaveImage(image);
-        return CreatedAtAction(nameof(GetImageById), new { id = savedImage.NewsId }, savedImage);
+        return Ok(new { message = "News Added" });
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("get/{id}")]
     public async Task<ActionResult<News>> GetImageById(int id)
     {
         var image = await _newsService.GetImageById(id);
@@ -43,7 +43,7 @@ public class NewsController : ControllerBase
         return Ok(image);
     }
 
-    [HttpDelete("{id}")]
+    [HttpDelete("delete/{id}")]
     public async Task<IActionResult> DeleteImage(int id)
     {
         await _newsService.DeleteImage(id);

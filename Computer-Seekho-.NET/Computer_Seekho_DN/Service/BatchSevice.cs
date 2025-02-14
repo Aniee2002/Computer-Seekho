@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Computer_Seekho_DN.Service;
 
-public class BatchSevice
+public class BatchSevice :IBatchService
 {
     private readonly ComputerSeekhoDbContext _dbContext;
 
@@ -13,7 +13,7 @@ public class BatchSevice
     {
         this._dbContext = computerSeekhoDbContext;
     }
-    public async Task<ActionResult<Batch>> Add(Batch batch)
+    public async Task<Batch> Add(Batch batch)
     {
         _dbContext.Add(batch);
         await _dbContext.SaveChangesAsync();
@@ -50,16 +50,18 @@ public class BatchSevice
         {
             return null;
         }
-        return await _dbContext.Batches.ToListAsync();
+
+        return await _dbContext.Batches.Include(b => b.Course).ToListAsync();
     }
 
-    public async Task<Batch?> GetBatchByBatchId(int BatchId)
+    public async Task<Batch?> GetBatchByBatchId(String name)
     {
         if (_dbContext.Batches == null)
         {
             return null;
         }
-        var batch = await _dbContext.Batches.FindAsync(BatchId);
+
+        var batch = await _dbContext.Batches.FirstOrDefaultAsync(x=> x.BatchName == name);
         if (batch == null)
         {
             return null;

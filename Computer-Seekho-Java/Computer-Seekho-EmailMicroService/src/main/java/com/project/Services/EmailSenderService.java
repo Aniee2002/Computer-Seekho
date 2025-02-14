@@ -20,14 +20,15 @@ public class EmailSenderService {
   final String username = "computerseekho2025@gmail.com";
   final String password = "uqknkgmutwmxuxju";
 
-  public void sendEmailPayment(Map<String, Object> paymentDetails) {
-    String to = (String)paymentDetails.get("email");
-    String studentName = (String)paymentDetails.get("studentName");
-    String paymentAmount = (String) paymentDetails.get("amount");
-    String paymentMethod = (String) paymentDetails.get("Type");
-    String paymentDate = (String) paymentDetails.get("date");
-    String paymentID = (String) paymentDetails.get("paymentId");
-
+  public void sendEmailPayment(Map<String, String> paymentDetails) {
+    
+    String to = paymentDetails.get("email");
+    String studentName = paymentDetails.get("studentName");
+    String paymentAmount = paymentDetails.get("amount");
+    String paymentMethod = paymentDetails.get("Type");
+    String paymentDate = paymentDetails.get("date");
+    String paymentID = paymentDetails.get("paymentId");
+    System.out.println(to);
     Properties props = new Properties();
     props.put("mail.smtp.host", "smtp.gmail.com");
     props.put("mail.smtp.auth", "true");
@@ -50,7 +51,7 @@ public class EmailSenderService {
       message1.setSubject("Payment Received");
 
       // Read the HTML template from a file
-      String emailTemplate = new String(Files.readAllBytes(Paths.get("src/main/resources/paymentTemplate.html")));
+      String emailTemplate = new String(Files.readAllBytes(Paths.get("Computer-Seekho-Java/Computer-Seekho-EmailMicroService/src/main/resources/paymentTemplate.html")));
       System.out.println("PaymentTemplate");
 
       // Replace placeholders with actual values
@@ -102,7 +103,7 @@ public class EmailSenderService {
       message1.setSubject("Admission Confirmation");
 
       // Read the HTML template from a file
-      String emailTemplate = new String(Files.readAllBytes(Paths.get("src/main/resources/emailTemplate.html")));
+      String emailTemplate = new String(Files.readAllBytes(Paths.get("Computer-Seekho-Java/Computer-Seekho-EmailMicroService/src/main/resources/emailTemplate.html")));
 
       // Replace placeholders with actual values
       emailTemplate = emailTemplate.replace("${studentName}", studentName);

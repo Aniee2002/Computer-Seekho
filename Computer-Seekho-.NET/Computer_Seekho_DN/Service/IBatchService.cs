@@ -5,7 +5,7 @@ namespace Computer_Seekho_DN.Service;
 
 public interface IBatchService
 {
-    Task<Batch?> GetBatchByBatchId(int BatchId);
+    Task<Batch?> GetBatchByBatchId(String name);
     Task<IEnumerable<Batch>> GetAllBatches();
     Task<Batch> Add(Batch batch);
     Task<bool> Update(Batch batch);
