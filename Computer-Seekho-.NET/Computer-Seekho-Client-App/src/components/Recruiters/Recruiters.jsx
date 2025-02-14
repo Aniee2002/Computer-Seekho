@@ -44,7 +44,7 @@ const Recruiter = () => {
         {recruiters.map((recruiter, index) => (
           <div key={index} className="recruiter-card">
             <img
-              src={recruiter.recruiterPhotoUrl || 'https://via.placeholder.com/100'} // Fallback to placeholder
+              src={recruiter.recruiterImage || 'https://via.placeholder.com/100'} // Fallback to placeholder
               alt={recruiter.recruiterName}
               className="recruiter-logo"
             />

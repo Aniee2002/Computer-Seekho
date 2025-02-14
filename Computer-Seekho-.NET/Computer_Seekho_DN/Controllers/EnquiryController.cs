@@ -43,7 +43,7 @@ public class EnquiryController : ControllerBase
         return Ok(enquiry);
     }
 
-    [HttpGet("getByStaffName/{staffName}")]
+    [HttpGet("getbystaff/{staffName}")]
 
     public async Task<IActionResult> GetEnquiriesByStaffName(string staffName)
     {

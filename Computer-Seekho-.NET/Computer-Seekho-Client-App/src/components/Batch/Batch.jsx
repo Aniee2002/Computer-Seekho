@@ -24,7 +24,7 @@ const Staff = () => {
                 const formattedBatch = data.map(batch => ({
                     Id: batch.batchId,
                     name: batch.batchName,
-                    img: batch.batchPhoto,
+                    img: batch.batchPhotoUrl,
                 }));
                 setBatchList(formattedBatch);
             } catch (error) {

@@ -15,7 +15,7 @@ public class AuthController : ControllerBase
         this.service = service;
     }
 
-    [HttpPost("signin")]
+    [HttpPost("signIn")]
     public async Task<IActionResult> Login()
     {
         if (Request.Headers.TryGetValue("Authorization", out var authHeader))

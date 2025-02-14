@@ -22,7 +22,7 @@ const AllRecruiters = () => {
                     {recruiters.map((recruiter, index) => (
                         <div key={index} className="recruiter-card">
                             <img
-                                src={recruiter.recruiterPhotoUrl}
+                                src={recruiter.recruiterImage}
                                 alt="Recruiter"
                                 className="recruiter-image"
                             />

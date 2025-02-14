@@ -7,10 +7,10 @@ import Navbar from "../Navbar/Navbar";
 const ContactUs = () => {
   const [formData, setFormData] = useState({
     enquirerName: "",
-    email: "",
-    mobile: "",
+    enquirerEmail: "",
+    enquirerMobile: "",
     courseName: "",
-    enquiryMessage: ""
+    enquirerMessage: ""
   });
 
   const [errors, setErrors] = useState({});
@@ -26,18 +26,18 @@ const ContactUs = () => {
   const validateForm = () => {
     const newErrors = {};
     if (!formData.enquirerName) newErrors.enquirerName = "Name is required";
-    if (!formData.email) {
-      newErrors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Email address is invalid";
+    if (!formData.enquirerEmail) {
+      newErrors.enquirerEmail = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.enquirerEmail)) {
+      newErrors.enquirerEmail = "Email address is invalid";
     }
-    if (!formData.mobile) {
-      newErrors.mobile = "Phone number is required";
-    } else if (!/^\d{10}$/.test(formData.mobile)) {
-      newErrors.mobile = "Phone number is invalid";
+    if (!formData.enquirerMobile) {
+      newErrors.enquirerMobile = "Phone number is required";
+    } else if (!/^\d{10}$/.test(formData.enquirerMobile)) {
+      newErrors.enquirerMobile = "Phone number is invalid";
     }
     if (!formData.courseName) newErrors.courseName = "Course name is required";
-    if (!formData.enquiryMessage) newErrors.enquiryMessage = "Message is required";
+    if (!formData.enquirerMessage) newErrors.enquirerMessage = "Message is required";
     return newErrors;
   };
 
@@ -50,7 +50,7 @@ const ContactUs = () => {
     }
     setErrors({});
     try {
-      const response = await fetch("http://localhost:8080/getInTouch/add", {
+      const response = await fetch("http://localhost:8080/getinTouch/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -61,10 +61,10 @@ const ContactUs = () => {
         toast.success("Your message has been sent successfully!");
         setFormData({
           enquirerName: "",
-          email: "",
-          mobile: "",
+          enquirerEmail: "",
+          enquirerMobile: "",
           courseName: "",
-          enquiryMessage: ""
+          enquirerMessage: ""
         });
       } else {
         alert("Failed to send your message. Please try again.");
@@ -108,34 +108,33 @@ const ContactUs = () => {
                   </div>
                   <div className="form-group">
                     <label>Email Address</label>
-                    <input type="email" className="form-control border-0" id="email" name="email" placeholder="Email" onChange={handleChange} value={formData.email} />
-                    {errors.email && <p className="error">{errors.email}</p>}
+                    <input type="email" className="form-control border-0" id="email" name="enquirerEmail" placeholder="Email" onChange={handleChange} value={formData.enquirerEmail} />
+                    {errors.enquirerEmail && <p className="error">{errors.enquirerEmail}</p>}
                   </div>
                   <div className="form-group">
                     <label>Phone no.</label>
-                    <input type="tel" className="form-control border-0" id="mobile" name="mobile" placeholder="Phone" onChange={handleChange} value={formData.mobile} />
-                    {errors.mobile && <p className="error">{errors.mobile}</p>}
+                    <input type="tel" className="form-control border-0" id="mobile" name="enquirerMobile" placeholder="Phone" onChange={handleChange} value={formData.enquirerMobile} />
+                    {errors.enquirerMobile && <p className="error">{errors.enquirerMobile}</p>}
                   </div>
-              <div className="form-group">
-                <label>Course</label>
-                <input type="text" className="form-control border-0" id="courseName" name="courseName" placeholder="Course" onChange={handleChange} value={formData.courseName} />
-                {errors.courseName && <p className="error">{errors.courseName}</p>}
+                  <div className="form-group">
+                    <label>Course</label>
+                    <input type="text" className="form-control border-0" id="courseName" name="courseName" placeholder="Course" onChange={handleChange} value={formData.courseName} />
+                    {errors.courseName && <p className="error">{errors.courseName}</p>}
+                  </div>
+                  <div className="form-group">
+                    <label>Message</label>
+                    <textarea name="enquirerMessage" className="form-control border-0" id="enquirerMessage" rows="6" placeholder="Message" onChange={handleChange} value={formData.enquirerMessage}></textarea>
+                    {errors.enquirerMessage && <p className="error">{errors.enquirerMessage}</p>}
+                  </div>
+                  <input id="submit" type="submit" className="btn btn-pri btn-pill float-right mb-4" value="Send" />
+                </form>
               </div>
-              <div className="form-group">
-                <label>Message</label>
-                <textarea name="enquiryMessage" className="form-control border-0" id="enquiryMessage" rows="6" placeholder="Message" onChange={handleChange} value={formData.enquiryMessage}></textarea>
-                {errors.enquiryMessage && <p className="error">{errors.enquiryMessage}</p>}
-              </div>
-              <input id="submit" type="submit" className="btn btn-pri btn-pill float-right mb-4" value="Send" />
-            </form>
-          </div>
+            </div>
           </div>
         </div>
-        </div >
-  {/* <Footer/> */ }
-      </div >
-  <Footer />
-    </div >
+      </div>
+      <Footer />
+    </div>
   );
 };
 

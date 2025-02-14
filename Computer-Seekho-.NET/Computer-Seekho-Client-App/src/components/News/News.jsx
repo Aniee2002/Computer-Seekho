@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
 
-const Card = ({ newsTitle, newsDescrption, newsUrl }) => {
+const Card = ({ newsTitle, newsDescription, newsUrl }) => {
   return (
     <div className="box1">
       <img src={newsUrl} alt="news" />

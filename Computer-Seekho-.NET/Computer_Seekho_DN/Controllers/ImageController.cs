@@ -17,7 +17,7 @@ public class ImageController : ControllerBase
     }
 
     // GET: api/image
-    [HttpGet("getAll")]
+    [HttpGet("all")]
     public async Task<ActionResult<IEnumerable<Image>>> GetAllImages()
     {
         var images = await _imageService.GetAllImagesAsync();

@@ -96,16 +96,16 @@ const GetInTouch = () => {
               </Typography>
             </Box>
             <Typography variant="body2" sx={{ color: grey[600] }}>
-              <b>Email:</b> {enquiry.email}
+              <b>Email:</b> {enquiry.enquirerEmail}
             </Typography>
             <Typography variant="body2" sx={{ color: grey[600] }}>
-              <b>Mobile:</b> {enquiry.mobile}
+              <b>Mobile:</b> {enquiry.enquirerMobile}
             </Typography>
             <Typography variant="body2" sx={{ color: grey[600] }}>
               <b>Course:</b> {enquiry.courseName || "N/A"}
             </Typography>
             <Typography variant="body2" sx={{ color: grey[600], flexGrow: 1 }}>
-              <b>Message:</b> {enquiry.enquiryMessage || "N/A"}
+              <b>Message:</b> {enquiry.enquirerMessage || "N/A"}
             </Typography>
           </CardContent>
         </Card>

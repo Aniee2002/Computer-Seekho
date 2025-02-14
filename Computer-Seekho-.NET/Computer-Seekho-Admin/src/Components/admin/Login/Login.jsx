@@ -29,18 +29,20 @@ const Login = () => {
                     "Authorization": "Basic " + btoa(username + ":" + password)
                 }
             });
-            
+            // console.log(token)
             if (!response.ok) {
-                if (response.status === 401) {
-                    toast.error("Invalid credentials..!", { position: "top-center" });
+                // const error = response.data();
+                if (response.status === 404) {
+                    toast.error("Invalid", { position: "top-center" });
                 }
-                 else {
+                else {
                     toast.error("Internal server error", { position: "top-center" });
                 }
             } else {
-                const data = response.headers.get('Authorization');
+                const data = response.headers.get("Authorization");
+                console.log(data);
                 sessionStorage.setItem('token', data);
-                const data2 = await response.json();
+                // const data2 = await response.json();
                 navigate("/admin/enquiry");
                 toast.success(data2.message, { position: "top-center" });
             }

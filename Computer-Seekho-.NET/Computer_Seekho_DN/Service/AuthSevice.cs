@@ -32,7 +32,7 @@ namespace Computer_Seekho_DN.Service
             // Check if the staff exists in the database
             var staff = await _context.Staff
                 .Where(s => s.StaffUsername == username)
-                .FirstOrDefaultAsync() ?? throw new Exception("Invalid Credentials");
+                .FirstOrDefaultAsync() ?? throw new NotFoundException("Username Not Found");
 
             if (!BCrypt.Net.BCrypt.Verify(password, staff.StaffPassword))
             {

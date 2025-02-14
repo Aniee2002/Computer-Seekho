@@ -75,7 +75,7 @@ public class StaffController : ControllerBase
     }
 
     // GET: api/staff/username/{username}
-    [HttpGet("get/{username}")]
+    [HttpGet("username/{username}")]
     public async Task<ActionResult<int>> GetStaffIdByUsername(string username)
     {
         try
