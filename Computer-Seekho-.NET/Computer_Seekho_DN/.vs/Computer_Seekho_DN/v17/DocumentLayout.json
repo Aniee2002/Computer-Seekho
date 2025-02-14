@@ -102,8 +102,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 5,
@@ -114,8 +118,7 @@
               "RelativeToolTip": "Service\\AuthSevice.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAAwBkAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-14T12:02:13.259Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-14T12:02:13.259Z"
             },
             {
               "$type": "Document",
@@ -139,8 +142,7 @@
               "RelativeToolTip": "Controllers\\AuthController.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAACcAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-14T10:27:59.771Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-14T10:27:59.771Z"
             },
             {
               "$type": "Document",
@@ -152,8 +154,7 @@
               "RelativeToolTip": "Exceptions\\AppExceptionHandler.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAAQwCQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-14T09:04:32.035Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-14T09:04:32.035Z"
             },
             {
               "$type": "Document",
@@ -165,8 +166,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAB8AAAAAAAAAAAAkwCkAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-14T10:41:05.561Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-14T10:41:05.561Z"
             },
             {
               "$type": "Document",
@@ -176,7 +176,7 @@
               "RelativeDocumentMoniker": "Controllers\\EnquiryController.cs",
               "ToolTip": "E:\\Computer-Seekho\\Computer-Seekho-.NET\\Computer_Seekho_DN\\Controllers\\EnquiryController.cs",
               "RelativeToolTip": "Controllers\\EnquiryController.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAAwBwAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAxwBcAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-14T10:32:00.424Z",
               "EditorCaption": ""
@@ -191,8 +191,7 @@
               "RelativeToolTip": "Controllers\\StaffController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-14T08:56:13.063Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-14T08:56:13.063Z"
             },
             {
               "$type": "Document",
@@ -240,8 +239,7 @@
               "RelativeToolTip": "Controllers\\ImageController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-14T11:30:12.721Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-14T11:30:12.721Z"
             },
             {
               "$type": "Document",
