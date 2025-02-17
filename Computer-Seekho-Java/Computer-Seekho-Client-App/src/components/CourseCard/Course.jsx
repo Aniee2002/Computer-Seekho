@@ -1,8 +1,10 @@
 import {useState,useEffect} from "react";
+import {useNavigate} from "react-router-dom"
 import "./Cource.css";
 
 const Course = () => {
   const [cardsData, setCardsData] = useState([]); // State to store fetched courses
+  // const navigate = useNavigate();
 
     useEffect(() => {
         const fetchCourses = async () => {
