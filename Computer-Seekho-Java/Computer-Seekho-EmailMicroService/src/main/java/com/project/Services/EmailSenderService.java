@@ -22,12 +22,12 @@ public class EmailSenderService {
 
   public void sendEmailPayment(Map<String, Object> paymentDetails) {
     
-    String to = paymentDetails.get("email");
-    String studentName = paymentDetails.get("studentName");
-    String paymentAmount = paymentDetails.get("amount");
-    String paymentMethod = paymentDetails.get("Type");
-    String paymentDate = paymentDetails.get("date");
-    String paymentID = paymentDetails.get("paymentId");
+    String to = (String)paymentDetails.get("email");
+    String studentName = (String)paymentDetails.get("studentName");
+    String paymentAmount = (String)paymentDetails.get("amount");
+    String paymentMethod = (String)paymentDetails.get("Type");
+    String paymentDate = (String)paymentDetails.get("date");
+    String paymentID = (String)paymentDetails.get("paymentId");
     System.out.println(to);
     Properties props = new Properties();
     props.put("mail.smtp.host", "smtp.gmail.com");
