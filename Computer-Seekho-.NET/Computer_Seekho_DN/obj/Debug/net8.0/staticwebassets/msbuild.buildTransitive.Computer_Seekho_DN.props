@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\Computer_Seekho_DN.props" />
-</Project>
