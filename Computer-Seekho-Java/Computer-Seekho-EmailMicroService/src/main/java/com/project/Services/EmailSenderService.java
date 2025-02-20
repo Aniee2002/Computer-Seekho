@@ -20,7 +20,7 @@ public class EmailSenderService {
   final String username = "computerseekho2025@gmail.com";
   final String password = "uqknkgmutwmxuxju";
 
-  public void sendEmailPayment(Map<String, String> paymentDetails) {
+  public void sendEmailPayment(Map<String, Object> paymentDetails) {
     
     String to = paymentDetails.get("email");
     String studentName = paymentDetails.get("studentName");

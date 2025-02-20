@@ -30,7 +30,7 @@ public class EmailController {
 	}
 
 	@PostMapping("/emailpayment")
-	public ResponseEntity<String> sendEmailPayment(@RequestBody Map<String, String> emailRequest1) {
+	public ResponseEntity<String> sendEmailPayment(@RequestBody Map<String, Object> emailRequest1) {
 		System.out.println("Sending Email");
 		try {
 			service.sendEmailPayment(emailRequest1);
