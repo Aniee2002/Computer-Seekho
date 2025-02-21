@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\Computer_Seekho_DN.props" />
-</Project>

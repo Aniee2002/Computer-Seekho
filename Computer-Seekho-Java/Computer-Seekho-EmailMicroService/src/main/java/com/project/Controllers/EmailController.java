@@ -30,9 +30,10 @@ public class EmailController {
 	}
 
 	@PostMapping("/emailpayment")
-	public ResponseEntity<String> sendEmailPayment(@RequestBody Map<String, Object> emailRequest) {
+	public ResponseEntity<String> sendEmailPayment(@RequestBody Map<String, Object> emailRequest1) {
+		System.out.println("Sending Email");
 		try {
-			service.sendEmailPayment(emailRequest);
+			service.sendEmailPayment(emailRequest1);
 			return ResponseEntity.status(HttpStatus.OK).body("Email sent successfully");
 		} 
 		catch (Exception e) {

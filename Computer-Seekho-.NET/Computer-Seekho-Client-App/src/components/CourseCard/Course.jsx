@@ -24,7 +24,7 @@ const Course = () => {
                 const formattedCourses = data.map(course => ({
                     img: course.coverPhoto, // Assuming this is a valid image URL
                     title: course.courseName,
-                    description: course.courseDescription
+                    description: course.courseDescriptor
                 }));
 
                 setCardsData(formattedCourses); // Update state

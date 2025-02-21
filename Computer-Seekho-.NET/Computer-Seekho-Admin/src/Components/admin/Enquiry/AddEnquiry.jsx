@@ -45,7 +45,6 @@ const AddEnquiryComponent = ({selectedEnquiry}) => {
     enquirerQuery: "",
     courseName: "",
     followUpDate: dayjs().add(3,'day'),
-    staff:{staffId:staffId}
   });
 
    useEffect(() => {
@@ -79,13 +78,15 @@ const AddEnquiryComponent = ({selectedEnquiry}) => {
   
     const formattedData = {
       ...formData,
-      staff: { staffId : id },
+      enquiryDate: formData.enquiryDate ? dayjs(formData.enquiryDate).format("YYYY-MM-DD") : null,
+      followUpDate: formData.followUpDate ? dayjs(formData.followUpDate).format("YYYY-MM-DD") : null,
+      enquiryCounter: 0, staffId : id
     };
   
     console.log(formattedData);
   
     try {
-      const response = await fetch("http://localhost:8080/enquiries/create", {
+      const response = await fetch("http://localhost:8080/enquiries/add", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formattedData),
@@ -107,7 +108,7 @@ const AddEnquiryComponent = ({selectedEnquiry}) => {
         enquiryDate: dayjs(),
         enquirerQuery: "",
         courseName: "",
-        followUpDate: dayjs().add(3, "day"),
+        followUpDate: dayjs().add(3, "day")
       });
   
     } catch (error) {
@@ -124,7 +125,7 @@ const AddEnquiryComponent = ({selectedEnquiry}) => {
     if (!id) return;
   
     try {
-      const response = await fetch(`http://localhost:8080/getInTouch/delete/${id}`, {
+      const response = await fetch(`http://localhost:8080/getinTouch/delete/${id}`, {
         method: "DELETE",
       });
 
@@ -145,7 +146,7 @@ const getStaffIdHandler = async (username) => {
       throw new Error("Failed to fetch staff ID");
     }
     const data = await response.json();
-    return Number(data.message);
+    return Number(data);
   } catch (error) {
     toast.error(error.message);
   }

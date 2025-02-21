@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,6 +8,7 @@ using Computer_Seekho_DN.Service;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
+namespace Computer_Seekho_DN.Service;
 public class CourseService : ICourseService
 {
     private readonly ComputerSeekhoDbContext _context;
@@ -17,20 +18,19 @@ public class CourseService : ICourseService
         _context = context;
     }
 
-    public async Task<ActionResult<Course>> GetCourseById(int courseId)
+    public async Task<Course> GetCourseById(int courseId)
     {
         var course = await _context.Courses.FindAsync(courseId);
-        if (course == null) return new NotFoundResult();
         return course;
     }
 
-    public async Task<ActionResult<IEnumerable<Course>>> GetAllCourses()
+    public async Task<IEnumerable<Course>> GetAllCourses()
     {
         var courses = await _context.Courses.ToListAsync();
-        return new ActionResult<IEnumerable<Course>>(courses);
+        return courses;
     }
 
-    public Task<ActionResult<Course>> AddCourse(Course course)
+    public Task<Course> AddCourse(Course course)
     {
         throw new NotImplementedException();
     }
@@ -45,13 +45,7 @@ public class CourseService : ICourseService
         throw new NotImplementedException();
     }
 
-    public Task<ActionResult<Course>> FindCourseByName(string courseName)
-    {
-        throw new NotImplementedException();
-    }
-
-    // Fixed the incomplete method declaration
-    public async Task<ActionResult<Course>> SomeMethodName()
+    public Task<Course>? FindCourseByName(string courseName)
     {
         throw new NotImplementedException();
     }

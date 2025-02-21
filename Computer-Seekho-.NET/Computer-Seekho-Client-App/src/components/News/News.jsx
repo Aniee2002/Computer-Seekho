@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
 
-const Card = ({ newsTitle, newsDescrption, newsUrl }) => {
+const Card = ({ newsTitle, newsDescription, newsUrl }) => {
   return (
     <div className="box1">
       <img src={newsUrl} alt="news" />
       <div className="overlay1">
         <h3>{newsTitle}</h3>
-        <p>{newsDescrption}</p>
+        <p>{newsDescription}</p>
        
       </div>
     </div>

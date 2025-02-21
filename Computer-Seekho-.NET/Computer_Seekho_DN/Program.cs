@@ -1,15 +1,51 @@
-﻿using Computer_Seekho_DN.Models;
-using Computer_Seekho_DN.Repository;
-using Computer_Seekho_DN.Service;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Computer_Seekho_DN.Models;
+using Computer_Seekho_DN.Service;
+using Computer_Seekho_DN.Repository;
+using Microsoft.AspNetCore.Cors.Infrastructure;
+using Computer_Seekho_DN.Exceptions;
+using Org.BouncyCastle.Security;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add controllers
+// Add services to the container
 builder.Services.AddControllers();
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.RequireHttpsMetadata = false;
+        options.SaveToken = true;
+        options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidateAudience = true,
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!)
+            )
+        };
+    });
+builder.Services.AddAuthorization();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigins",
+        policy =>
+        {
+            policy.WithOrigins("*")
+                  .AllowAnyMethod()
+                  .AllowAnyHeader()
+                  .WithExposedHeaders("Authorization");
+        });
+});
+
 
 // Configure MySQL Database Connection
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -17,46 +53,34 @@ builder.Services.AddDbContext<ComputerSeekhoDbContext>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
 // Register your service dependencies
-builder.Services.AddScoped<ICourseService, CourseService>();
-builder.Services.AddScoped<INewsService, NewsService>();
-
-// Register IAuthService for dependency injection
+builder.Services.AddScoped<IAlbumService, AlbumService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IBatchService, BatchSevice>();
+builder.Services.AddScoped<IClosureReasonService,ClosureReasonService>();
+builder.Services.AddScoped<ICourseService, CourseService>();
+builder.Services.AddScoped<IEnquiryService,EnquiryService>();
+builder.Services.AddScoped<IGetInTouchService, GetInTouchService>();
+builder.Services.AddScoped<IImageService, ImageService>();
+builder.Services.AddScoped<INewsService, NewsService>();
+builder.Services.AddScoped<IpaymentService, PaymentService>();
+builder.Services.AddScoped<IpaymentTypeService, PaymentTypeService>();
+builder.Services.AddScoped<IPlacementService, PlacementService>();
+builder.Services.AddScoped<IRecruiterService, RecruiterService>();
+builder.Services.AddScoped<IstaffService, StaffService>();
+builder.Services.AddScoped<IStudentService, StudentService>();
 
-// Configure JWT authentication
-var jwtSettings = builder.Configuration.GetSection("Jwt");
-var key = Encoding.UTF8.GetBytes(jwtSettings["Key"]);
 
-builder.Services.AddAuthentication(options =>
-{
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-}).AddJwtBearer(options =>
-{
-    options.RequireHttpsMetadata = false;
-    options.SaveToken = true;
-    options.TokenValidationParameters = new TokenValidationParameters
-    {
-        ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymmetricSecurityKey(key),
-        ValidateIssuer = true,
-        ValidateAudience = true,
-        ValidIssuer = jwtSettings["Issuer"],
-        ValidAudience = jwtSettings["Audience"],
-        ValidateLifetime = true,
-        ClockSkew = TimeSpan.Zero
-    };
-});
 
-builder.Services.AddAuthorization();
+builder.Services.AddExceptionHandler<AppExceptionHandler>();
 
-// Optionally add Swagger if needed
+
+// Enable Swagger for API documentation (optional)
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Middleware pipeline configuration
+// Enable middleware for error handling during development
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
@@ -64,8 +88,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseExceptionHandler( _ => { });
+
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseCors("AllowSpecificOrigins");
 app.MapControllers();
 app.Run();
